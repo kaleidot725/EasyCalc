@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "EasyCalc"
+rootProject.name = "easycalc"
 
 include(":app")
 include(":ui")
