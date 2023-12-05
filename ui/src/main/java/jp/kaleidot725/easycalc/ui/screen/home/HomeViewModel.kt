@@ -14,17 +14,10 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class HomeViewModel(
-    enableAd: Boolean,
-    adUnitId: String,
     private val textRepository: TextRepository,
     private val statsRepository: StatsRepository,
 ) : ContainerHost<HomeState, HomeEvent>, HomeAction, ViewModel() {
-    override val container = container<HomeState, HomeEvent>(
-        HomeState(
-            enableAd = enableAd,
-            adUnitId = adUnitId
-        )
-    )
+    override val container = container<HomeState, HomeEvent>(HomeState())
 
     init {
         refresh()

@@ -13,16 +13,9 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class MyListViewModel(
-    enableAd: Boolean,
-    adUnitId: String,
     private val textRepository: TextRepository,
 ) : ContainerHost<MyListState, MyListEvent>, MyListAction, ViewModel() {
-    override val container = container<MyListState, MyListEvent>(
-        MyListState(
-            enableAd = enableAd,
-            adUnitId = adUnitId
-        )
-    )
+    override val container = container<MyListState, MyListEvent>(MyListState())
 
     init {
         viewModelScope.launch {

@@ -36,7 +36,7 @@ import jp.kaleidot725.easycalc.ui.R
 import jp.kaleidot725.easycalc.ui.component.icon.IconTextItem
 import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
 import jp.kaleidot725.easycalc.ui.component.divider.VerticalDivider
-import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
+import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
 import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
 
 private const val OneMinuteSeconds = 60

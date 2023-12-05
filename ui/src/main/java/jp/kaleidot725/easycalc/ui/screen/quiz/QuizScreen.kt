@@ -18,9 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import jp.kaleidot725.easycalc.ui.R
 import jp.kaleidot725.easycalc.ui.screen.quiz.component.QuizCategoryList
 import jp.kaleidot725.easycalc.ui.screen.quiz.component.QuizTabCategory
@@ -72,21 +69,6 @@ fun QuizScreen(
                 onClickCategory = action::clickCategory,
                 onClickText = action::clickText,
                 modifier = Modifier.weight(1.0f)
-            )
-        }
-
-        if (state.enableAd) {
-            AndroidView(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.BottomCenter),
-                factory = { context ->
-                    AdView(context).apply {
-                        setAdSize(AdSize.BANNER)
-                        setAdUnitId(state.adUnitId)
-                        loadAd(AdRequest.Builder().build())
-                    }
-                }
             )
         }
     }

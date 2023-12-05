@@ -65,7 +65,6 @@ dependencies {
     implementation(libs.accompanist.webview)
     implementation(libs.accompanist.systemuicontroller)
     implementation(libs.aboutlibraries.compose)
-    implementation(libs.play.services.ads)
     implementation(libs.kotlinx.datetime)
 
     testImplementation(libs.junit.jupiter.api)

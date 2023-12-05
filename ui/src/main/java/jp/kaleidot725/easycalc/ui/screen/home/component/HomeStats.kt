@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.ui.R
 import jp.kaleidot725.easycalc.ui.component.divider.VerticalDivider
-import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
+import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
 
 @Composable
 fun HomeStats(

@@ -44,7 +44,6 @@ class ComposeAppViewModel(
         if (newCount == 3) postSideEffect(ComposeAppEvent.ShowAppInReview)
         if (newCount % 5 == 0) {
             reduce { state.copy(isLoading = true) }
-            postSideEffect(ComposeAppEvent.DisplayAd(adUnitId))
         }
     }
 

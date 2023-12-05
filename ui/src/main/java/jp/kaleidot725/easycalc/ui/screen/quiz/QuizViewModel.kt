@@ -12,16 +12,9 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class QuizViewModel(
-    enableAd: Boolean,
-    adUnitId: String,
     private val textRepository: TextRepository,
 ) : ContainerHost<QuizState, QuizEvent>, QuizAction, ViewModel() {
-    override val container = container<QuizState, QuizEvent>(
-        QuizState(
-            enableAd = enableAd,
-            adUnitId = adUnitId
-        )
-    )
+    override val container = container<QuizState, QuizEvent>(QuizState())
 
     init {
         viewModelScope.launch {

@@ -10,12 +10,6 @@ plugins {
     alias(libs.plugins.about.libraries)
 }
 
-buildscript {
-    dependencies {
-        classpath(libs.google.services)
-    }
-}
-
 allprojects {
     apply(plugin = "io.gitlab.arturbosch.detekt")
     apply(plugin = "com.mikepenz.aboutlibraries.plugin")

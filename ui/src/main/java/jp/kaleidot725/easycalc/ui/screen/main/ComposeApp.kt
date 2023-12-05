@@ -41,7 +41,7 @@ import jp.kaleidot725.easycalc.ui.R
 import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigation
 import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigationItem
 import jp.kaleidot725.easycalc.ui.component.navigation.SimpleTopBar
-import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
+import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Progress.Companion.isProgressRoute

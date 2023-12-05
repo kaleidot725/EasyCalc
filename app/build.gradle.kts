@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serizalization)
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -76,7 +75,6 @@ dependencies {
     implementation(libs.koin.androidx.compose)
     implementation(libs.orbit.viewmodel)
     implementation(libs.orbit.compose)
-    implementation(libs.play.services.ads)
     implementation(libs.review.ktx)
     implementation(libs.timber)
 

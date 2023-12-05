@@ -7,10 +7,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.runtime.getValue
 import androidx.core.os.LocaleListCompat
 import androidx.core.view.WindowCompat
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.play.core.review.ReviewManagerFactory
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeApp
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeAppEvent
@@ -33,24 +29,6 @@ class MainActivity : AppCompatActivity() {
                         is ComposeAppEvent.ChangeLanguage -> {
                             val list = LocaleListCompat.forLanguageTags(it.language.lang)
                             AppCompatDelegate.setApplicationLocales(list)
-                        }
-                        is ComposeAppEvent.DisplayAd -> {
-                            val adRequest = AdRequest.Builder().build()
-                            InterstitialAd.load(
-                                this,
-                                it.unitId,
-                                adRequest,
-                                object : InterstitialAdLoadCallback() {
-                                    override fun onAdLoaded(value: InterstitialAd) {
-                                        value.show(this@MainActivity)
-                                        appViewModel.showedAd()
-                                    }
-
-                                    override fun onAdFailedToLoad(p0: LoadAdError) {
-                                        appViewModel.showedAd()
-                                    }
-                                }
-                            )
                         }
                         ComposeAppEvent.ShowAppInReview -> {
                             showAppInReview()
@@ -79,24 +57,5 @@ class MainActivity : AppCompatActivity() {
                 Timber.e("Failed app in review(${task.exception}).")
             }
         }
-    }
-
-    private fun showAd(unitId: String, appViewModel: ComposeAppViewModel) {
-        val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(
-            this,
-            unitId,
-            adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdLoaded(value: InterstitialAd) {
-                    value.show(this@MainActivity)
-                    appViewModel.showedAd()
-                }
-
-                override fun onAdFailedToLoad(p0: LoadAdError) {
-                    appViewModel.showedAd()
-                }
-            }
-        )
     }
 }

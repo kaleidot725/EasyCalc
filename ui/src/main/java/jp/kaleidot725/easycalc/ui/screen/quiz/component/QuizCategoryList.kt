@@ -26,7 +26,7 @@ import jp.kaleidot725.easycalc.domain.model.text.MathText
 import jp.kaleidot725.easycalc.domain.model.text.MathTextSet
 import jp.kaleidot725.easycalc.ui.R
 import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
-import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
+import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

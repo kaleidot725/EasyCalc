@@ -84,7 +84,7 @@ val repositoryModule = module {
 
 val appModule = module {
     viewModel {
-        HomeViewModel(BuildConfig.ENABLE_AD, homeUnitId, get(), get())
+        HomeViewModel(get(), get())
     }
     viewModel {
         StatsViewModel(get())
@@ -96,13 +96,13 @@ val appModule = module {
         LanguageViewModel(get())
     }
     viewModel {
-        QuizViewModel(BuildConfig.ENABLE_AD, listUnitId, get())
+        QuizViewModel(get())
     }
     viewModel { (category: MathText.Category) ->
         CategoryViewModel(category, get())
     }
     viewModel {
-        MyListViewModel(BuildConfig.ENABLE_AD, mylistUnitId, get())
+        MyListViewModel(get())
     }
     viewModel {
         HistoryViewModel(get())

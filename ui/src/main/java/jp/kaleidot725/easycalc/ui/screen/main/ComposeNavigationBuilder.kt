@@ -18,7 +18,7 @@ import jp.kaleidot725.easycalc.ui.screen.category.CategoryAction
 import jp.kaleidot725.easycalc.ui.screen.category.CategoryEvent
 import jp.kaleidot725.easycalc.ui.screen.category.CategoryScreen
 import jp.kaleidot725.easycalc.ui.screen.category.CategoryViewModel
-import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
+import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
 import jp.kaleidot725.easycalc.ui.screen.history.HistoryAction
 import jp.kaleidot725.easycalc.ui.screen.history.HistoryEvent
 import jp.kaleidot725.easycalc.ui.screen.history.HistoryScreen

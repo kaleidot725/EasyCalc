@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.ext
+package jp.kaleidot725.easycalc.ui.extention
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource

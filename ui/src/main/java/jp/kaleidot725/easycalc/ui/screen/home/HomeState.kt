@@ -5,8 +5,6 @@ import jp.kaleidot725.easycalc.domain.model.text.MathTexts
 
 data class HomeState(
     val userName: String = "Albites Software",
-    val enableAd: Boolean = true,
-    val adUnitId: String = "",
     val histories: MathTexts = MathTexts.EMPTY,
     val mylist: MathTexts = MathTexts.EMPTY,
     val todayStreakDays: StatsData.TodayStreakDays? = null,
