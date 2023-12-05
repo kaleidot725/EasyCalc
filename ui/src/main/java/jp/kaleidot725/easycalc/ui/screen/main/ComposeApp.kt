@@ -38,9 +38,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import jp.kaleidot725.easycalc.domain.model.text.MathText
 import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.common.SimpleBottomNavigation
-import jp.kaleidot725.easycalc.ui.screen.common.SimpleBottomNavigationItem
-import jp.kaleidot725.easycalc.ui.screen.common.SimpleTopBar
+import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigation
+import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigationItem
+import jp.kaleidot725.easycalc.ui.component.navigation.SimpleTopBar
 import jp.kaleidot725.easycalc.ui.screen.ext.clickableNoRipple
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.isCategoryRoute

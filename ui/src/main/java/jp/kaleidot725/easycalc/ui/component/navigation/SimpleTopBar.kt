@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.navigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding

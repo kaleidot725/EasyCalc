@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.icon
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.domain.model.text.MathText
+import jp.kaleidot725.easycalc.ui.component.text.AutoSizeableText
 import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
 
 @Composable

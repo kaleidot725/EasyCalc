@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.icon
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

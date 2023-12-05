@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.text
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

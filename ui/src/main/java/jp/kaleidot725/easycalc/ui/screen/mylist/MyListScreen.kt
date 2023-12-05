@@ -23,7 +23,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.common.TextIconWithDetails
+import jp.kaleidot725.easycalc.ui.component.icon.TextIconWithDetails
 
 @Composable
 fun MyListScreen(

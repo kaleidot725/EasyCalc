@@ -24,7 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.domain.model.utils.ElapsedTimeCalculator
 import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.common.TextIcon
+import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
 import jp.kaleidot725.easycalc.ui.screen.home.HomeAction
 import jp.kaleidot725.easycalc.ui.screen.home.HomeState
 

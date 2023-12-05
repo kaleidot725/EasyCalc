@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.domain.model.text.MathText
 import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.common.AutoSizeableText
+import jp.kaleidot725.easycalc.ui.component.text.AutoSizeableText
 import jp.kaleidot725.easycalc.ui.screen.progress.FocusMode
 import jp.kaleidot725.easycalc.ui.screen.resources.ColorResource
 import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource

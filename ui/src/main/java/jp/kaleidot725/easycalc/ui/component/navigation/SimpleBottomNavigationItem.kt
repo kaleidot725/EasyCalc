@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.navigation
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.MaterialTheme

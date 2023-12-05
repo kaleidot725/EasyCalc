@@ -1,9 +1,9 @@
-package jp.kaleidot725.easycalc.ui.screen.common
+package jp.kaleidot725.easycalc.ui.component.divider
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HorizontalDivider(
+fun VerticalDivider(
     modifier: Modifier = Modifier,
     thickness: Dp = DividerDefaults.Thickness,
     color: Color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.3f),
@@ -26,8 +26,8 @@ fun HorizontalDivider(
     }
     Box(
         modifier
-            .fillMaxWidth()
-            .height(targetThickness)
+            .fillMaxHeight()
+            .width(targetThickness)
             .background(color = color)
     )
 }

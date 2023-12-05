@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.screen.common.TextIconWithDetails
+import jp.kaleidot725.easycalc.ui.component.icon.TextIconWithDetails
 
 @Composable
 fun CategoryScreen(
