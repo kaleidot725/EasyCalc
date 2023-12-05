@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+      
+  <string name="home_title">Halamanku</string>
+      
+  <string name="home_stats_title">Statistik</string>
+      
+  <string name="home_stats_today_streak_days_title">Hari-hari beruntun hari ini</string>
+      
+  <string name="home_stats_today_solved_quiz_count_title">Hitungan kuis terpecahkan hari ini</string>
+      
+  <string name="home_stats_today_training_time_title">Waktu latihan hari ini</string>
+      
+  <string name="home_stats_total_streak_days_title">Hari-hari beruntun setiap saat</string>
+      
+  <string name="home_stats_total_study_days">Hari belajar setiap saat</string>
+      
+  <string name="home_stats_total_training_time_time">Waktu pelatihan setiap saat</string>
+      
+  <string name="home_stats_total_solved_quiz_count_title">Jumlah kuis yang dipecahkan setiap saat</string>
+      
+  <string name="quiz_title">Ulangan</string>
+      
+  <string name="language_title">Bahasa</string>
+      
+  <string name="language_japanese" translatable="false">日本語</string>
+      
+  <string name="language_english" translatable="false">English</string>
+      
+  <string name="language_german" translatable="false">Deutsch</string>
+      
+  <string name="language_spain" translatable="false">Español</string>
+      
+  <string name="language_france" translatable="false">Français</string>
+      
+  <string name="language_indonesia" translatable="false">Bahasa</string>
+      
+  <string name="language_italy" translatable="false">Italiano</string>
+      
+  <string name="language_portugal" translatable="false">Português</string>
+      
+  <string name="language_thai" translatable="false">ไทย</string>
+      
+  <string name="language_chinese" translatable="false">中文</string>
+      
+  <string name="license_title">Lisensi</string>
+      
+  <string name="privacy_policy_title">Kebijakan pribadi</string>
+      
+  <string name="theme_title">Tema</string>
+      
+  <string name="theme_light">Tema Cahaya</string>
+      
+  <string name="theme_dark">Tema gelap</string>
+      
+  <string name="theme_system">Sinkronisasi Sistem</string>
+      
+  <string name="version_info" translatable="false">Version : v1.7.0</string>
+      
+  <string name="setting_title">Pengaturan</string>
+      
+  <string name="category_all">Semua</string>
+      
+  <string name="category_addition">Tambahan</string>
+      
+  <string name="category_subtraction">Pengurangan</string>
+      
+  <string name="category_multiplication">Perkalian</string>
+      
+  <string name="category_multiplication_table">Tabel Perkalian</string>
+      
+  <string name="category_division">Divisi</string>
+      
+  <string name="start_title">Apakah kamu siap ?</string>
+      
+  <string name="start_ok">Awal</string>
+      
+  <string name="progress_number_zero">0</string>
+      
+  <string name="progress_number_one">1</string>
+      
+  <string name="progress_number_two">2</string>
+      
+  <string name="progress_number_three">3</string>
+      
+  <string name="progress_number_four">4</string>
+      
+  <string name="progress_number_five">5</string>
+      
+  <string name="progress_number_six">6</string>
+      
+  <string name="progress_number_seven">7</string>
+      
+  <string name="progress_number_eight">8</string>
+      
+  <string name="progress_number_nine">9</string>
+      
+  <string name="progress_number_clear" translatable="false">AC</string>
+      
+  <string name="progress_number_delete" translatable="false">DEL</string>
+      
+  <string name="progress_title">%d / %d</string>
+      
+  <string name="result_title">Hasil</string>
+      
+  <string name="result_ok">Menyelesaikan</string>
+      
+  <string name="result_percent">Tingkat Keberhasilan %.01f％</string>
+      
+  <string name="result_count">Jumlah Keberhasilan %d / %d</string>
+      
+  <string name="result_elapsed_time">Waktu %02dj %02dm %02ddtk</string>
+      
+  <string name="result_answer">%4d %s %4d = %6d</string>
+      
+  <string name="result_answer_with_remainder">%4d %s %4d = %d R %d</string>
+      
+  <string name="text_single_digits_addition_title">Penambahan 1 digit</string>
+      
+  <string name="text_double_digits_addition_title">Penambahan 2 digit</string>
+      
+  <string name="text_triple_digits_addition_title">Penambahan 3 digit</string>
+      
+  <string name="text_single_digits_addition_content">Pertanyaan penambahan 1 digit secara acak</string>
+      
+  <string name="text_double_digits_addition_content">Pertanyaan penambahan 2 digit secara acak</string>
+      
+  <string name="text_triple_digits_addition_content">Pertanyaan penambahan 3 digit secara acak</string>
+      
+  <string name="text_single_digits_subtraction_title">Pengurangan 1 digit</string>
+      
+  <string name="text_double_digits_subtraction_title">Pengurangan 2 digit</string>
+      
+  <string name="text_triple_digits_subtraction_title">Pengurangan 3 digit</string>
+      
+  <string name="text_single_digits_subtraction_content">Soal pengurangan acak 1 digit</string>
+      
+  <string name="text_double_digits_subtraction_content">Soal pengurangan 2 digit secara acak</string>
+      
+  <string name="text_triple_digits_subtraction_content">Soal pengurangan acak 3 digit</string>
+      
+  <string name="text_single_digits_multiplication_title">Perkalian 1 digit</string>
+      
+  <string name="text_double_digits_multiplication_title">Perkalian 2 digit</string>
+      
+  <string name="text_triple_digits_multiplication_title">Perkalian 3 digit</string>
+      
+  <string name="text_single_digits_multiplication_content">Soal perkalian acak 1 digit</string>
+      
+  <string name="text_double_digits_multiplication_content">Soal perkalian acak 2 digit</string>
+      
+  <string name="text_triple_digits_multiplication_content">Soal perkalian acak 3 digit</string>
+      
+  <string name="text_single_digits_division_title">Pembagian 1 digit(Tanpa Sisa)</string>
+      
+  <string name="text_double_digits_division_title">Pembagian 2 digit(Tanpa Sisa)</string>
+      
+  <string name="text_triple_digits_division_title">Pembagian 3 digit(Tanpa Sisa)</string>
+      
+  <string name="text_single_digits_division_content">Soal secara acak pembagian 1 digit (Tidak Ada Sisa)</string>
+      
+  <string name="text_double_digits_division_content">Soal dibagi 2 digit secara acak (Tanpa Sisa)</string>
+      
+  <string name="text_triple_digits_division_content">Soal dibagi 3 digit secara acak(Tanpa Sisa)</string>
+      
+  <string name="text_single_digits_division_remainder_title">Pembagian 1 digit</string>
+      
+  <string name="text_double_digits_division_remainder_title">Pembagian 2 digit</string>
+      
+  <string name="text_triple_digits_division_remainder_title">Pembagian 3 angka</string>
+      
+  <string name="text_single_digits_division_remainder_content">Pertanyaan acak pembagian 1 digit</string>
+      
+  <string name="text_double_digits_division_remainder_content">Pertanyaan secara acak pembagian 2 digit</string>
+      
+  <string name="text_triple_digits_division_remainder_content">Soal secara acak dibagi 3 digit</string>
+      
+  <string name="start_count">%d Pertanyaan</string>
+      
+  <string name="start_length_of_time">Durasi Waktu %dm</string>
+      
+  <string name="start_limit_of_time">Batas waktu %d dtk</string>
+      
+  <string name="interrupt_title">Apakah Anda ingin menyela?</string>
+      
+  <string name="interrupt_text">Kemajuan diatur ulang saat interupsi</string>
+      
+  <string name="interrupt_ok">Ya</string>
+      
+  <string name="interrupt_cancel">TIDAK</string>
+      
+  <string name="result_retry">Mencoba kembali</string>
+      
+  <string name="progress_skip" translatable="false">Skip</string>
+      
+  <string name="text_multiplication_table_title">Tabel perkalian untuk %d</string>
+      
+  <string name="text_multiplication_table_content">Tabel perkalian pertanyaan untuk %d</string>
+      
+  <string name="result_answer_title">Menjawab</string>
+      
+  <string name="result_your_answer_title">Jawaban Anda</string>
+      
+  <string name="result_no_title">TIDAK</string>
+      
+  <string name="category_history">Sejarah</string>
+      
+  <string name="mylist_title">Daftarku</string>
+      
+  <string name="mylist_not_found">Tidak ditemukan teks yang terdaftar di Daftar Saya</string>
+      
+  <string name="remainder">R</string>
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+
+</resources>

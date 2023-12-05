@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+      
+  <string name="home_title">หน้าของฉัน</string>
+      
+  <string name="home_stats_title">สถิติ</string>
+      
+  <string name="home_stats_today_streak_days_title">วันนี้ Streak วัน</string>
+      
+  <string name="home_stats_today_solved_quiz_count_title">จำนวนแบบทดสอบที่แก้ไขแล้วของวันนี้</string>
+      
+  <string name="home_stats_today_training_time_title">เวลาฝึกซ้อมของวันนี้</string>
+      
+  <string name="home_stats_total_streak_days_title">Streak วันตลอดเวลา</string>
+      
+  <string name="home_stats_total_study_days">วันเรียนตลอดเวลา</string>
+      
+  <string name="home_stats_total_training_time_time">เวลาฝึกซ้อมตลอดเวลา</string>
+      
+  <string name="home_stats_total_solved_quiz_count_title">แก้ไขจำนวนคำถามตลอดเวลา</string>
+      
+  <string name="quiz_title">แบบทดสอบ</string>
+      
+  <string name="language_title">ภาษา</string>
+      
+  <string name="language_japanese" translatable="false">日本語</string>
+      
+  <string name="language_english" translatable="false">English</string>
+      
+  <string name="language_german" translatable="false">Deutsch</string>
+      
+  <string name="language_spain" translatable="false">Español</string>
+      
+  <string name="language_france" translatable="false">Français</string>
+      
+  <string name="language_indonesia" translatable="false">Bahasa</string>
+      
+  <string name="language_italy" translatable="false">Italiano</string>
+      
+  <string name="language_portugal" translatable="false">Português</string>
+      
+  <string name="language_thai" translatable="false">ไทย</string>
+      
+  <string name="language_chinese" translatable="false">中文</string>
+      
+  <string name="license_title">ใบอนุญาต</string>
+      
+  <string name="privacy_policy_title">นโยบายความเป็นส่วนตัว</string>
+      
+  <string name="theme_title">ธีม</string>
+      
+  <string name="theme_light">ธีมแสง</string>
+      
+  <string name="theme_dark">ธีมมืด</string>
+      
+  <string name="theme_system">ระบบซิงค์</string>
+      
+  <string name="version_info" translatable="false">Version : v1.7.0</string>
+      
+  <string name="setting_title">การตั้งค่า</string>
+      
+  <string name="category_all">ทั้งหมด</string>
+      
+  <string name="category_addition">ส่วนที่เพิ่มเข้าไป</string>
+      
+  <string name="category_subtraction">การลบ</string>
+      
+  <string name="category_multiplication">การคูณ</string>
+      
+  <string name="category_multiplication_table">ตารางสูตรคูณ</string>
+      
+  <string name="category_division">แผนก</string>
+      
+  <string name="start_title">คุณพร้อมไหม ?</string>
+      
+  <string name="start_ok">เริ่ม</string>
+      
+  <string name="progress_number_zero">0</string>
+      
+  <string name="progress_number_one">1</string>
+      
+  <string name="progress_number_two">2</string>
+      
+  <string name="progress_number_three">3</string>
+      
+  <string name="progress_number_four">4</string>
+      
+  <string name="progress_number_five">5</string>
+      
+  <string name="progress_number_six">6</string>
+      
+  <string name="progress_number_seven">7</string>
+      
+  <string name="progress_number_eight">8</string>
+      
+  <string name="progress_number_nine">9</string>
+      
+  <string name="progress_number_clear" translatable="false">AC</string>
+      
+  <string name="progress_number_delete" translatable="false">DEL</string>
+      
+  <string name="progress_title">%d / %d</string>
+      
+  <string name="result_title">ผลลัพธ์</string>
+      
+  <string name="result_ok">เสร็จ</string>
+      
+  <string name="result_percent">อัตราความสำเร็จ %.01f％</string>
+      
+  <string name="result_count">จำนวนความสำเร็จ %d / %d</string>
+      
+  <string name="result_elapsed_time">เวลา %02dชม %02dน %02d วินาที</string>
+      
+  <string name="result_answer">%4d %s %4d = %6d</string>
+      
+  <string name="result_answer_with_remainder">%4d %s %4d = %d ร %d</string>
+      
+  <string name="text_single_digits_addition_title">การบวกเลข 1 หลัก</string>
+      
+  <string name="text_double_digits_addition_title">การบวกเลข 2 หลัก</string>
+      
+  <string name="text_triple_digits_addition_title">การบวกเลข 3 หลัก</string>
+      
+  <string name="text_single_digits_addition_content">คำถามสุ่มบวก 1 หลัก</string>
+      
+  <string name="text_double_digits_addition_content">คำถามสุ่มบวก 2 หลัก</string>
+      
+  <string name="text_triple_digits_addition_content">คำถามสุ่มบวก 3 หลัก</string>
+      
+  <string name="text_single_digits_subtraction_title">การลบ 1 หลัก</string>
+      
+  <string name="text_double_digits_subtraction_title">การลบ 2 หลัก</string>
+      
+  <string name="text_triple_digits_subtraction_title">การลบ 3 หลัก</string>
+      
+  <string name="text_single_digits_subtraction_content">คำถามสุ่มลบ 1 หลัก</string>
+      
+  <string name="text_double_digits_subtraction_content">คำถามสุ่มลบ 2 หลัก</string>
+      
+  <string name="text_triple_digits_subtraction_content">คำถามสุ่มลบ 3 หลัก</string>
+      
+  <string name="text_single_digits_multiplication_title">การคูณ 1 หลัก</string>
+      
+  <string name="text_double_digits_multiplication_title">การคูณเลข 2 หลัก</string>
+      
+  <string name="text_triple_digits_multiplication_title">การคูณเลข 3 หลัก</string>
+      
+  <string name="text_single_digits_multiplication_content">คำถามสุ่มคูณ 1 หลัก</string>
+      
+  <string name="text_double_digits_multiplication_content">คำถามสุ่มคูณ 2 หลัก</string>
+      
+  <string name="text_triple_digits_multiplication_content">คำถามสุ่มคูณ 3 หลัก</string>
+      
+  <string name="text_single_digits_division_title">การหาร 1 หลัก(ไม่มีเศษ)</string>
+      
+  <string name="text_double_digits_division_title">การหาร 2 หลัก(ไม่มีเศษ)</string>
+      
+  <string name="text_triple_digits_division_title">การหาร 3 หลัก(ไม่มีเศษ)</string>
+      
+  <string name="text_single_digits_division_content">คำถาม การแบ่ง 1 หลักแบบสุ่ม (ไม่เหลือ)</string>
+      
+  <string name="text_double_digits_division_content">คำถาม สุ่มหาร 2 หลัก (ไม่เหลือ)</string>
+      
+  <string name="text_triple_digits_division_content">คำถาม การแบ่ง 3 หลักแบบสุ่ม(ไม่เหลือ)</string>
+      
+  <string name="text_single_digits_division_remainder_title">การหาร 1 หลัก</string>
+      
+  <string name="text_double_digits_division_remainder_title">การหาร 2 หลัก</string>
+      
+  <string name="text_triple_digits_division_remainder_title">การหาร 3 หลัก</string>
+      
+  <string name="text_single_digits_division_remainder_content">คำถามสุ่มหาร 1 หลัก</string>
+      
+  <string name="text_double_digits_division_remainder_content">คำถามสุ่มหาร 2 หลัก</string>
+      
+  <string name="text_triple_digits_division_remainder_content">คำถามหารสุ่มของ 3 หลัก</string>
+      
+  <string name="start_count">%d คำถาม</string>
+      
+  <string name="start_length_of_time">ระยะเวลา %dม</string>
+      
+  <string name="start_limit_of_time">จำกัดเวลา %d วินาที</string>
+      
+  <string name="interrupt_title">คุณต้องการที่จะขัดจังหวะ?</string>
+      
+  <string name="interrupt_text">ความคืบหน้าจะถูกรีเซ็ตเมื่อหยุดชะงัก</string>
+      
+  <string name="interrupt_ok">ใช่</string>
+      
+  <string name="interrupt_cancel">เลขที่</string>
+      
+  <string name="result_retry">ลองอีกครั้ง</string>
+      
+  <string name="progress_skip" translatable="false">Skip</string>
+      
+  <string name="text_multiplication_table_title">สูตรคูณสำหรับ %d</string>
+      
+  <string name="text_multiplication_table_content">สูตรคูณคำถามสำหรับ %d</string>
+      
+  <string name="result_answer_title">คำตอบ</string>
+      
+  <string name="result_your_answer_title">คำตอบของคุณ</string>
+      
+  <string name="result_no_title">เลขที่</string>
+      
+  <string name="category_history">ประวัติศาสตร์</string>
+      
+  <string name="mylist_title">รายการของฉัน</string>
+      
+  <string name="mylist_not_found">ไม่พบข้อความที่เกี่ยวข้องกับรายการของฉัน</string>
+      
+  <string name="remainder">ร</string>
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+
+</resources>

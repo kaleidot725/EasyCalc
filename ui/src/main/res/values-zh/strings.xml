@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+      
+  <string name="home_title">我的页面</string>
+      
+  <string name="home_stats_title">统计数据</string>
+      
+  <string name="home_stats_today_streak_days_title">今天的连胜日</string>
+      
+  <string name="home_stats_today_solved_quiz_count_title">今天已解答的测验数量</string>
+      
+  <string name="home_stats_today_training_time_title">今天的训练时间</string>
+      
+  <string name="home_stats_total_streak_days_title">任何时候都是连胜天</string>
+      
+  <string name="home_stats_total_study_days">任何时候的学习日</string>
+      
+  <string name="home_stats_total_training_time_time">随时训练时间</string>
+      
+  <string name="home_stats_total_solved_quiz_count_title">始终解决测验计数</string>
+      
+  <string name="quiz_title">测验</string>
+      
+  <string name="language_title">语言</string>
+      
+  <string name="language_japanese" translatable="false">日本語</string>
+      
+  <string name="language_english" translatable="false">English</string>
+      
+  <string name="language_german" translatable="false">Deutsch</string>
+      
+  <string name="language_spain" translatable="false">Español</string>
+      
+  <string name="language_france" translatable="false">Français</string>
+      
+  <string name="language_indonesia" translatable="false">Bahasa</string>
+      
+  <string name="language_italy" translatable="false">Italiano</string>
+      
+  <string name="language_portugal" translatable="false">Português</string>
+      
+  <string name="language_thai" translatable="false">ไทย</string>
+      
+  <string name="language_chinese" translatable="false">中文</string>
+      
+  <string name="license_title">执照</string>
+      
+  <string name="privacy_policy_title">隐私政策</string>
+      
+  <string name="theme_title">主题</string>
+      
+  <string name="theme_light">浅色主题</string>
+      
+  <string name="theme_dark">黑暗主题</string>
+      
+  <string name="theme_system">同步系统</string>
+      
+  <string name="version_info" translatable="false">Version : v1.7.0</string>
+      
+  <string name="setting_title">环境</string>
+      
+  <string name="category_all">全部</string>
+      
+  <string name="category_addition">添加</string>
+      
+  <string name="category_subtraction">减法</string>
+      
+  <string name="category_multiplication">乘法</string>
+      
+  <string name="category_multiplication_table">乘法表</string>
+      
+  <string name="category_division">分配</string>
+      
+  <string name="start_title">你准备好了吗 ？</string>
+      
+  <string name="start_ok">开始</string>
+      
+  <string name="progress_number_zero">0</string>
+      
+  <string name="progress_number_one">1</string>
+      
+  <string name="progress_number_two">2</string>
+      
+  <string name="progress_number_three">3</string>
+      
+  <string name="progress_number_four">4</string>
+      
+  <string name="progress_number_five">5</string>
+      
+  <string name="progress_number_six">6</string>
+      
+  <string name="progress_number_seven">7</string>
+      
+  <string name="progress_number_eight">8</string>
+      
+  <string name="progress_number_nine">9</string>
+      
+  <string name="progress_number_clear" translatable="false">AC</string>
+      
+  <string name="progress_number_delete" translatable="false">DEL</string>
+      
+  <string name="progress_title">%d / %d</string>
+      
+  <string name="result_title">结果</string>
+      
+  <string name="result_ok">结束</string>
+      
+  <string name="result_percent">成功率%.01f％</string>
+      
+  <string name="result_count">成功计数：%d / %d</string>
+      
+  <string name="result_elapsed_time">时间 %02dh %02dm %02ds</string>
+      
+  <string name="result_answer">%4d %s %4d = %6d</string>
+      
+  <string name="result_answer_with_remainder">%4d %s %4d = %d R %d</string>
+      
+  <string name="text_single_digits_addition_title">加 1 位数字</string>
+      
+  <string name="text_double_digits_addition_title">2 位数字相加</string>
+      
+  <string name="text_triple_digits_addition_title">3 位数字相加</string>
+      
+  <string name="text_single_digits_addition_content">问题随机添加 1 位数字</string>
+      
+  <string name="text_double_digits_addition_content">2 位数字随机加法问题</string>
+      
+  <string name="text_triple_digits_addition_content">3 位数随机加法问题</string>
+      
+  <string name="text_single_digits_subtraction_title">1 位数字减法</string>
+      
+  <string name="text_double_digits_subtraction_title">2 位数减法</string>
+      
+  <string name="text_triple_digits_subtraction_title">3 位数减法</string>
+      
+  <string name="text_single_digits_subtraction_content">问题随机减 1 位</string>
+      
+  <string name="text_double_digits_subtraction_content">问题 2 位数字的随机减法</string>
+      
+  <string name="text_triple_digits_subtraction_content">问题 3 位数字的随机减法</string>
+      
+  <string name="text_single_digits_multiplication_title">1 位数字的乘法</string>
+      
+  <string name="text_double_digits_multiplication_title">2 位数字的乘法</string>
+      
+  <string name="text_triple_digits_multiplication_title">3 位数的乘法</string>
+      
+  <string name="text_single_digits_multiplication_content">问题 1 位数字的随机乘法</string>
+      
+  <string name="text_double_digits_multiplication_content">问题 2 位数字的随机乘法</string>
+      
+  <string name="text_triple_digits_multiplication_content">问题 3 位数字的随机乘法</string>
+      
+  <string name="text_single_digits_division_title">1 位除（无余数）</string>
+      
+  <string name="text_double_digits_division_title">2 位除法（无余数）</string>
+      
+  <string name="text_triple_digits_division_title">3 位数相除（无余数）</string>
+      
+  <string name="text_single_digits_division_content">问题随机除 1 位（无余数）</string>
+      
+  <string name="text_double_digits_division_content">问题随机除 2 位数字（无余数）</string>
+      
+  <string name="text_triple_digits_division_content">问题随机除 3 位数（无余数）</string>
+      
+  <string name="text_single_digits_division_remainder_title">1 位数字的除法</string>
+      
+  <string name="text_double_digits_division_remainder_title">2 位数字的除法</string>
+      
+  <string name="text_triple_digits_division_remainder_title">3 位数除法</string>
+      
+  <string name="text_single_digits_division_remainder_content">问题随机划分 1 位数</string>
+      
+  <string name="text_double_digits_division_remainder_content">问题随机划分 2 位数</string>
+      
+  <string name="text_triple_digits_division_remainder_content">问题随机划分 3 位数</string>
+      
+  <string name="start_count">%d 个问题</string>
+      
+  <string name="start_length_of_time">时间长度 %d 米</string>
+      
+  <string name="start_limit_of_time">时间限制为 %d 秒</string>
+      
+  <string name="interrupt_title">你想打断吗？</string>
+      
+  <string name="interrupt_text">中断时进度会重置</string>
+      
+  <string name="interrupt_ok">是的</string>
+      
+  <string name="interrupt_cancel">不</string>
+      
+  <string name="result_retry">重试</string>
+      
+  <string name="progress_skip" translatable="false">Skip</string>
+      
+  <string name="text_multiplication_table_title">%d 的乘法表</string>
+      
+  <string name="text_multiplication_table_content">问题“%d”的乘法表</string>
+      
+  <string name="result_answer_title">回答</string>
+      
+  <string name="result_your_answer_title">您的答案</string>
+      
+  <string name="result_no_title">不</string>
+      
+  <string name="category_history">历史</string>
+      
+  <string name="mylist_title">我的列表</string>
+      
+  <string name="mylist_not_found">未找到注册到“我的列表”的文本</string>
+      
+  <string name="remainder">右</string>
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+
+</resources>

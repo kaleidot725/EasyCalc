@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+      
+  <string name="home_title">Ma page</string>
+      
+  <string name="home_stats_title">Statistiques</string>
+      
+  <string name="home_stats_today_streak_days_title">Jours de la série d\'aujourd\'hui</string>
+      
+  <string name="home_stats_today_solved_quiz_count_title">Le quiz résolu d\'aujourd\'hui compte</string>
+      
+  <string name="home_stats_today_training_time_title">L\'heure d\'entraînement d\'aujourd\'hui</string>
+      
+  <string name="home_stats_total_streak_days_title">Jours consécutifs en tout temps</string>
+      
+  <string name="home_stats_total_study_days">Des journées d\'étude en tout temps</string>
+      
+  <string name="home_stats_total_training_time_time">Temps de formation en tout temps</string>
+      
+  <string name="home_stats_total_solved_quiz_count_title">Le quiz résolu compte à tout moment</string>
+      
+  <string name="quiz_title">Questionnaire</string>
+      
+  <string name="language_title">Langue</string>
+      
+  <string name="language_japanese" translatable="false">日本語</string>
+      
+  <string name="language_english" translatable="false">English</string>
+      
+  <string name="language_german" translatable="false">Deutsch</string>
+      
+  <string name="language_spain" translatable="false">Español</string>
+      
+  <string name="language_france" translatable="false">Français</string>
+      
+  <string name="language_indonesia" translatable="false">Bahasa</string>
+      
+  <string name="language_italy" translatable="false">Italiano</string>
+      
+  <string name="language_portugal" translatable="false">Português</string>
+      
+  <string name="language_thai" translatable="false">ไทย</string>
+      
+  <string name="language_chinese" translatable="false">中文</string>
+      
+  <string name="license_title">Licence</string>
+      
+  <string name="privacy_policy_title">politique de confidentialité</string>
+      
+  <string name="theme_title">Thème</string>
+      
+  <string name="theme_light">Thème Lumière</string>
+      
+  <string name="theme_dark">Thème sombre</string>
+      
+  <string name="theme_system">Système de synchronisation</string>
+      
+  <string name="version_info" translatable="false">Version : v1.7.0</string>
+      
+  <string name="setting_title">Paramètre</string>
+      
+  <string name="category_all">Tous</string>
+      
+  <string name="category_addition">Ajout</string>
+      
+  <string name="category_subtraction">Soustraction</string>
+      
+  <string name="category_multiplication">Multiplication</string>
+      
+  <string name="category_multiplication_table">Table de multiplication</string>
+      
+  <string name="category_division">Division</string>
+      
+  <string name="start_title">Es-tu prêt ?</string>
+      
+  <string name="start_ok">Commencer</string>
+      
+  <string name="progress_number_zero">0</string>
+      
+  <string name="progress_number_one">1</string>
+      
+  <string name="progress_number_two">2</string>
+      
+  <string name="progress_number_three">3</string>
+      
+  <string name="progress_number_four">4</string>
+      
+  <string name="progress_number_five">5</string>
+      
+  <string name="progress_number_six">6</string>
+      
+  <string name="progress_number_seven">7</string>
+      
+  <string name="progress_number_eight">8</string>
+      
+  <string name="progress_number_nine">9</string>
+      
+  <string name="progress_number_clear" translatable="false">AC</string>
+      
+  <string name="progress_number_delete" translatable="false">DEL</string>
+      
+  <string name="progress_title">%d / %d</string>
+      
+  <string name="result_title">Résultat</string>
+      
+  <string name="result_ok">Finir</string>
+      
+  <string name="result_percent">Taux de réussite %.01f %</string>
+      
+  <string name="result_count">Nombre de réussites %d / %d</string>
+      
+  <string name="result_elapsed_time">Durée %02dh %02dm %02ds</string>
+      
+  <string name="result_answer">%4d %s %4d = %6d</string>
+      
+  <string name="result_answer_with_remainder">%4d %s %4d = %d R %d</string>
+      
+  <string name="text_single_digits_addition_title">Ajout de 1 chiffre</string>
+      
+  <string name="text_double_digits_addition_title">Addition de 2 chiffres</string>
+      
+  <string name="text_triple_digits_addition_title">Addition de 3 chiffres</string>
+      
+  <string name="text_single_digits_addition_content">Question aléatoire addition de 1 chiffre</string>
+      
+  <string name="text_double_digits_addition_content">Question addition aléatoire de 2 chiffres</string>
+      
+  <string name="text_triple_digits_addition_content">Question addition aléatoire de 3 chiffres</string>
+      
+  <string name="text_single_digits_subtraction_title">Soustraction de 1 chiffre</string>
+      
+  <string name="text_double_digits_subtraction_title">Soustraction de 2 chiffres</string>
+      
+  <string name="text_triple_digits_subtraction_title">Soustraction de 3 chiffres</string>
+      
+  <string name="text_single_digits_subtraction_content">Question soustraction aléatoire de 1 chiffre</string>
+      
+  <string name="text_double_digits_subtraction_content">Question soustraction aléatoire de 2 chiffres</string>
+      
+  <string name="text_triple_digits_subtraction_content">Question soustraction aléatoire de 3 chiffres</string>
+      
+  <string name="text_single_digits_multiplication_title">Multiplication de 1 chiffre</string>
+      
+  <string name="text_double_digits_multiplication_title">Multiplication de 2 chiffres</string>
+      
+  <string name="text_triple_digits_multiplication_title">Multiplication de 3 chiffres</string>
+      
+  <string name="text_single_digits_multiplication_content">Question multiplication aléatoire de 1 chiffre</string>
+      
+  <string name="text_double_digits_multiplication_content">Question multiplication aléatoire de 2 chiffres</string>
+      
+  <string name="text_triple_digits_multiplication_content">Question multiplication aléatoire de 3 chiffres</string>
+      
+  <string name="text_single_digits_division_title">Division de 1 chiffre(pas de reste)</string>
+      
+  <string name="text_double_digits_division_title">Division de 2 chiffres(pas de reste)</string>
+      
+  <string name="text_triple_digits_division_title">Division de 3 chiffres(pas de reste)</string>
+      
+  <string name="text_single_digits_division_content">Question division aléatoire de 1 chiffre (pas de reste)</string>
+      
+  <string name="text_double_digits_division_content">Question division aléatoire de 2 chiffres (pas de reste)</string>
+      
+  <string name="text_triple_digits_division_content">Question division aléatoire de 3 chiffres(pas de reste)</string>
+      
+  <string name="text_single_digits_division_remainder_title">Division de 1 chiffre</string>
+      
+  <string name="text_double_digits_division_remainder_title">Division de 2 chiffres</string>
+      
+  <string name="text_triple_digits_division_remainder_title">Division de 3 chiffres</string>
+      
+  <string name="text_single_digits_division_remainder_content">Question division aléatoire de 1 chiffre</string>
+      
+  <string name="text_double_digits_division_remainder_content">Question division aléatoire de 2 chiffres</string>
+      
+  <string name="text_triple_digits_division_remainder_content">Question division aléatoire de 3 chiffres</string>
+      
+  <string name="start_count">%d question</string>
+      
+  <string name="start_length_of_time">La durée %d m</string>
+      
+  <string name="start_limit_of_time">La limite de temps %d s</string>
+      
+  <string name="interrupt_title">Voulez-vous interrompre ?</string>
+      
+  <string name="interrupt_text">La progression est réinitialisée en cas d\'interruption</string>
+      
+  <string name="interrupt_ok">Oui</string>
+      
+  <string name="interrupt_cancel">Non</string>
+      
+  <string name="result_retry">Recommencez</string>
+      
+  <string name="progress_skip" translatable="false">Skip</string>
+      
+  <string name="text_multiplication_table_title">Table de multiplication pour %d</string>
+      
+  <string name="text_multiplication_table_content">Table de multiplication des questions pour %d</string>
+      
+  <string name="result_answer_title">Répondre</string>
+      
+  <string name="result_your_answer_title">Votre Réponse</string>
+      
+  <string name="result_no_title">Non</string>
+      
+  <string name="category_history">Histoire</string>
+      
+  <string name="mylist_title">Ma liste</string>
+      
+  <string name="mylist_not_found">Textes introuvables enregistrés dans Ma liste</string>
+      
+  <string name="remainder">R</string>
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+
+</resources>

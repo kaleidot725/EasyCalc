@@ -1,0 +1,76 @@
+[versions]
+aboutlibraries-core = "10.8.3"
+accompanist-systemuicontroller = "0.30.1"
+accompanist-webview = "0.30.1"
+activity-compose = "1.8.0"
+android-gradle = "8.1.2"
+core-ktx = "1.12.0"
+datastore-preferences = "1.0.0"
+flipper = "0.201.0"
+google-services = "4.4.0"
+junit-jupiter-engine = "5.9.3"
+koin-android = "3.4.3"
+koin-androidx-compose = "3.4.6"
+kotlin = "1.9.10"
+kotlin-reflect = "1.9.0"
+kotlin-stdlib = "1.9.10"
+kotlinx-coroutines-android = "1.7.3"
+kotlinx-datetime = "0.4.0"
+kotlinx-serialization-json = "1.5.1"
+lifecycle-runtime-ktx = "2.6.2"
+detekt = "1.23.1"
+mockito-kotlin = "5.0.0"
+navigation-compose = "2.7.4"
+about-libraries = "10.8.3"
+orbit-compose = "4.6.1"
+play-services-ads = "22.4.0"
+review-ktx = "2.0.1"
+room-runtime = "2.5.2"
+soloader = "0.10.5"
+timber = "5.0.1"
+ksp = "1.9.10-1.0.13"
+
+[libraries]
+aboutlibraries-compose = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries-core" }
+aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutlibraries-core" }
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist-systemuicontroller" }
+accompanist-webview = { module = "com.google.accompanist:accompanist-webview", version.ref = "accompanist-webview" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-runtime" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-runtime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-runtime" }
+flipper = { module = "com.facebook.flipper:flipper", version.ref = "flipper" }
+flipper-noop = { module = "com.facebook.flipper:flipper-noop", version.ref = "flipper" }
+google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter-engine" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-engine" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-android" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-androidx-compose" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-android" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin-reflect" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin-stdlib" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-android" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbit-compose" }
+orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbit-compose" }
+orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit-compose" }
+play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "play-services-ads" }
+review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "review-ktx" }
+soloader = { module = "com.facebook.soloader:soloader", version.ref = "soloader" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle" }
+android-library = { id = "com.android.library", version.ref = "android-gradle" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serizalization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+about-libraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "about-libraries" }

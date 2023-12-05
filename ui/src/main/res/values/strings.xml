@@ -1,0 +1,118 @@
+<resources>
+    <string name="home_title">MyPage</string>
+    <string name="home_stats_title">Stats</string>
+
+    <string name="home_stats_today_streak_days_title">Today\'s Streak days</string>
+    <string name="home_stats_today_solved_quiz_count_title">Today\'s solved quiz count</string>
+    <string name="home_stats_today_training_time_title">Today\'s training time</string>
+    <string name="home_stats_total_streak_days_title">Streak days at all times</string>
+    <string name="home_stats_total_study_days">Study days at all times</string>
+    <string name="home_stats_total_training_time_time">Training time at all times</string>
+    <string name="home_stats_total_solved_quiz_count_title">Solved quiz count at all times</string>
+
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+
+    <string name="quiz_title">Quiz</string>
+    <string name="language_title">Language</string>
+    <string name="language_japanese" translatable="false">日本語</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_german" translatable="false">Deutsch</string>
+    <string name="language_spain" translatable="false">Español</string>
+    <string name="language_france" translatable="false">Français</string>
+    <string name="language_indonesia" translatable="false">Bahasa</string>
+    <string name="language_italy" translatable="false">Italiano</string>
+    <string name="language_portugal" translatable="false">Português</string>
+    <string name="language_thai" translatable="false">ไทย</string>
+    <string name="language_chinese" translatable="false">中文</string>
+
+    <string name="license_title">License</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="theme_title">Theme</string>
+    <string name="theme_light">Light Theme</string>
+    <string name="theme_dark">Dark Theme</string>
+    <string name="theme_system">Sync System</string>
+    <string name="version_info" translatable="false">Version : v1.9.0</string>
+    <string name="setting_title">Setting</string>
+    <string name="category_all">All</string>
+    <string name="category_addition">Addition</string>
+    <string name="category_subtraction">Subtraction</string>
+    <string name="category_multiplication">Multiplication</string>
+    <string name="category_multiplication_table">Multiplication Table</string>
+    <string name="category_division">Division</string>
+    <string name="start_title">Are you ready ?</string>
+    <string name="start_ok">Start</string>
+    <string name="progress_number_zero">0</string>
+    <string name="progress_number_one">1</string>
+    <string name="progress_number_two">2</string>
+    <string name="progress_number_three">3</string>
+    <string name="progress_number_four">4</string>
+    <string name="progress_number_five">5</string>
+    <string name="progress_number_six">6</string>
+    <string name="progress_number_seven">7</string>
+    <string name="progress_number_eight">8</string>
+    <string name="progress_number_nine">9</string>
+    <string name="progress_number_clear" translatable="false">AC</string>
+    <string name="progress_number_delete" translatable="false">DEL</string>
+    <string name="progress_title">%d / %d</string>
+    <string name="result_title">Result</string>
+    <string name="result_ok">Finish</string>
+    <string name="result_percent">Success Rate %.01f％</string>
+    <string name="result_count">Success Count %d / %d</string>
+    <string name="result_elapsed_time">Time %02dh %02dm %02ds</string>
+    <string name="result_answer">%4d %s %4d = %6d</string>
+    <string name="result_answer_with_remainder">%4d %s %4d = %d R %d</string>
+    <string name="text_single_digits_addition_title">Addition of 1 digit</string>
+    <string name="text_double_digits_addition_title">Addition of 2 digit</string>
+    <string name="text_triple_digits_addition_title">Addition of 3 digit</string>
+    <string name="text_single_digits_addition_content">Question randomly addition of 1 digit</string>
+    <string name="text_double_digits_addition_content">Question randomly addition of 2 digit</string>
+    <string name="text_triple_digits_addition_content">Question randomly addition of 3 digit</string>
+    <string name="text_single_digits_subtraction_title">Subtraction of 1 digit</string>
+    <string name="text_double_digits_subtraction_title">Subtraction of 2 digit</string>
+    <string name="text_triple_digits_subtraction_title">Subtraction of 3 digit</string>
+    <string name="text_single_digits_subtraction_content">Question randomly subtraction of 1 digit</string>
+    <string name="text_double_digits_subtraction_content">Question randomly subtraction of 2 digit</string>
+    <string name="text_triple_digits_subtraction_content">Question randomly subtraction of 3 digit</string>
+
+    <string name="text_single_digits_multiplication_title">Multiplication of 1 digit</string>
+    <string name="text_double_digits_multiplication_title">Multiplication of 2 digit</string>
+    <string name="text_triple_digits_multiplication_title">Multiplication of 3 digit</string>
+    <string name="text_single_digits_multiplication_content">Question randomly multiplication of 1 digit</string>
+    <string name="text_double_digits_multiplication_content">Question randomly multiplication of 2 digit</string>
+    <string name="text_triple_digits_multiplication_content">Question randomly multiplication of 3 digit</string>
+
+    <string name="text_single_digits_division_title">Division of 1 digit(No Remainder)</string>
+    <string name="text_double_digits_division_title">Division of 2 digit(No Remainder)</string>
+    <string name="text_triple_digits_division_title">Division of 3 digit(No Remainder)</string>
+    <string name="text_single_digits_division_content">Question randomly division of 1 digit (No Remainder)</string>
+    <string name="text_double_digits_division_content">Question randomly division of 2 digit (No Remainder)</string>
+    <string name="text_triple_digits_division_content">Question randomly division of 3 digit(No Remainder)</string>
+
+    <string name="text_single_digits_division_remainder_title">Division of 1 digit</string>
+    <string name="text_double_digits_division_remainder_title">Division of 2 digit</string>
+    <string name="text_triple_digits_division_remainder_title">Division of 3 digit</string>
+    <string name="text_single_digits_division_remainder_content">Question randomly division of 1 digit</string>
+    <string name="text_double_digits_division_remainder_content">Question randomly division of 2 digit</string>
+    <string name="text_triple_digits_division_remainder_content">Question randomly division of 3 digit</string>
+
+    <string name="start_count">%d Questions</string>
+    <string name="start_length_of_time">The length of Time %dm</string>
+    <string name="start_limit_of_time">The limit of time %ds</string>
+    <string name="interrupt_title">Do you want to interrupt?</string>
+    <string name="interrupt_text">Progress is reset upon interruption</string>
+    <string name="interrupt_ok">Yes</string>
+    <string name="interrupt_cancel">No</string>
+    <string name="result_retry">Retry</string>
+    <string name="progress_skip" translatable="false">Skip</string>
+    <string name="text_multiplication_table_title">Multiplication table for %d</string>
+    <string name="text_multiplication_table_content">Question multiplication table for %d</string>
+    <string name="result_answer_title">Answer</string>
+    <string name="result_your_answer_title">Your Answer</string>
+    <string name="result_no_title">No</string>
+    <string name="category_history">History</string>
+
+    <string name="mylist_title">MyList</string>
+    <string name="mylist_not_found">Not found texts that regsitered to My List</string>
+
+    <string name="remainder">R</string>
+</resources>

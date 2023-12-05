@@ -1,0 +1,122 @@
+<resources>
+    <!-- ホーム -->
+    <string name="home_title">マイページ</string>
+    <string name="home_stats_today_streak_days_title">現在の連続学習日数</string>
+    <string name="home_stats_today_solved_quiz_count_title">今日の学習問題数</string>
+    <string name="home_stats_today_training_time_title">今日の学習時間</string>
+    <string name="home_stats_total_streak_days_title">最長の連続学習日数</string>
+    <string name="home_stats_total_study_days">累計学習日数</string>
+    <string name="home_stats_total_training_time_time">累計学習時間</string>
+    <string name="home_stats_total_solved_quiz_count_title">累計学習問題数</string>
+
+    <string name="quiz_title">問題集</string>
+
+    <!-- 設定 -->
+    <string name="setting_title">設定</string>
+
+    <!-- カテゴリごとの一覧 -->
+    <string name="category_history">最近使ったもの</string>
+    <string name="category_all">全て</string>
+    <string name="category_addition">たし算</string>
+    <string name="category_subtraction">ひき算</string>
+    <string name="category_multiplication">かけ算</string>
+    <string name="category_division">わり算</string>
+
+    <!-- テキスト情報 -->
+    <string name="text_single_digits_addition_title">1桁のたし算</string>
+    <string name="text_single_digits_addition_content">1桁のたし算をランダムで出題します</string>
+    <string name="text_double_digits_addition_title">2桁のたし算</string>
+    <string name="text_double_digits_addition_content">2桁のたし算をランダムで出題します</string>
+    <string name="text_triple_digits_addition_title">3桁のたし算</string>
+    <string name="text_triple_digits_addition_content">3桁のたし算をランダムで出題します</string>
+
+    <string name="text_single_digits_subtraction_title">1桁のひき算</string>
+    <string name="text_single_digits_subtraction_content">1桁のひき算をランダムで出題します</string>
+    <string name="text_double_digits_subtraction_title">2桁のひき算</string>
+    <string name="text_double_digits_subtraction_content">2桁のひき算をランダムで出題します</string>
+    <string name="text_triple_digits_subtraction_title">3桁のひき算</string>
+    <string name="text_triple_digits_subtraction_content">3桁のひき算をランダムで出題します</string>
+
+    <string name="text_single_digits_multiplication_title">1桁のかけ算</string>
+    <string name="text_double_digits_multiplication_title">2桁のかけ算</string>
+    <string name="text_triple_digits_multiplication_title">3桁のかけ算</string>
+    <string name="text_multiplication_table_title">%dの段のかけ算</string>
+    <string name="text_multiplication_table_content">%dの段のかけ算を出題します</string>
+
+    <!-- 開始画面 -->
+    <string name="start_title">開始しますか？</string>
+    <string name="start_ok">スタート</string>
+    <string name="start_count">出題数 %3d問</string>
+    <string name="start_limit_of_time">回答時間 %d秒</string>
+    <string name="start_length_of_time">出題時間 約%d分</string>
+
+    <!-- 進捗画面 -->
+    <string name="progress_title">%d問 / %d問</string>
+    <string name="progress_number_zero">0</string>
+    <string name="progress_number_one">1</string>
+    <string name="progress_number_two">2</string>
+    <string name="progress_number_three">3</string>
+    <string name="progress_number_four">4</string>
+    <string name="progress_number_five">5</string>
+    <string name="progress_number_six">6</string>
+    <string name="progress_number_seven">7</string>
+    <string name="progress_number_eight">8</string>
+    <string name="progress_number_nine">9</string>
+
+    <!-- 中断画面 -->
+    <string name="interrupt_title">中断しますか？</string>
+    <string name="interrupt_text">中断すると進捗状況がリセットされます</string>
+    <string name="interrupt_ok">はい</string>
+    <string name="interrupt_cancel">いいえ</string>
+
+    <!-- 結果画面 -->
+    <string name="result_title">結果発表</string>
+    <string name="result_retry">リトライ</string>
+    <string name="result_ok">終了する</string>
+    <string name="result_percent">正答率 %.01f％</string>
+    <string name="result_count">正解数 %d / %d</string>
+    <string name="result_elapsed_time">回答時間 %02dh %02dm %02ds</string>
+    <string name="result_answer_title">答え</string>
+    <string name="result_your_answer_title">あなたの回答</string>
+    <string name="result_no_title">No</string>
+
+    <!-- 言語設定 -->
+    <string name="language_title">言語設定</string>
+
+    <!-- ライセンス -->
+    <string name="license_title">ライセンス</string>
+
+    <!-- プライバシーポリシー -->
+    <string name="privacy_policy_title">プライバシーポリシー</string>
+
+    <!-- テーマ -->
+    <string name="theme_title">テーマ</string>
+    <string name="theme_light">ライトテーマ</string>
+    <string name="theme_dark">ダークテーマ</string>
+    <string name="theme_system">システム同期</string>
+
+    <!-- バージョン情報 -->
+    <string name="text_single_digits_multiplication_content">1桁のかけ算をランダムで出題します</string>
+    <string name="text_double_digits_multiplication_content">2桁のかけ算をランダムで出題します</string>
+    <string name="text_triple_digits_multiplication_content">3桁のかけ算をランダムで出題します</string>
+    <string name="category_multiplication_table">九九</string>
+    <string name="text_single_digits_division_title">1桁のわり算（あまりなし）</string>
+    <string name="text_double_digits_division_title">2桁のわり算（あまりなし）</string>
+    <string name="text_triple_digits_division_title">3桁のわり算（あまりなし）</string>
+    <string name="text_single_digits_division_content">1桁のわり算（あまりなし）をランダムで出題します</string>
+    <string name="text_double_digits_division_content">2桁のわり算（あまりなし）をランダムで出題します</string>
+    <string name="text_triple_digits_division_content">3桁のわり算（あまりなし）をランダムで出題します</string>
+    <string name="text_single_digits_division_remainder_title">1桁のわり算（あまりあり）</string>
+    <string name="text_double_digits_division_remainder_title">2桁のわり算（あまりあり）</string>
+    <string name="text_triple_digits_division_remainder_title">3桁のわり算（あまりあり）</string>
+    <string name="text_single_digits_division_remainder_content">1桁のわり算（あまりあり）をランダムで出題します</string>
+    <string name="text_double_digits_division_remainder_content">2桁のわり算（あまりあり）をランダムで出題します</string>
+    <string name="text_triple_digits_division_remainder_content">3桁のわり算（あまりあり）をランダムで出題します</string>
+    <string name="result_answer">%4d %s %4d = %6d</string>
+    <string name="result_answer_with_remainder">%4d %s %4d = %d あまり %d</string>
+    <string name="remainder">あまり</string>
+    <string name="mylist_title">マイリスト</string>
+    <string name="mylist_not_found">マイリストに登録されている\nテキストはありません。</string>
+    <string name="home_stats_title">統計</string>
+    <string name="homes_stats_elapsed_time">%02dh %02dm %02ds</string>
+</resources>
