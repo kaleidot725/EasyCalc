@@ -21,10 +21,10 @@ class LanguageRepositoryImpl(
     override suspend fun initialize() {
         val settings = applicationContext.dataStore.data.first()
         val lang = settings[LANGUAGE_KEY]
-        val language = Language.values().firstOrNull { it.lang == lang }
+        val language = Language.entries.firstOrNull { it.lang == lang }
         if (language == null) {
             val currentLocale = Locale.getDefault()
-            val currentLanguage = Language.values().firstOrNull {
+            val currentLanguage = Language.entries.firstOrNull {
                 currentLocale.language == it.locale.language
             } ?: Language.English
             update(currentLanguage)

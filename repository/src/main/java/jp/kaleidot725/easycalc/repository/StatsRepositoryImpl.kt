@@ -16,20 +16,6 @@ import kotlinx.datetime.toLocalDateTime
 class StatsRepositoryImpl(
     private val todayStatsDao: TodayStatsDao
 ) : StatsRepository {
-
-//    init {
-//        GlobalScope.launch {
-//            val year = 2022
-//            val m = 12
-//            val d = 31
-//            var sortableId = getSortableId(year, m, d)
-//            repeat(10000) { i ->
-//                todayStatsDao.insert(TodayStatsEntity(sortableId, i.toLong(), i.toLong()))
-//                sortableId = getPreviousTodayId(sortableId)
-//            }
-//        }
-//    }
-
     override suspend fun getTodayStreakDays(): StatsData.TodayStreakDays {
         return withContext(Dispatchers.Default) {
             val todayId = todayStatsDao.getAll().lastOrNull()?.id ?: return@withContext StatsData.TodayStreakDays(0)
