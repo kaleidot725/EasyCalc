@@ -4,18 +4,20 @@ https://github.com/albites/anzan/assets/23740796/d980a59d-425d-48c9-883a-81b4181
 
 ## Features
 
-## Modules
+- Set questions that addiction and subtraction, multiplication, division
+- Check question answers that addiction and subtraction, multiplication, division.
 
-![image](https://github.com/kaleidot725/EasyCalc/assets/23740796/ec0c13be-b6a9-4355-86ce-ba1d212b1be1)
+## Modules
 
 | Name | Details |
 | ----- | ------ |
-| APP | - |
-| UI | - |
-| DOMAIN | - |
-| REPOSITORY | - |
-| DB | - |
-| API | - |
+| APP | Setup Application and Activity. |
+| UI | Compose application screens. |
+| DOMAIN | Define application domain model. |
+| REPOSITORY | Convert database entity to domain mode for reading domain model.<br>Convert domain model to database entity for writing database entity to persist data. |
+| DB | Read and write database entity as local data source. |
+
+![image](https://github.com/kaleidot725/EasyCalc/assets/23740796/1994b4ea-6b8c-4cdd-b445-91a502cdec72)
 
 ## Library
 
@@ -28,4 +30,3 @@ https://github.com/albites/anzan/assets/23740796/d980a59d-425d-48c9-883a-81b4181
 | Coil                  | https://coil-kt.github.io/coil/                              |
 | Room                  | https://developer.android.com/training/data-storage/room?hl=ja |
 | Kotlin-Serialiazation | https://github.com/Kotlin/kotlinx.serialization              |
-| PokemonGO-Pokedex     | https://github.com/Biuni/PokemonGO-Pokedex                   |
