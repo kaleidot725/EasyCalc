@@ -31,34 +31,6 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-private val finishUnitId
-    get() = if (BuildConfig.DEBUG_MODE) {
-        "ca-app-pub-3940256099942544/1033173712"
-    } else {
-        "ca-app-pub-6306836711962723/5152177100"
-    }
-
-private val listUnitId
-    get() = if (BuildConfig.DEBUG_MODE) {
-        "ca-app-pub-3940256099942544/6300978111"
-    } else {
-        "ca-app-pub-6306836711962723/7596097332"
-    }
-
-private val mylistUnitId
-    get() = if (BuildConfig.DEBUG_MODE) {
-        "ca-app-pub-3940256099942544/6300978111"
-    } else {
-        "ca-app-pub-6306836711962723/2394972000"
-    }
-
-private val homeUnitId
-    get() = if (BuildConfig.DEBUG_MODE) {
-        "ca-app-pub-3940256099942544/6300978111"
-    } else {
-        "ca-app-pub-6306836711962723/3151785365"
-    }
-
 val repositoryModule = module {
     single<ThemeRepository> {
         ThemeRepositoryImpl(androidContext())
@@ -111,7 +83,7 @@ val appModule = module {
         StartViewModel(id, get())
     }
     viewModel {
-        ComposeAppViewModel(finishUnitId, get(), get())
+        ComposeAppViewModel(get(), get())
     }
     viewModel { (id: MathTextId) ->
         ProgressViewModel(get(), id, get(), get())

@@ -14,7 +14,6 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class ComposeAppViewModel(
-    private val adUnitId: String,
     private val themeRepository: ThemeRepository,
     private val languageRepository: LanguageRepository,
 ) : ContainerHost<ComposeAppState, ComposeAppEvent>, ViewModel(), ComposeAppAction {
