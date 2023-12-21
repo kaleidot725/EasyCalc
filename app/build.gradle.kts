@@ -56,11 +56,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":api"))
-    implementation(project(":db"))
-    implementation(project(":repository"))
-    implementation(project(":domain"))
-    implementation(project(":ui"))
+    implementation(project(":core:database"))
+    implementation(project(":core:repository"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:ui"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)

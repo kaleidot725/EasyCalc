@@ -9,8 +9,7 @@ pluginManagement {
 rootProject.name = "easycalc"
 
 include(":app")
-include(":ui")
-include(":domain")
-include(":repository")
-include(":db")
-include(":api")
+include(":core:ui")
+include(":core:database")
+include(":core:domain")
+include(":core:repository")

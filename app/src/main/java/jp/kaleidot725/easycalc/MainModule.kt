@@ -1,20 +1,14 @@
 package jp.kaleidot725.easycalc
 
-import jp.kaleidot725.easycalc.domain.model.question.QAList
-import jp.kaleidot725.easycalc.domain.model.question.selector.QuestionSelector
-import jp.kaleidot725.easycalc.domain.model.question.selector.QuestionSelectorImpl
-import jp.kaleidot725.easycalc.domain.model.text.MathText
-import jp.kaleidot725.easycalc.domain.model.text.MathTextId
-import jp.kaleidot725.easycalc.domain.repository.LanguageRepository
-import jp.kaleidot725.easycalc.domain.repository.SettingRepository
-import jp.kaleidot725.easycalc.domain.repository.StatsRepository
-import jp.kaleidot725.easycalc.domain.repository.TextRepository
-import jp.kaleidot725.easycalc.domain.repository.ThemeRepository
-import jp.kaleidot725.easycalc.repository.LanguageRepositoryImpl
-import jp.kaleidot725.easycalc.repository.SettingRepositoryImpl
-import jp.kaleidot725.easycalc.repository.StatsRepositoryImpl
-import jp.kaleidot725.easycalc.repository.TextRepositoryImpl
-import jp.kaleidot725.easycalc.repository.ThemeRepositoryImpl
+import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
+import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelectorImpl
+import jp.kaleidot725.easycalc.core.domain.model.text.MathText
+import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
+import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
+import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
+import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
 import jp.kaleidot725.easycalc.ui.screen.category.CategoryViewModel
 import jp.kaleidot725.easycalc.ui.screen.history.HistoryViewModel
 import jp.kaleidot725.easycalc.ui.screen.home.HomeViewModel
@@ -33,22 +27,22 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     single<ThemeRepository> {
-        ThemeRepositoryImpl(androidContext())
+        jp.kaleidot725.easycalc.core.repository.ThemeRepositoryImpl(androidContext())
     }
     single<LanguageRepository> {
-        LanguageRepositoryImpl(androidContext())
+        jp.kaleidot725.easycalc.core.repository.LanguageRepositoryImpl(androidContext())
     }
     single<SettingRepository> {
-        SettingRepositoryImpl(androidContext())
+        jp.kaleidot725.easycalc.core.repository.SettingRepositoryImpl(androidContext())
     }
     single<TextRepository> {
-        TextRepositoryImpl(androidContext())
+        jp.kaleidot725.easycalc.core.repository.TextRepositoryImpl(androidContext())
     }
     single<QuestionSelector> {
         QuestionSelectorImpl()
     }
     single<StatsRepository> {
-        StatsRepositoryImpl(
+        jp.kaleidot725.easycalc.core.repository.StatsRepositoryImpl(
             get()
         )
     }
@@ -88,7 +82,7 @@ val appModule = module {
     viewModel { (id: MathTextId) ->
         ProgressViewModel(get(), id, get(), get())
     }
-    viewModel { (id: MathTextId, qalist: QAList) ->
+    viewModel { (id: MathTextId, qalist: jp.kaleidot725.easycalc.core.domain.model.question.QAList) ->
         ResultViewModel(id, qalist, get(), get())
     }
 }
