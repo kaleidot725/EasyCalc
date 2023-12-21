@@ -71,24 +71,24 @@ fun NavDestination.visibleBottomNavigation(): Boolean {
 
 fun NavDestination.isDialog(): Boolean {
     fun judge(route: String?): Boolean {
-        return route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Interrupt.route
+        return route == ComposeNavigation.Interrupt.route
     }
     return this.hierarchy.any { judge(it.route) }
 }
 
 fun NavDestination.isHomeGroup(): Boolean {
     fun judge(route: String?): Boolean {
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.History.route) return true
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.MyList.route) return true
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Stats.route) return true
-        return hierarchy.any { route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Home.route }
+        if (route == ComposeNavigation.History.route) return true
+        if (route == ComposeNavigation.MyList.route) return true
+        if (route == ComposeNavigation.Stats.route) return true
+        return hierarchy.any { route == ComposeNavigation.Home.route }
     }
     return this.hierarchy.any { judge(it.route) }
 }
 
 fun NavDestination.isTextGroup(): Boolean {
     fun judge(route: String?): Boolean {
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Quiz.route) return true
+        if (route == ComposeNavigation.Quiz.route) return true
         return route?.isCategoryRoute() == true
     }
     return this.hierarchy.any { judge(it.route) }
@@ -96,40 +96,40 @@ fun NavDestination.isTextGroup(): Boolean {
 
 fun NavDestination.isSettingGroup(): Boolean {
     fun judge(route: String?): Boolean {
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Setting.route) return true
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.License.route) return true
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.PrivacyPolicy.route) return true
-        if (route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Theme.route) return true
-        return route == jp.kaleidot725.easycalc.compose.ComposeNavigation.Language.route
+        if (route == ComposeNavigation.Setting.route) return true
+        if (route == ComposeNavigation.License.route) return true
+        if (route == ComposeNavigation.PrivacyPolicy.route) return true
+        if (route == ComposeNavigation.Theme.route) return true
+        return route == ComposeNavigation.Language.route
     }
     return this.hierarchy.any { judge(it.route) }
 }
 
 fun NavGraphBuilder.addHomeScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Home.path) {
+    composable(ComposeNavigation.Home.path) {
         val viewModel = koinViewModel<HomeViewModel>()
         val action = viewModel as HomeAction
         val state by viewModel.collectAsState()
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is HomeEvent.ClickHistory -> {
-                    val route = jp.kaleidot725.easycalc.compose.ComposeNavigation.History.route
+                    val route = ComposeNavigation.History.route
                     navController.navigate(route)
                 }
 
                 is HomeEvent.ClickMyList -> {
-                    val route = jp.kaleidot725.easycalc.compose.ComposeNavigation.MyList.route
+                    val route = ComposeNavigation.MyList.route
                     navController.navigate(route)
                 }
 
                 is HomeEvent.ClickText -> {
                     val route =
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(sideEffect.mathText).route
+                        ComposeNavigation.Start(sideEffect.mathText).route
                     navController.navigate(route)
                 }
 
                 is HomeEvent.ClickStats -> {
-                    val route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Stats.route
+                    val route = ComposeNavigation.Stats.route
                     navController.navigate(route)
                 }
             }
@@ -143,7 +143,7 @@ fun NavGraphBuilder.addHomeScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addStatsScreen() {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Stats.path) {
+    composable(ComposeNavigation.Stats.path) {
         val viewModel = koinViewModel<StatsViewModel>()
         val state by viewModel.collectAsState()
         StatsScreen(
@@ -154,7 +154,7 @@ fun NavGraphBuilder.addStatsScreen() {
 }
 
 fun NavGraphBuilder.addQuizScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Quiz.path) {
+    composable(ComposeNavigation.Quiz.path) {
         val viewModel = koinViewModel<QuizViewModel>()
         val action = viewModel as QuizAction
         val state by viewModel.collectAsState()
@@ -162,13 +162,13 @@ fun NavGraphBuilder.addQuizScreen(navController: NavController) {
             when (sideEffect) {
                 is QuizEvent.ClickCategory -> {
                     val route =
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Category(sideEffect.category).route
+                        ComposeNavigation.Category(sideEffect.category).route
                     navController.navigate(route)
                 }
 
                 is QuizEvent.ClickText -> {
                     val route =
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(sideEffect.mathText).route
+                        ComposeNavigation.Start(sideEffect.mathText).route
                     navController.navigate(route)
                 }
             }
@@ -182,7 +182,7 @@ fun NavGraphBuilder.addQuizScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addCategoryScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Category().path) {
+    composable(ComposeNavigation.Category().path) {
         val category = navController.currentBackStackEntry?.getCategory()
         val viewModel = koinViewModel<CategoryViewModel> { parametersOf(category) }
         val action = viewModel as CategoryAction
@@ -192,7 +192,7 @@ fun NavGraphBuilder.addCategoryScreen(navController: NavController) {
             when (sideEffect) {
                 is CategoryEvent.ClickText -> {
                     navController.navigate(
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(
+                        ComposeNavigation.Start(
                             sideEffect.mathText
                         ).route
                     )
@@ -212,7 +212,7 @@ fun NavGraphBuilder.addCategoryScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addMyListScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.MyList.path) {
+    composable(ComposeNavigation.MyList.path) {
         val viewModel = koinViewModel<MyListViewModel>()
         val action = viewModel as MyListAction
         val state by viewModel.collectAsState()
@@ -221,7 +221,7 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
             when (sideEffect) {
                 is MyListEvent.ClickText -> {
                     navController.navigate(
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(
+                        ComposeNavigation.Start(
                             sideEffect.mathText
                         ).route
                     )
@@ -241,7 +241,7 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.History.path) {
+    composable(ComposeNavigation.History.path) {
         val viewModel = koinViewModel<HistoryViewModel>()
         val action = viewModel as HistoryAction
         val state by viewModel.collectAsState()
@@ -250,7 +250,7 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
             when (sideEffect) {
                 is HistoryEvent.ClickText -> {
                     navController.navigate(
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(
+                        ComposeNavigation.Start(
                             sideEffect.mathText
                         ).route
                     )
@@ -270,9 +270,9 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addStartScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Start().path) {
+    composable(ComposeNavigation.Start().path) {
         val id =
-            jp.kaleidot725.easycalc.compose.ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
+            ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
         val viewModel = koinViewModel<StartViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
 
@@ -280,7 +280,7 @@ fun NavGraphBuilder.addStartScreen(navController: NavController) {
             when (sideEffect) {
                 is StartEvent.ClickStart -> {
                     navController.navigate(
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress(
+                        ComposeNavigation.Progress(
                             sideEffect.mathText
                         ).route
                     )
@@ -304,9 +304,9 @@ fun NavGraphBuilder.addProgressScreen(
     sound: ComposeAppSound,
     onChangedProgress: (ComposeAppProgress) -> Unit
 ) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress().path) {
+    composable(ComposeNavigation.Progress().path) {
         val id =
-            jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
+            ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
         val viewModel = koinViewModel<ProgressViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
 
@@ -323,12 +323,12 @@ fun NavGraphBuilder.addProgressScreen(
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is ProgressEvent.Interrupted -> {
-                    navController.navigate(jp.kaleidot725.easycalc.compose.ComposeNavigation.Interrupt.route)
+                    navController.navigate(ComposeNavigation.Interrupt.route)
                 }
 
                 is ProgressEvent.Finish -> {
                     navController.navigate(
-                        jp.kaleidot725.easycalc.compose.ComposeNavigation.Result(
+                        ComposeNavigation.Result(
                             sideEffect.mathText,
                             sideEffect.qalist
                         ).route
@@ -373,25 +373,25 @@ fun NavGraphBuilder.addResultScreen(
     composeAppAction: ComposeAppAction,
     navController: NavController
 ) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Result().path) {
+    composable(ComposeNavigation.Result().path) {
         val id =
-            jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
+            ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
         val qaList =
-            jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
+            ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
         val viewModel = koinViewModel<ResultViewModel> { parametersOf(id, qaList) }
         val state by viewModel.collectAsState()
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 ResultEvent.PopBack, ResultEvent.Finish -> {
-                    jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.clear(navController.currentBackStackEntry)
+                    ComposeNavigation.Result.clear(navController.currentBackStackEntry)
                     val result = navController.popBackStack(
-                        route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Quiz.route,
+                        route = ComposeNavigation.Quiz.route,
                         inclusive = false
                     )
                     if (!result) {
                         navController.popBackStack(
-                            route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Home.route,
+                            route = ComposeNavigation.Home.route,
                             inclusive = false
                         )
                     }
@@ -399,13 +399,13 @@ fun NavGraphBuilder.addResultScreen(
                 }
 
                 is ResultEvent.Retry -> {
-                    jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.clear(navController.currentBackStackEntry)
+                    ComposeNavigation.Result.clear(navController.currentBackStackEntry)
                     navController.popBackStack(
-                        route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Start(sideEffect.mathText).route,
+                        route = ComposeNavigation.Start(sideEffect.mathText).route,
                         inclusive = false
                     )
                     navController.navigate(
-                        route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress(
+                        route = ComposeNavigation.Progress(
                             sideEffect.mathText
                         ).route
                     )
@@ -422,7 +422,7 @@ fun NavGraphBuilder.addResultScreen(
 
 fun NavGraphBuilder.addInterruptDialog(navController: NavController) {
     dialog(
-        route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Interrupt.path,
+        route = ComposeNavigation.Interrupt.path,
         dialogProperties = DialogProperties(usePlatformDefaultWidth = false)
     ) {
         InterruptScreen(
@@ -431,12 +431,12 @@ fun NavGraphBuilder.addInterruptDialog(navController: NavController) {
             },
             onConfirm = {
                 val result = navController.popBackStack(
-                    route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Quiz.route,
+                    route = ComposeNavigation.Quiz.route,
                     inclusive = false
                 )
                 if (!result) {
                     navController.popBackStack(
-                        route = jp.kaleidot725.easycalc.compose.ComposeNavigation.Home.route,
+                        route = ComposeNavigation.Home.route,
                         inclusive = false
                     )
                 }
@@ -450,18 +450,26 @@ fun NavGraphBuilder.addInterruptDialog(navController: NavController) {
 }
 
 fun NavGraphBuilder.addSettingScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Setting.path) {
+    composable(ComposeNavigation.Setting.path) {
         SettingScreen(
-            onNavigateLicense = { navController.navigate(jp.kaleidot725.easycalc.compose.ComposeNavigation.License.route) },
-            onNavigateTheme = { navController.navigate(jp.kaleidot725.easycalc.compose.ComposeNavigation.Theme.route) },
-            onNavigateLanguage = { navController.navigate(jp.kaleidot725.easycalc.compose.ComposeNavigation.Language.route) },
+            onNavigateLicense = {
+                navController.navigate(
+                    ComposeNavigation.License.route
+                )
+            },
+            onNavigateTheme = { navController.navigate(ComposeNavigation.Theme.route) },
+            onNavigateLanguage = {
+                navController.navigate(
+                    ComposeNavigation.Language.route
+                )
+            },
             modifier = Modifier.fillMaxSize(),
         )
     }
 }
 
 fun NavGraphBuilder.addLicenseScreen() {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.License.path) {
+    composable(ComposeNavigation.License.path) {
         LicenseScreen(
             modifier = Modifier.fillMaxSize()
         )
@@ -469,7 +477,7 @@ fun NavGraphBuilder.addLicenseScreen() {
 }
 
 fun NavGraphBuilder.addPrivacyPolicyScreen() {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.PrivacyPolicy.path) {
+    composable(ComposeNavigation.PrivacyPolicy.path) {
         PrivacyPolicyScreen(
             modifier = Modifier.fillMaxSize()
         )
@@ -477,7 +485,7 @@ fun NavGraphBuilder.addPrivacyPolicyScreen() {
 }
 
 fun NavGraphBuilder.addThemeScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Theme.path) {
+    composable(ComposeNavigation.Theme.path) {
         val viewModel = koinViewModel<ThemeViewModel>()
         val action = viewModel as ThemeAction
         val state by viewModel.collectAsState()
@@ -495,7 +503,7 @@ fun NavGraphBuilder.addThemeScreen(navController: NavController) {
 }
 
 fun NavGraphBuilder.addLanguageScreen(navController: NavController) {
-    composable(jp.kaleidot725.easycalc.compose.ComposeNavigation.Language.path) {
+    composable(ComposeNavigation.Language.path) {
         val viewModel = koinViewModel<LanguageViewModel>()
         val action = viewModel as LanguageAction
         val state by viewModel.collectAsState()

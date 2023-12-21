@@ -8,8 +8,14 @@ sealed class Answer : java.io.Serializable {
     abstract val remainder: String
 
     @Serializable
-    data class Success(override val value: String, override val remainder: String) : jp.kaleidot725.easycalc.core.domain.model.question.Answer()
+    data class Success(
+        override val value: String,
+        override val remainder: String
+    ) : Answer()
 
     @Serializable
-    data class Failed(override val value: String, override val remainder: String) : jp.kaleidot725.easycalc.core.domain.model.question.Answer()
+    data class Failed(
+        override val value: String,
+        override val remainder: String
+    ) : Answer()
 }

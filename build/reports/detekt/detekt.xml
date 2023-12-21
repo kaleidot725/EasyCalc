@@ -1,89 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?><checkstyle version="4.3">
-  <file name="src/main/java/jp/kaleidot725/easycalc/MainActivity.kt">
-    <error column="17" line="84" message="Private function `showAd` is unused." severity="warning" source="detekt.UnusedPrivateMember"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/compose/ComposeNavigationBuilder.kt">
+    <error column="57" line="455" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="88" line="457" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="74" line="455" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="33" line="456" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="14" line="458" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="33" line="463" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="35" line="455" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="51" line="455" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="94" line="457" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="110" line="457" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/division/DivisionGenerator.kt">
-    <error column="18" line="16" message="Function generate is nested too deeply." severity="warning" source="detekt.NestedBlockDepth"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/compose/ComposeNavigation.kt">
+    <error column="46" line="44" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/division/DivisionRemainderGenerator.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/compose/ComposeAppState.kt">
+    <error column="30" line="6" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="1" line="7" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/MainApplication.kt">
+    <error column="1" line="1" message="File must end with a newline (\n)" severity="warning" source="detekt.FinalNewline"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/division/DivisionGenerator.kt">
     <error column="18" line="17" message="Function generate is nested too deeply." severity="warning" source="detekt.NestedBlockDepth"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/subtraction/SingleDigitSubtractionGenerator.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/division/DivisionRemainderGenerator.kt">
+    <error column="18" line="17" message="Function generate is nested too deeply." severity="warning" source="detekt.NestedBlockDepth"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/QA.kt">
+    <error column="14" line="7" message="Parameter should start on a newline" severity="warning" source="detekt.ParameterListWrapping"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/QAList.kt">
+    <error column="51" line="12" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="59" line="12" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/Answer.kt">
+    <error column="23" line="11" message="Parameter should start on a newline" severity="warning" source="detekt.ParameterListWrapping"/>
+    <error column="44" line="14" message="Parameter should start on a newline" severity="warning" source="detekt.ParameterListWrapping"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/addition/SingleDigitAdditionGenerator.kt">
+    <error column="63" line="5" message="Needless blank line(s)" severity="warning" source="detekt.NoConsecutiveBlankLines"/>
+    <error column="8" line="18" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/addition/DoubleDigitAdditionGenerator.kt">
+    <error column="36" line="20" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
     <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/subtraction/DoubleDigitSubtractionGenerator.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/subtraction/SingleDigitSubtractionGenerator.kt">
+    <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
+  </file>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/subtraction/DoubleDigitSubtractionGenerator.kt">
     <error column="9" line="18" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/subtraction/TripleDigitSubtractionGenerator.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/subtraction/TripleDigitSubtractionGenerator.kt">
     <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/addition/SingleDigitAdditionGenerator.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/domain/model/question/generator/addition/TripleDigitAdditionGenerator.kt">
     <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/addition/TripleDigitAdditionGenerator.kt">
-    <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/repository/LanguageRepositoryImpl.kt">
+    <error column="42" line="22" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="96" line="36" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="112" line="36" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="1" line="23" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/domain/model/question/generator/addition/DoubleDigitAdditionGenerator.kt">
-    <error column="9" line="17" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/repository/StatsRepositoryImpl.kt">
+    <error column="17" line="35" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
+    <error column="13" line="57" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/repository/StatsRepositoryImpl.kt">
-    <error column="17" line="50" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
-    <error column="13" line="72" message="The loop contains more than one break or continue statement. The code should be refactored to increase readability." severity="warning" source="detekt.LoopWithTooManyJumpStatements"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/progress/component/QuestionCard.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/ui/screen/progress/component/QuestionCard.kt">
     <error column="17" line="48" message="The function QuestionCard(first: String, second: String, category: MathText.Category, answer: String, remainder: String?, isSuccess: Boolean, isFailed: Boolean, hasRemainder: Boolean, focusMode: FocusMode, onFocusChange: (FocusMode) -&gt; Unit, modifier: Modifier) has too many parameters. The current threshold is set to 10." severity="warning" source="detekt.LongParameterList"/>
-    <error column="20" line="116" message="First line in a method block should not be empty" severity="warning" source="detekt.NoEmptyFirstLineInMethodBlock"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/home/component/HomeStats.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/ui/screen/setting/language/LanguageScreen.kt">
+    <error column="53" line="31" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="83" line="45" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="113" line="59" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="20" line="74" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="3" line="89" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="9" line="104" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="1" line="119" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="8" line="134" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="32" line="148" message="Argument should be on a separate line (unless all arguments can fit a single line)" severity="warning" source="detekt.ArgumentListWrapping"/>
+    <error column="33" line="31" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="49" line="31" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="91" line="45" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="107" line="45" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="25" line="60" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="1" line="61" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="13" line="76" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="29" line="76" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="31" line="91" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="16" line="92" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="4" line="111" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="20" line="111" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="30" line="126" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="46" line="126" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="33" line="141" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="6" line="142" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="44" line="159" message="Missing newline after &quot;{&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="60" line="159" message="Missing newline before &quot;}&quot;" severity="warning" source="detekt.Wrapping"/>
+    <error column="70" line="31" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="33" line="32" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="10" line="46" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="25" line="48" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="6" line="62" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="30" line="64" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="11" line="78" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="9" line="84" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="7" line="97" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="10" line="99" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="55" line="112" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="34" line="114" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="12" line="128" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="59" line="129" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="38" line="143" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="123" line="143" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
+    <error column="9" line="162" message="Unexpected indentation (16) (should be 20)" severity="warning" source="detekt.Indentation"/>
+    <error column="-1" line="-1" message="Unexpected indentation (12) (should be 16)" severity="warning" source="detekt.Indentation"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/home/component/HomeStatsItem.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/ui/screen/setting/language/LanguageViewModel.kt">
+    <error column="36" line="24" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="129" line="25" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="127" line="26" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="125" line="27" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="123" line="28" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="125" line="29" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="131" line="30" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="123" line="31" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="121" line="33" message="Exceeded max line length (120)" severity="warning" source="detekt.MaximumLineLength"/>
+    <error column="1" line="25" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="26" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="27" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="28" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="29" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="30" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="31" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="32" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
+    <error column="1" line="34" message="Line detected, which is longer than the defined maximum line length in the code style." severity="warning" source="detekt.MaxLineLength"/>
   </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/home/HomeScreen.kt">
-    <error column="1" line="12" message="Wildcard import" severity="warning" source="detekt.NoWildcardImports"/>
-    <error column="1" line="12" message="androidx.lifecycle.Lifecycle.Event.* is a wildcard import. Replace it with fully qualified imports." severity="warning" source="detekt.WildcardImport"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/result/component/MathTextResult.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/progress/component/CircleIconButton.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-    <error column="9" line="29" message="Missing spacing before &quot;=&quot;" severity="warning" source="detekt.SpacingAroundOperators"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/progress/component/CircleButton.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/progress/component/ProgressBar.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/resources/ColorResource.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/common/HorizontalDivider.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/common/TextIcon.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/common/TextIconWithDetails.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/main/ComposeApp.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-    <error column="4" line="86" message="Unnecessary long whitespace" severity="warning" source="detekt.NoMultipleSpaces"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/stats/StatsScreen.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/stats/component/StatsCard.kt">
-    <error column="1" line="1" message="Unused import" severity="warning" source="detekt.NoUnusedImports"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/stats/StartAction.kt">
+  <file name="src/main/java/jp/kaleidot725/easycalc/core/ui/screen/stats/StartAction.kt">
     <error column="1" line="1" message="File 'StartAction.kt' contains a single class and possibly also extension functions for that class and should be named same after that class 'StatsAction.kt'" severity="warning" source="detekt.Filename"/>
     <error column="11" line="3" message="The file name 'StartAction' does not match the name of the single top-level declaration 'StatsAction'." severity="warning" source="detekt.MatchingDeclarationName"/>
-  </file>
-  <file name="src/main/java/jp/kaleidot725/easycalc/ui/screen/resources/MathTextResource.kt">
-    <error column="28" line="279" message="Function parameter `text` is unused." severity="warning" source="detekt.UnusedParameter"/>
   </file>
 </checkstyle>

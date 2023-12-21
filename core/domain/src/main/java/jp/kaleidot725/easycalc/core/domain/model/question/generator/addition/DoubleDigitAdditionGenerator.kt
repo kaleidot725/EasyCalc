@@ -19,7 +19,8 @@ internal class DoubleDigitAdditionGenerator : QuestionGenerator {
             val two = (min..max).random()
             val question = Question(
                 one.toString(),
-                two.toString(), (one + two).toString(),
+                two.toString(),
+                (one + two).toString(),
                 MathText.Category.ADDITION
             )
             if (one == two) continue

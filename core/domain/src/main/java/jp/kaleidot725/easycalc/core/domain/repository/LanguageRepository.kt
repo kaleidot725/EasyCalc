@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface LanguageRepository {
     suspend fun initialize()
-    fun get(): Flow<jp.kaleidot725.easycalc.core.domain.model.language.Language>
-    suspend fun update(theme: jp.kaleidot725.easycalc.core.domain.model.language.Language)
+    fun get(): Flow<Language>
+    suspend fun update(theme: Language)
 }

@@ -4,7 +4,6 @@ import jp.kaleidot725.easycalc.core.domain.model.question.Question
 import jp.kaleidot725.easycalc.core.domain.model.question.generator.QuestionGenerator
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 
-
 internal class SingleDigitAdditionGenerator : QuestionGenerator {
     private val min = 1
     private val max = 9

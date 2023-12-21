@@ -6,10 +6,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class QAList {
-    private val _values: MutableList<jp.kaleidot725.easycalc.core.domain.model.question.QA> = mutableListOf()
-    val values: List<jp.kaleidot725.easycalc.core.domain.model.question.QA> = _values
+    private val _values: MutableList<QA> = mutableListOf()
+    val values: List<QA> = _values
 
-    val successCount: Long get() = values.count { it.a is jp.kaleidot725.easycalc.core.domain.model.question.Answer.Success }.toLong()
+    val successCount: Long get() = values.count { it.a is Answer.Success }.toLong()
     val questionCount: Long get() = values.count().toLong()
     val percent: Float get() = successCount.toFloat() / questionCount.toFloat() * 100.0f
 

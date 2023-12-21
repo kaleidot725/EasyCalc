@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import jp.kaleidot725.easycalc.core.domain.model.language.Language
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.screen.setting.component.SettingCheckItem
 
@@ -28,7 +29,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_english),
             icon = Icons.Default.Language,
             checked = state.englishSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.English) },
+            onCheckedChange = { action.clickLanguage(Language.English) },
             iconDescription = "english",
             modifier = Modifier
                 .fillMaxWidth()
@@ -42,7 +43,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_japanese),
             icon = Icons.Default.Language,
             checked = state.japaneseSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Japanese) },
+            onCheckedChange = { action.clickLanguage(Language.Japanese) },
             iconDescription = "japanese",
             modifier = Modifier
                 .fillMaxWidth()
@@ -56,7 +57,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_german),
             icon = Icons.Default.Language,
             checked = state.germanSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.German) },
+            onCheckedChange = { action.clickLanguage(Language.German) },
             iconDescription = "German",
             modifier = Modifier
                 .fillMaxWidth()
@@ -70,7 +71,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_spain),
             icon = Icons.Default.Language,
             checked = state.spainSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Spain) },
+            onCheckedChange = { action.clickLanguage(Language.Spain) },
             iconDescription = "Spain",
             modifier = Modifier
                 .fillMaxWidth()
@@ -84,7 +85,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_indonesia),
             icon = Icons.Default.Language,
             checked = state.indonesiaSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Indonesia) },
+            onCheckedChange = { action.clickLanguage(Language.Indonesia) },
             iconDescription = "Indonesia",
             modifier = Modifier
                 .fillMaxWidth()
@@ -98,7 +99,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_italy),
             icon = Icons.Default.Language,
             checked = state.italySelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Italy) },
+            onCheckedChange = { action.clickLanguage(Language.Italy) },
             iconDescription = "Italy",
             modifier = Modifier
                 .fillMaxWidth()
@@ -112,7 +113,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_portugal),
             icon = Icons.Default.Language,
             checked = state.portugalSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Portugal) },
+            onCheckedChange = { action.clickLanguage(Language.Portugal) },
             iconDescription = "Portugal",
             modifier = Modifier
                 .fillMaxWidth()
@@ -126,7 +127,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_thai),
             icon = Icons.Default.Language,
             checked = state.thaiSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Thai) },
+            onCheckedChange = { action.clickLanguage(Language.Thai) },
             iconDescription = "Thai",
             modifier = Modifier
                 .fillMaxWidth()
@@ -140,7 +141,7 @@ fun LanguageScreen(
             title = stringResource(R.string.language_chinese),
             icon = Icons.Default.Language,
             checked = state.chineseSelected,
-            onCheckedChange = { action.clickLanguage(jp.kaleidot725.easycalc.core.domain.model.language.Language.Chinese) },
+            onCheckedChange = { action.clickLanguage(Language.Chinese) },
             iconDescription = "Chinese",
             modifier = Modifier
                 .fillMaxWidth()
@@ -156,9 +157,7 @@ private fun Preview() {
     LanguageScreen(
         state = LanguageState(),
         action = object : LanguageAction {
-            override fun clickLanguage(language: jp.kaleidot725.easycalc.core.domain.model.language.Language) =
-                TODO()
-
+            override fun clickLanguage(language: Language) = TODO()
             override fun popBack() = TODO()
         },
         modifier = Modifier,
