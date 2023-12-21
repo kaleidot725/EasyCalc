@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.compositeOver
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import jp.kaleidot725.easycalc.core.domain.model.theme.Theme
-import jp.kaleidot725.easycalc.ui.screen.resources.ColorResource
+import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
 
 @Composable
 fun ComposeTheme(

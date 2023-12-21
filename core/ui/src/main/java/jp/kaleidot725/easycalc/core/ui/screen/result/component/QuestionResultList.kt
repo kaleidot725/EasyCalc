@@ -23,9 +23,9 @@ import jp.kaleidot725.easycalc.core.domain.model.question.Answer
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.question.Question
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.divider.HorizontalDivider
-import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.divider.HorizontalDivider
+import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
 
 @Composable
 fun QuestionResultList(

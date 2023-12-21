@@ -1,10 +1,10 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import jp.kaleidot725.easycalc.ui.R
+import jp.kaleidot725.easycalc.core.ui.R
 
 class ComposeAppSound {
     private val audioAttributes = AudioAttributes.Builder()

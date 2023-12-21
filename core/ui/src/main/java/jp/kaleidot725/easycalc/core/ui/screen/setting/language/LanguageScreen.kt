@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.setting.component.SettingCheckItem
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.screen.setting.component.SettingCheckItem
 
 @Composable
 fun LanguageScreen(
@@ -156,7 +156,9 @@ private fun Preview() {
     LanguageScreen(
         state = LanguageState(),
         action = object : LanguageAction {
-            override fun clickLanguage(language: jp.kaleidot725.easycalc.core.domain.model.language.Language) = TODO()
+            override fun clickLanguage(language: jp.kaleidot725.easycalc.core.domain.model.language.Language) =
+                TODO()
+
             override fun popBack() = TODO()
         },
         modifier = Modifier,

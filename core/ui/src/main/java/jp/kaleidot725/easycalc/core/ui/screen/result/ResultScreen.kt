@@ -21,9 +21,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.result.component.MathTextResult
-import jp.kaleidot725.easycalc.ui.screen.result.component.QuestionResultList
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.screen.result.component.MathTextResult
+import jp.kaleidot725.easycalc.core.ui.screen.result.component.QuestionResultList
 
 @Composable
 fun ResultScreen(

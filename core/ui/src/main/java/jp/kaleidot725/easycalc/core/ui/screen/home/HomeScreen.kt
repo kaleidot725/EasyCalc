@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle.Event.ON_RESUME
 import androidx.lifecycle.LifecycleEventObserver
-import jp.kaleidot725.easycalc.ui.screen.home.component.HomeCategoryList
+import jp.kaleidot725.easycalc.core.ui.screen.home.component.HomeCategoryList
 
 @Composable
 fun HomeScreen(

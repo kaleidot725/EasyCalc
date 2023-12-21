@@ -29,11 +29,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.text.AutoSizeableText
-import jp.kaleidot725.easycalc.ui.screen.progress.FocusMode
-import jp.kaleidot725.easycalc.ui.screen.resources.ColorResource
-import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.screen.progress.FocusMode
+import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
+import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
 
 @Composable
 private fun getFocusColor(current: FocusMode, target: FocusMode): Color {

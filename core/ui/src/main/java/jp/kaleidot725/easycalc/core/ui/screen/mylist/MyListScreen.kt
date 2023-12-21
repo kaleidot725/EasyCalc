@@ -17,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.icon.TextIconWithDetails
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.icon.TextIconWithDetails
 
 @Composable
 fun MyListScreen(

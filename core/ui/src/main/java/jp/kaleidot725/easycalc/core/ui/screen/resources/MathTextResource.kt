@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
-import jp.kaleidot725.easycalc.ui.R
+import jp.kaleidot725.easycalc.core.ui.R
 
 object MathTextResource {
     @Composable

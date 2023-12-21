@@ -24,8 +24,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.stats.StatsData
 import jp.kaleidot725.easycalc.core.domain.model.utils.ElapsedTimeCalculator
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.stats.component.StatsCard
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.screen.stats.component.StatsCard
 
 @Composable
 fun StatsScreen(

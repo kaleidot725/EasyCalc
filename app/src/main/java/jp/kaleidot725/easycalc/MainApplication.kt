@@ -13,8 +13,10 @@ open class MainApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MainApplication)
-            modules(appModule, repositoryModule, jp.kaleidot725.easycalc.core.database.dbModule)
+            modules(appModule, repositoryModule, dbModule)
         }
-        if (BuildConfig.DEBUG) { Timber.plant(Timber.DebugTree()) }
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }

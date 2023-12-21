@@ -30,7 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import androidx.compose.ui.unit.sp
-import jp.kaleidot725.easycalc.ui.R
+import jp.kaleidot725.easycalc.core.ui.R
 
 @Composable
 fun NumberIme(

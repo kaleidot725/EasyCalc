@@ -9,13 +9,13 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.screen.main.md_theme_light_inversePrimary
-import jp.kaleidot725.easycalc.ui.screen.resources.ColorResource
+import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
 
 private const val ZERO = 0f
 private const val WARNING = 1f / 3f
@@ -26,7 +26,7 @@ fun ProgressBar(progress: Float, modifier: Modifier = Modifier) {
     val color = when {
         (progress in ZERO..WARNING) -> ColorResource.red()
         (progress in WARNING..CAUTION) -> ColorResource.yellow()
-        else -> md_theme_light_inversePrimary
+        else -> MaterialTheme.colorScheme.inversePrimary
     }
     LinearProgressIndicator(
         progress = progress,

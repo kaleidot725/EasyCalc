@@ -32,11 +32,11 @@ import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.domain.model.utils.ElapsedTimeCalculator
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.divider.VerticalDivider
-import jp.kaleidot725.easycalc.ui.component.icon.IconTextItem
-import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
-import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.divider.VerticalDivider
+import jp.kaleidot725.easycalc.core.ui.component.icon.IconTextItem
+import jp.kaleidot725.easycalc.core.ui.component.icon.TextIcon
+import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
 
 @Composable
 fun MathTextResult(

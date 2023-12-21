@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -36,18 +36,18 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
+import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
+import jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress.Companion.isProgressRoute
+import jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.Companion.isResultRoute
+import jp.kaleidot725.easycalc.compose.ComposeNavigation.Start.Companion.isStartRoute
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigation
-import jp.kaleidot725.easycalc.ui.component.navigation.SimpleBottomNavigationItem
-import jp.kaleidot725.easycalc.ui.component.navigation.SimpleTopBar
-import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.getCategory
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Category.Companion.isCategoryRoute
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Progress.Companion.isProgressRoute
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Result.Companion.isResultRoute
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeNavigation.Start.Companion.isStartRoute
-import jp.kaleidot725.easycalc.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleBottomNavigation
+import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleBottomNavigationItem
+import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleTopBar
+import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
+import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
 
 @Composable
 fun ComposeApp(

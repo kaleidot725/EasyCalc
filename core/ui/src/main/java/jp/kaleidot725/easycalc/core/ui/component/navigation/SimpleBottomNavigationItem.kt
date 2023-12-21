@@ -5,7 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
-import jp.kaleidot725.easycalc.ui.screen.resources.ColorResource
+import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
 
 @Composable
 fun RowScope.SimpleBottomNavigationItem(

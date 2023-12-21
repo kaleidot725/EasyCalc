@@ -24,9 +24,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextSet
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
-import jp.kaleidot725.easycalc.ui.extention.clickableNoRipple
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.icon.TextIcon
+import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

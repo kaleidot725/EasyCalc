@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme

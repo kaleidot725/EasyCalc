@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.R
+import jp.kaleidot725.easycalc.core.ui.R
 
 @Composable
 fun InterruptScreen(

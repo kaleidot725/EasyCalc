@@ -1,5 +1,6 @@
 package jp.kaleidot725.easycalc
 
+import jp.kaleidot725.easycalc.compose.ComposeAppViewModel
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelectorImpl
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
@@ -9,18 +10,17 @@ import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
 import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
 import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
 import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
-import jp.kaleidot725.easycalc.ui.screen.category.CategoryViewModel
-import jp.kaleidot725.easycalc.ui.screen.history.HistoryViewModel
-import jp.kaleidot725.easycalc.ui.screen.home.HomeViewModel
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeAppViewModel
-import jp.kaleidot725.easycalc.ui.screen.mylist.MyListViewModel
-import jp.kaleidot725.easycalc.ui.screen.progress.ProgressViewModel
-import jp.kaleidot725.easycalc.ui.screen.quiz.QuizViewModel
-import jp.kaleidot725.easycalc.ui.screen.result.ResultViewModel
-import jp.kaleidot725.easycalc.ui.screen.setting.language.LanguageViewModel
-import jp.kaleidot725.easycalc.ui.screen.setting.theme.ThemeViewModel
-import jp.kaleidot725.easycalc.ui.screen.start.StartViewModel
-import jp.kaleidot725.easycalc.ui.screen.stats.StatsViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.history.HistoryViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.home.HomeViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.mylist.MyListViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.progress.ProgressViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.result.ResultViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.setting.language.LanguageViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.setting.theme.ThemeViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.start.StartViewModel
+import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsViewModel
+import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

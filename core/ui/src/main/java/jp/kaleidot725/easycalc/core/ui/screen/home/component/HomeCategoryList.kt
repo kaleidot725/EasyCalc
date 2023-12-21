@@ -23,10 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.utils.ElapsedTimeCalculator
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.component.icon.TextIcon
-import jp.kaleidot725.easycalc.ui.screen.home.HomeAction
-import jp.kaleidot725.easycalc.ui.screen.home.HomeState
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.component.icon.TextIcon
+import jp.kaleidot725.easycalc.core.ui.screen.home.HomeAction
+import jp.kaleidot725.easycalc.core.ui.screen.home.HomeState
 
 @Composable
 internal fun HomeCategoryList(

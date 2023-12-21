@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.category
+package jp.kaleidot725.easycalc.feature.category
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.component.icon.TextIconWithDetails
+import jp.kaleidot725.easycalc.core.ui.component.icon.TextIconWithDetails
 
 @Composable
 fun CategoryScreen(

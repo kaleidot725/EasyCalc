@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 interface ComposeAppAction {
     fun finish()

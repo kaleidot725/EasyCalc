@@ -16,9 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.ui.R
-import jp.kaleidot725.easycalc.ui.screen.quiz.component.QuizCategoryList
-import jp.kaleidot725.easycalc.ui.screen.quiz.component.QuizTabCategory
+import jp.kaleidot725.easycalc.core.ui.R
+import jp.kaleidot725.easycalc.core.ui.screen.quiz.component.QuizCategoryList
+import jp.kaleidot725.easycalc.core.ui.screen.quiz.component.QuizTabCategory
 
 @Composable
 fun QuizScreen(
@@ -48,9 +48,11 @@ fun QuizScreen(
                                     QuizTabCategory.MULTIPLICATION -> stringResource(
                                         id = R.string.category_multiplication
                                     )
+
                                     QuizTabCategory.MULTIPLICATION_TABLE -> stringResource(
                                         id = R.string.category_multiplication_table
                                     )
+
                                     QuizTabCategory.DIVISION -> stringResource(id = R.string.category_division)
                                 }
                             )

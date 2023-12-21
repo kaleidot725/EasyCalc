@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.main
+package jp.kaleidot725.easycalc.compose
 
 import androidx.navigation.NavBackStackEntry
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
@@ -40,7 +40,8 @@ sealed interface ComposeNavigation {
         companion object {
             private const val CATEGORY_ARGUMENT_KEY = "category_category"
             fun NavBackStackEntry.getCategory(): MathText.Category {
-                val name = this.arguments?.getString(CATEGORY_ARGUMENT_KEY)
+                val name =
+                    this.arguments?.getString(jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.CATEGORY_ARGUMENT_KEY)
                 val category = MathText.Category.values().firstOrNull { it.name == name }
                 return category ?: MathText.Category.ADDITION
             }

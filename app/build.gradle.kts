@@ -41,7 +41,10 @@ android {
         release {
             buildConfigField("Boolean", "DEBUG_MODE", "false")
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
             signingConfig = signingConfigs.getByName("debug")
         }
     }
@@ -60,11 +63,13 @@ dependencies {
     implementation(project(":core:repository"))
     implementation(project(":core:domain"))
     implementation(project(":core:ui"))
+    implementation(project(":feature:category"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -76,6 +81,7 @@ dependencies {
     implementation(libs.orbit.compose)
     implementation(libs.review.ktx)
     implementation(libs.timber)
+    implementation(libs.accompanist.systemuicontroller)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)
