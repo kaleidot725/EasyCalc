@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.home
+package jp.kaleidot725.easycalc.feature.home
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle.Event.ON_RESUME
 import androidx.lifecycle.LifecycleEventObserver
-import jp.kaleidot725.easycalc.core.ui.screen.home.component.HomeCategoryList
+import jp.kaleidot725.easycalc.feature.home.component.HomeCategoryList
 
 @Composable
 fun HomeScreen(

@@ -64,6 +64,8 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:ui"))
     implementation(project(":feature:category"))
+    implementation(project(":feature:history"))
+    implementation(project(":feature:home"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
@@ -82,7 +84,6 @@ dependencies {
     implementation(libs.review.ktx)
     implementation(libs.timber)
     implementation(libs.accompanist.systemuicontroller)
-    implementation(project(":feature:hisotry"))
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)

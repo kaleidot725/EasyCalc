@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.home.component
+package jp.kaleidot725.easycalc.feature.home.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,8 +25,8 @@ import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.utils.ElapsedTimeCalculator
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.component.icon.TextIcon
-import jp.kaleidot725.easycalc.core.ui.screen.home.HomeAction
-import jp.kaleidot725.easycalc.core.ui.screen.home.HomeState
+import jp.kaleidot725.easycalc.feature.home.HomeAction
+import jp.kaleidot725.easycalc.feature.home.HomeState
 
 @Composable
 internal fun HomeCategoryList(

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.home.component
+package jp.kaleidot725.easycalc.feature.home.component
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.Box
@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
 
 @Composable
-fun HomeStatsItem(
+internal fun HomeStatsItem(
     icon: ImageVector,
     text: String,
     title: String,
