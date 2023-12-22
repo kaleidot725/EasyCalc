@@ -1,6 +1,6 @@
 package jp.kaleidot725.easycalc
 
-import jp.kaleidot725.easycalc.compose.ComposeAppViewModel
+import jp.kaleidot725.easycalc.compose.app.ComposeAppViewModel
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelectorImpl

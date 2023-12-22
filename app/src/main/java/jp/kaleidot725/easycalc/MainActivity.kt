@@ -8,9 +8,9 @@ import androidx.compose.runtime.getValue
 import androidx.core.os.LocaleListCompat
 import androidx.core.view.WindowCompat
 import com.google.android.play.core.review.ReviewManagerFactory
-import jp.kaleidot725.easycalc.compose.ComposeApp
-import jp.kaleidot725.easycalc.compose.ComposeAppEvent
-import jp.kaleidot725.easycalc.compose.ComposeAppViewModel
+import jp.kaleidot725.easycalc.compose.app.ComposeApp
+import jp.kaleidot725.easycalc.compose.app.ComposeAppEvent
+import jp.kaleidot725.easycalc.compose.app.ComposeAppViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.compose.collectSideEffect

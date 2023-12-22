@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.compose
+package jp.kaleidot725.easycalc.compose.app
 
 import android.content.Context
 import android.media.AudioAttributes

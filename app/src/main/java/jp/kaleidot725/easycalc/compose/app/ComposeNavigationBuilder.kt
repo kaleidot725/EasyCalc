@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.compose
+package jp.kaleidot725.easycalc.compose.app
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,8 +15,8 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Category.Companion.getCategory
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
 import jp.kaleidot725.easycalc.feature.category.CategoryAction
 import jp.kaleidot725.easycalc.feature.category.CategoryEvent
