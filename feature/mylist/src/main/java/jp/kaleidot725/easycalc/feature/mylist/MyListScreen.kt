@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.mylist
+package jp.kaleidot725.easycalc.feature.mylist
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
