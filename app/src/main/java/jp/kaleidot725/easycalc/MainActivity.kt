@@ -8,9 +8,9 @@ import androidx.compose.runtime.getValue
 import androidx.core.os.LocaleListCompat
 import androidx.core.view.WindowCompat
 import com.google.android.play.core.review.ReviewManagerFactory
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeApp
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeAppEvent
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeAppViewModel
+import jp.kaleidot725.easycalc.compose.ComposeApp
+import jp.kaleidot725.easycalc.compose.ComposeAppEvent
+import jp.kaleidot725.easycalc.compose.ComposeAppViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.compose.collectSideEffect
@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                             val list = LocaleListCompat.forLanguageTags(it.language.lang)
                             AppCompatDelegate.setApplicationLocales(list)
                         }
+
                         ComposeAppEvent.ShowAppInReview -> {
                             showAppInReview()
                         }

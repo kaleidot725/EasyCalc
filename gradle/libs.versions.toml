@@ -27,6 +27,11 @@ room-runtime = "2.5.2"
 soloader = "0.10.5"
 timber = "5.0.1"
 ksp = "1.9.10-1.0.13"
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
 
 [libraries]
 aboutlibraries-compose = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries-core" }
@@ -61,6 +66,11 @@ orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orb
 review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "review-ktx" }
 soloader = { module = "com.facebook.soloader:soloader", version.ref = "soloader" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle" }

@@ -1,32 +1,30 @@
 package jp.kaleidot725.easycalc
 
-import jp.kaleidot725.easycalc.domain.model.question.QAList
-import jp.kaleidot725.easycalc.domain.model.question.selector.QuestionSelector
-import jp.kaleidot725.easycalc.domain.model.question.selector.QuestionSelectorImpl
-import jp.kaleidot725.easycalc.domain.model.text.MathText
-import jp.kaleidot725.easycalc.domain.model.text.MathTextId
-import jp.kaleidot725.easycalc.domain.repository.LanguageRepository
-import jp.kaleidot725.easycalc.domain.repository.SettingRepository
-import jp.kaleidot725.easycalc.domain.repository.StatsRepository
-import jp.kaleidot725.easycalc.domain.repository.TextRepository
-import jp.kaleidot725.easycalc.domain.repository.ThemeRepository
-import jp.kaleidot725.easycalc.repository.LanguageRepositoryImpl
-import jp.kaleidot725.easycalc.repository.SettingRepositoryImpl
-import jp.kaleidot725.easycalc.repository.StatsRepositoryImpl
-import jp.kaleidot725.easycalc.repository.TextRepositoryImpl
-import jp.kaleidot725.easycalc.repository.ThemeRepositoryImpl
-import jp.kaleidot725.easycalc.ui.screen.category.CategoryViewModel
-import jp.kaleidot725.easycalc.ui.screen.history.HistoryViewModel
-import jp.kaleidot725.easycalc.ui.screen.home.HomeViewModel
-import jp.kaleidot725.easycalc.ui.screen.main.ComposeAppViewModel
-import jp.kaleidot725.easycalc.ui.screen.mylist.MyListViewModel
-import jp.kaleidot725.easycalc.ui.screen.progress.ProgressViewModel
-import jp.kaleidot725.easycalc.ui.screen.quiz.QuizViewModel
-import jp.kaleidot725.easycalc.ui.screen.result.ResultViewModel
-import jp.kaleidot725.easycalc.ui.screen.setting.language.LanguageViewModel
-import jp.kaleidot725.easycalc.ui.screen.setting.theme.ThemeViewModel
-import jp.kaleidot725.easycalc.ui.screen.start.StartViewModel
-import jp.kaleidot725.easycalc.ui.screen.stats.StatsViewModel
+import jp.kaleidot725.easycalc.compose.ComposeAppViewModel
+import jp.kaleidot725.easycalc.core.domain.model.question.QAList
+import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
+import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelectorImpl
+import jp.kaleidot725.easycalc.core.domain.model.text.MathText
+import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
+import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
+import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
+import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
+import jp.kaleidot725.easycalc.core.repository.LanguageRepositoryImpl
+import jp.kaleidot725.easycalc.core.repository.SettingRepositoryImpl
+import jp.kaleidot725.easycalc.core.repository.StatsRepositoryImpl
+import jp.kaleidot725.easycalc.core.repository.TextRepositoryImpl
+import jp.kaleidot725.easycalc.core.repository.ThemeRepositoryImpl
+import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
+import jp.kaleidot725.easycalc.feature.history.HistoryViewModel
+import jp.kaleidot725.easycalc.feature.home.HomeViewModel
+import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
+import jp.kaleidot725.easycalc.feature.result.ResultViewModel
+import jp.kaleidot725.easycalc.feature.setting.language.LanguageViewModel
+import jp.kaleidot725.easycalc.feature.setting.theme.ThemeViewModel
+import jp.kaleidot725.easycalc.feature.start.StartViewModel
+import jp.kaleidot725.easycalc.feature.stats.StatsViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -68,7 +66,7 @@ val appModule = module {
         LanguageViewModel(get())
     }
     viewModel {
-        QuizViewModel(get())
+        jp.kaleidot725.easycalc.feature.quiz.QuizViewModel(get())
     }
     viewModel { (category: MathText.Category) ->
         CategoryViewModel(category, get())
@@ -86,7 +84,7 @@ val appModule = module {
         ComposeAppViewModel(get(), get())
     }
     viewModel { (id: MathTextId) ->
-        ProgressViewModel(get(), id, get(), get())
+        jp.kaleidot725.easycalc.feature.progress.ProgressViewModel(get(), id, get(), get())
     }
     viewModel { (id: MathTextId, qalist: QAList) ->
         ResultViewModel(id, qalist, get(), get())

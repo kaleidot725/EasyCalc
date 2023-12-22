@@ -41,7 +41,10 @@ android {
         release {
             buildConfigField("Boolean", "DEBUG_MODE", "false")
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
             signingConfig = signingConfigs.getByName("debug")
         }
     }
@@ -56,16 +59,27 @@ android {
 }
 
 dependencies {
-    implementation(project(":api"))
-    implementation(project(":db"))
-    implementation(project(":repository"))
-    implementation(project(":domain"))
-    implementation(project(":ui"))
+    implementation(project(":core:database"))
+    implementation(project(":core:repository"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:ui"))
+    implementation(project(":feature:category"))
+    implementation(project(":feature:history"))
+    implementation(project(":feature:home"))
+    implementation(project(":feature:interrupt"))
+    implementation(project(":feature:mylist"))
+    implementation(project(":feature:progress"))
+    implementation(project(":feature:quiz"))
+    implementation(project(":feature:result"))
+    implementation(project(":feature:setting"))
+    implementation(project(":feature:start"))
+    implementation(project(":feature:stats"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -77,6 +91,7 @@ dependencies {
     implementation(libs.orbit.compose)
     implementation(libs.review.ktx)
     implementation(libs.timber)
+    implementation(libs.accompanist.systemuicontroller)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)

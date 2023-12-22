@@ -1,8 +1,7 @@
 package jp.kaleidot725.easycalc
 
 import android.app.Application
-import android.util.Log
-import jp.kaleidot725.easycalc.db.dbModule
+import jp.kaleidot725.easycalc.core.database.dbModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
@@ -16,6 +15,8 @@ open class MainApplication : Application() {
             androidContext(this@MainApplication)
             modules(appModule, repositoryModule, dbModule)
         }
-        if (BuildConfig.DEBUG) { Timber.plant(Timber.DebugTree()) }
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }
