@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.compose
+package jp.kaleidot725.easycalc.compose.app
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -36,11 +36,12 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Progress.Companion.isProgressRoute
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Result.Companion.isResultRoute
-import jp.kaleidot725.easycalc.compose.ComposeNavigation.Start.Companion.isStartRoute
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Category.Companion.getCategory
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Category.Companion.isCategoryRoute
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Progress.Companion.isProgressRoute
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Result.Companion.isResultRoute
+import jp.kaleidot725.easycalc.compose.app.ComposeNavigation.Start.Companion.isStartRoute
+import jp.kaleidot725.easycalc.compose.theme.ComposeTheme
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleBottomNavigation

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.compose
+package jp.kaleidot725.easycalc.compose.app
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

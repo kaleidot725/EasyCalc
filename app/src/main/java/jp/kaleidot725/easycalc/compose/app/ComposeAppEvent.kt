@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.compose
+package jp.kaleidot725.easycalc.compose.app
 
 import jp.kaleidot725.easycalc.core.domain.model.language.Language
 
