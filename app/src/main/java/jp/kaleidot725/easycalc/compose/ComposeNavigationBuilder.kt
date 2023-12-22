@@ -17,10 +17,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.history.HistoryAction
-import jp.kaleidot725.easycalc.core.ui.screen.history.HistoryEvent
-import jp.kaleidot725.easycalc.core.ui.screen.history.HistoryScreen
-import jp.kaleidot725.easycalc.core.ui.screen.history.HistoryViewModel
 import jp.kaleidot725.easycalc.core.ui.screen.home.HomeAction
 import jp.kaleidot725.easycalc.core.ui.screen.home.HomeEvent
 import jp.kaleidot725.easycalc.core.ui.screen.home.HomeScreen
@@ -60,6 +56,10 @@ import jp.kaleidot725.easycalc.feature.category.CategoryAction
 import jp.kaleidot725.easycalc.feature.category.CategoryEvent
 import jp.kaleidot725.easycalc.feature.category.CategoryScreen
 import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
+import jp.kaleidot725.easycalc.feature.history.HistoryAction
+import jp.kaleidot725.easycalc.feature.history.HistoryEvent
+import jp.kaleidot725.easycalc.feature.history.HistoryScreen
+import jp.kaleidot725.easycalc.feature.history.HistoryViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
@@ -242,13 +242,13 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
 
 fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
     composable(ComposeNavigation.History.path) {
-        val viewModel = koinViewModel<HistoryViewModel>()
-        val action = viewModel as HistoryAction
+        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.history.HistoryViewModel>()
+        val action = viewModel as jp.kaleidot725.easycalc.feature.history.HistoryAction
         val state by viewModel.collectAsState()
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is HistoryEvent.ClickText -> {
+                is jp.kaleidot725.easycalc.feature.history.HistoryEvent.ClickText -> {
                     navController.navigate(
                         ComposeNavigation.Start(
                             sideEffect.mathText
@@ -256,12 +256,12 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
                     )
                 }
 
-                is HistoryEvent.PopBack -> {
+                is jp.kaleidot725.easycalc.feature.history.HistoryEvent.PopBack -> {
                     navController.popBackStack()
                 }
             }
         }
-        HistoryScreen(
+        jp.kaleidot725.easycalc.feature.history.HistoryScreen(
             state = state,
             action = action,
             modifier = Modifier.fillMaxSize()

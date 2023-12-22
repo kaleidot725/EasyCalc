@@ -82,6 +82,7 @@ dependencies {
     implementation(libs.review.ktx)
     implementation(libs.timber)
     implementation(libs.accompanist.systemuicontroller)
+    implementation(project(":feature:hisotry"))
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)
