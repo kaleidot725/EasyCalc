@@ -2,6 +2,7 @@ package jp.kaleidot725.easycalc.compose
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -17,7 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.interrupt.InterruptScreen
 import jp.kaleidot725.easycalc.core.ui.screen.mylist.MyListAction
 import jp.kaleidot725.easycalc.core.ui.screen.mylist.MyListEvent
 import jp.kaleidot725.easycalc.core.ui.screen.mylist.MyListScreen
@@ -56,6 +56,7 @@ import jp.kaleidot725.easycalc.feature.home.HomeAction
 import jp.kaleidot725.easycalc.feature.home.HomeEvent
 import jp.kaleidot725.easycalc.feature.home.HomeScreen
 import jp.kaleidot725.easycalc.feature.home.HomeViewModel
+import jp.kaleidot725.easycalc.feature.interrupt.InterruptScreen
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
@@ -438,7 +439,7 @@ fun NavGraphBuilder.addInterruptDialog(navController: NavController) {
                 }
             },
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .background(Color.Black.copy(0.25f))
                 .clickableNoRipple { }
         )

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.interrupt
+package jp.kaleidot725.easycalc.feature.interrupt
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
