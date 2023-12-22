@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.quiz.component
+package jp.kaleidot725.easycalc.feature.quiz.component
 
 internal enum class QuizTabCategory(val index: Int) {
     ALL(0),

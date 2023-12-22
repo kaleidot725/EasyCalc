@@ -31,8 +31,8 @@ import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
-import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
-import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.resource.ColorResource
+import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 
 @Composable

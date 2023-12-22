@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.component.divider.VerticalDivider
-import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 private const val OneMinuteSeconds = 60
 

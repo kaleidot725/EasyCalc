@@ -15,7 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
+import jp.kaleidot725.easycalc.core.ui.resource.ColorResource
 
 private const val ZERO = 0f
 private const val WARNING = 1f / 3f

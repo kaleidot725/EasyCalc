@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
-import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 @Composable
 fun TextIcon(mathText: MathText, modifier: Modifier = Modifier) {

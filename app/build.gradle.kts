@@ -69,6 +69,7 @@ dependencies {
     implementation(project(":feature:interrupt"))
     implementation(project(":feature:mylist"))
     implementation(project(":feature:progress"))
+    implementation(project(":feature:quiz"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)

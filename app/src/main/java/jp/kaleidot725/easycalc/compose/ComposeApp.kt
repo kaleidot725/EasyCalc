@@ -47,7 +47,7 @@ import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleBottomNavigati
 import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleBottomNavigationItem
 import jp.kaleidot725.easycalc.core.ui.component.navigation.SimpleTopBar
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 @Composable
 fun ComposeApp(

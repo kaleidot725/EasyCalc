@@ -18,10 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizAction
-import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizEvent
-import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizScreen
-import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizViewModel
 import jp.kaleidot725.easycalc.core.ui.screen.result.ResultEvent
 import jp.kaleidot725.easycalc.core.ui.screen.result.ResultScreen
 import jp.kaleidot725.easycalc.core.ui.screen.result.ResultViewModel
@@ -54,9 +50,10 @@ import jp.kaleidot725.easycalc.feature.mylist.MyListAction
 import jp.kaleidot725.easycalc.feature.mylist.MyListEvent
 import jp.kaleidot725.easycalc.feature.mylist.MyListScreen
 import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
-import jp.kaleidot725.easycalc.feature.progress.ProgressEvent
-import jp.kaleidot725.easycalc.feature.progress.ProgressScreen
-import jp.kaleidot725.easycalc.feature.progress.ProgressViewModel
+import jp.kaleidot725.easycalc.feature.quiz.QuizAction
+import jp.kaleidot725.easycalc.feature.quiz.QuizEvent
+import jp.kaleidot725.easycalc.feature.quiz.QuizScreen
+import jp.kaleidot725.easycalc.feature.quiz.QuizViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
@@ -152,25 +149,25 @@ fun NavGraphBuilder.addStatsScreen() {
 
 fun NavGraphBuilder.addQuizScreen(navController: NavController) {
     composable(ComposeNavigation.Quiz.path) {
-        val viewModel = koinViewModel<QuizViewModel>()
-        val action = viewModel as QuizAction
+        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.quiz.QuizViewModel>()
+        val action = viewModel as jp.kaleidot725.easycalc.feature.quiz.QuizAction
         val state by viewModel.collectAsState()
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is QuizEvent.ClickCategory -> {
+                is jp.kaleidot725.easycalc.feature.quiz.QuizEvent.ClickCategory -> {
                     val route =
                         ComposeNavigation.Category(sideEffect.category).route
                     navController.navigate(route)
                 }
 
-                is QuizEvent.ClickText -> {
+                is jp.kaleidot725.easycalc.feature.quiz.QuizEvent.ClickText -> {
                     val route =
                         ComposeNavigation.Start(sideEffect.mathText).route
                     navController.navigate(route)
                 }
             }
         }
-        QuizScreen(
+        jp.kaleidot725.easycalc.feature.quiz.QuizScreen(
             state = state,
             action = action,
             modifier = Modifier.fillMaxSize()

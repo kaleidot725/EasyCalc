@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.resources
+package jp.kaleidot725.easycalc.core.ui.resource
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
