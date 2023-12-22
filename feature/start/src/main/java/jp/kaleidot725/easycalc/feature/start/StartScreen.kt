@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.start
+package jp.kaleidot725.easycalc.feature.start
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.screen.start.component.StartTextCard
+import jp.kaleidot725.easycalc.feature.start.component.StartTextCard
 
 @Composable
 fun StartScreen(

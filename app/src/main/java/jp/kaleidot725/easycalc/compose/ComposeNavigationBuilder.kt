@@ -18,9 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.start.StartEvent
-import jp.kaleidot725.easycalc.core.ui.screen.start.StartScreen
-import jp.kaleidot725.easycalc.core.ui.screen.start.StartViewModel
 import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsScreen
 import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsViewModel
 import jp.kaleidot725.easycalc.feature.category.CategoryAction
@@ -50,6 +47,9 @@ import jp.kaleidot725.easycalc.feature.setting.theme.ThemeAction
 import jp.kaleidot725.easycalc.feature.setting.theme.ThemeEvent
 import jp.kaleidot725.easycalc.feature.setting.theme.ThemeScreen
 import jp.kaleidot725.easycalc.feature.setting.theme.ThemeViewModel
+import jp.kaleidot725.easycalc.feature.start.StartEvent
+import jp.kaleidot725.easycalc.feature.start.StartScreen
+import jp.kaleidot725.easycalc.feature.start.StartViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState

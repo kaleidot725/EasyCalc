@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.start.component
+package jp.kaleidot725.easycalc.feature.start.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -42,7 +42,7 @@ import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 private const val OneMinuteSeconds = 60
 
 @Composable
-fun StartTextCard(
+internal fun StartTextCard(
     mathText: MathText,
     isFavorite: Boolean,
     onChangeFavorite: (Boolean) -> Unit,

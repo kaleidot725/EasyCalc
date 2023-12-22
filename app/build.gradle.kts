@@ -72,6 +72,7 @@ dependencies {
     implementation(project(":feature:quiz"))
     implementation(project(":feature:result"))
     implementation(project(":feature:setting"))
+    implementation(project(":feature:start"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)

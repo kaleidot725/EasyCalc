@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.start
+package jp.kaleidot725.easycalc.feature.start
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
