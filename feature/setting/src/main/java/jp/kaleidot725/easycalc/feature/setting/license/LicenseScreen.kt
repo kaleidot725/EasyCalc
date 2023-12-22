@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.license
+package jp.kaleidot725.easycalc.feature.setting.license
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

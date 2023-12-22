@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.language
+package jp.kaleidot725.easycalc.feature.setting.language
 
 sealed interface LanguageEvent {
     object PopBack : LanguageEvent

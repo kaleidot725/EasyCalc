@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.language
+package jp.kaleidot725.easycalc.feature.setting.language
 
 data class LanguageState(
     val englishSelected: Boolean = false,

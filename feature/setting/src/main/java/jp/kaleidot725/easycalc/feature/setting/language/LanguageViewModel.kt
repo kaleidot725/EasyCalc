@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.language
+package jp.kaleidot725.easycalc.feature.setting.language
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

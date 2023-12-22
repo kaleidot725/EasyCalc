@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting
+package jp.kaleidot725.easycalc.feature.setting
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.screen.setting.component.SettingItem
+import jp.kaleidot725.easycalc.feature.setting.component.SettingItem
 
 @Composable
 fun SettingScreen(

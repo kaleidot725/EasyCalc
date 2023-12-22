@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.component
+package jp.kaleidot725.easycalc.feature.setting.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,8 +11,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -26,12 +24,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun SettingCheckItem(
+internal fun SettingItem(
     title: String,
     icon: ImageVector,
     iconDescription: String,
-    checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -58,15 +54,6 @@ internal fun SettingCheckItem(
                 modifier = Modifier.fillMaxWidth()
             )
         }
-
-        Checkbox(
-            checked = checked,
-            onCheckedChange = onCheckedChange,
-            colors = CheckboxDefaults.colors(checkedColor = MaterialTheme.colorScheme.onSurface),
-            modifier = Modifier
-                .size(24.dp)
-                .align(Alignment.CenterVertically),
-        )
     }
 }
 
@@ -75,33 +62,16 @@ internal fun SettingCheckItem(
 private fun Preview() {
     MaterialTheme {
         Surface {
-            Column {
-                SettingCheckItem(
-                    title = "Title",
-                    icon = Icons.Default.Star,
-                    iconDescription = "star",
-                    checked = true,
-                    onCheckedChange = {},
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .width(320.dp)
-                        .height(40.dp)
-                        .wrapContentHeight()
-                )
-
-                SettingCheckItem(
-                    title = "Title",
-                    icon = Icons.Default.Star,
-                    iconDescription = "star",
-                    checked = false,
-                    onCheckedChange = {},
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .width(320.dp)
-                        .height(40.dp)
-                        .wrapContentHeight()
-                )
-            }
+            SettingItem(
+                title = "Title",
+                icon = Icons.Default.Star,
+                iconDescription = "star",
+                modifier = Modifier
+                    .padding(4.dp)
+                    .width(320.dp)
+                    .height(40.dp)
+                    .wrapContentHeight()
+            )
         }
     }
 }

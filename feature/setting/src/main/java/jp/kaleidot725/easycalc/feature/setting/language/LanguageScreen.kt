@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.setting.language
+package jp.kaleidot725.easycalc.feature.setting.language
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.language.Language
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.screen.setting.component.SettingCheckItem
+import jp.kaleidot725.easycalc.feature.setting.component.SettingCheckItem
 
 @Composable
 fun LanguageScreen(

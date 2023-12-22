@@ -71,6 +71,7 @@ dependencies {
     implementation(project(":feature:progress"))
     implementation(project(":feature:quiz"))
     implementation(project(":feature:result"))
+    implementation(project(":feature:setting"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
