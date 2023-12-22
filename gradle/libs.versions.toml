@@ -1,4 +1,5 @@
 [versions]
+composeCompiler = "1.5.3" # Used in app/build.gradle.kts
 aboutlibraries-core = "10.8.3"
 accompanist-systemuicontroller = "0.30.1"
 accompanist-webview = "0.30.1"

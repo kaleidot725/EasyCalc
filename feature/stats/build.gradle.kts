@@ -37,7 +37,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 }
 
@@ -56,21 +56,16 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
     implementation(libs.timber)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.koin.androidx.compose)
     implementation(libs.orbit.viewmodel)
     implementation(libs.orbit.compose)
-
-    implementation(libs.accompanist.webview)
-    implementation(libs.accompanist.systemuicontroller)
-    implementation(libs.aboutlibraries.compose)
-    implementation(libs.kotlinx.datetime)
 
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
