@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.result.component
+package jp.kaleidot725.easycalc.feature.result.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -28,7 +28,7 @@ import jp.kaleidot725.easycalc.core.ui.component.divider.HorizontalDivider
 import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 @Composable
-fun QuestionResultList(
+internal fun QuestionResultList(
     qalist: QAList,
     modifier: Modifier = Modifier
 ) {

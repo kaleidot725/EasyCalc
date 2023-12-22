@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.result
+package jp.kaleidot725.easycalc.feature.result
 
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 

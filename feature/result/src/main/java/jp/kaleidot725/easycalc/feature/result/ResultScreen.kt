@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.result
+package jp.kaleidot725.easycalc.feature.result
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -22,8 +22,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.screen.result.component.MathTextResult
-import jp.kaleidot725.easycalc.core.ui.screen.result.component.QuestionResultList
+import jp.kaleidot725.easycalc.feature.result.component.MathTextResult
+import jp.kaleidot725.easycalc.feature.result.component.QuestionResultList
 
 @Composable
 fun ResultScreen(

@@ -18,9 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.result.ResultEvent
-import jp.kaleidot725.easycalc.core.ui.screen.result.ResultScreen
-import jp.kaleidot725.easycalc.core.ui.screen.result.ResultViewModel
 import jp.kaleidot725.easycalc.core.ui.screen.setting.SettingScreen
 import jp.kaleidot725.easycalc.core.ui.screen.setting.language.LanguageAction
 import jp.kaleidot725.easycalc.core.ui.screen.setting.language.LanguageEvent
@@ -50,10 +47,9 @@ import jp.kaleidot725.easycalc.feature.mylist.MyListAction
 import jp.kaleidot725.easycalc.feature.mylist.MyListEvent
 import jp.kaleidot725.easycalc.feature.mylist.MyListScreen
 import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
-import jp.kaleidot725.easycalc.feature.quiz.QuizAction
-import jp.kaleidot725.easycalc.feature.quiz.QuizEvent
-import jp.kaleidot725.easycalc.feature.quiz.QuizScreen
-import jp.kaleidot725.easycalc.feature.quiz.QuizViewModel
+import jp.kaleidot725.easycalc.feature.result.ResultEvent
+import jp.kaleidot725.easycalc.feature.result.ResultScreen
+import jp.kaleidot725.easycalc.feature.result.ResultViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.result.component
+package jp.kaleidot725.easycalc.feature.result.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -39,7 +39,7 @@ import jp.kaleidot725.easycalc.core.ui.component.icon.TextIcon
 import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 @Composable
-fun MathTextResult(
+internal fun MathTextResult(
     mathText: MathText,
     qaList: QAList,
     modifier: Modifier = Modifier
