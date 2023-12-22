@@ -134,9 +134,9 @@ fun NavGraphBuilder.addHomeScreen(navController: NavController) {
 
 fun NavGraphBuilder.addStatsScreen() {
     composable(ComposeNavigation.Stats.path) {
-        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.stats.StatsViewModel>()
+        val viewModel = koinViewModel<StatsViewModel>()
         val state by viewModel.collectAsState()
-        jp.kaleidot725.easycalc.feature.stats.StatsScreen(
+        StatsScreen(
             state = state,
             modifier = Modifier.fillMaxSize()
         )

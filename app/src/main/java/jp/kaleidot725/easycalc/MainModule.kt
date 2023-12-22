@@ -57,7 +57,7 @@ val appModule = module {
         HomeViewModel(get(), get())
     }
     viewModel {
-        jp.kaleidot725.easycalc.feature.stats.StatsViewModel(get())
+        StatsViewModel(get())
     }
     viewModel {
         ThemeViewModel(get())

@@ -2,6 +2,7 @@ package jp.kaleidot725.easycalc.feature.progress
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import jp.kaleidot725.easycalc.core.domain.model.question.Answer
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
@@ -102,7 +103,7 @@ class ProgressViewModel(
 
         qaList.add(
             state.question,
-            jp.kaleidot725.easycalc.core.domain.model.question.Answer.Success(
+            Answer.Success(
                 state.textAnswer,
                 state.textRemainder
             )
@@ -132,7 +133,7 @@ class ProgressViewModel(
         if (state.isSuccess || state.isFailed) return@intent
         qaList.add(
             state.question,
-            jp.kaleidot725.easycalc.core.domain.model.question.Answer.Failed(
+            Answer.Failed(
                 state.textAnswer,
                 state.textRemainder
             )
@@ -190,7 +191,7 @@ class ProgressViewModel(
 
         qaList.add(
             state.question,
-            jp.kaleidot725.easycalc.core.domain.model.question.Answer.Success(
+            Answer.Success(
                 state.textAnswer,
                 state.textRemainder
             )
