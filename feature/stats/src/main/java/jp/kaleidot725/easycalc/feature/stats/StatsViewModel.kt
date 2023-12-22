@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.stats
+package jp.kaleidot725.easycalc.feature.stats
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

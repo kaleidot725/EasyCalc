@@ -73,6 +73,7 @@ dependencies {
     implementation(project(":feature:result"))
     implementation(project(":feature:setting"))
     implementation(project(":feature:start"))
+    implementation(project(":feature:stats"))
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)

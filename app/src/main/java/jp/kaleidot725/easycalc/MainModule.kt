@@ -16,7 +16,6 @@ import jp.kaleidot725.easycalc.core.repository.SettingRepositoryImpl
 import jp.kaleidot725.easycalc.core.repository.StatsRepositoryImpl
 import jp.kaleidot725.easycalc.core.repository.TextRepositoryImpl
 import jp.kaleidot725.easycalc.core.repository.ThemeRepositoryImpl
-import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsViewModel
 import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
 import jp.kaleidot725.easycalc.feature.history.HistoryViewModel
 import jp.kaleidot725.easycalc.feature.home.HomeViewModel
@@ -25,6 +24,7 @@ import jp.kaleidot725.easycalc.feature.result.ResultViewModel
 import jp.kaleidot725.easycalc.feature.setting.language.LanguageViewModel
 import jp.kaleidot725.easycalc.feature.setting.theme.ThemeViewModel
 import jp.kaleidot725.easycalc.feature.start.StartViewModel
+import jp.kaleidot725.easycalc.feature.stats.StatsViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -57,7 +57,7 @@ val appModule = module {
         HomeViewModel(get(), get())
     }
     viewModel {
-        StatsViewModel(get())
+        jp.kaleidot725.easycalc.feature.stats.StatsViewModel(get())
     }
     viewModel {
         ThemeViewModel(get())

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.stats.component
+package jp.kaleidot725.easycalc.feature.stats.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,7 +35,11 @@ fun StatsCard(
         shape = RoundedCornerShape(8.dp),
         modifier = modifier
     ) {
-        Box(modifier = Modifier.padding(16.dp).fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxSize()
+        ) {
             Column(modifier = Modifier.align(Alignment.Center)) {
                 Icon(
                     imageVector = icon,

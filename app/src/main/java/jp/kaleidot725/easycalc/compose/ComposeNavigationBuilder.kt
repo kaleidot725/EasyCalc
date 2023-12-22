@@ -18,8 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsScreen
-import jp.kaleidot725.easycalc.core.ui.screen.stats.StatsViewModel
 import jp.kaleidot725.easycalc.feature.category.CategoryAction
 import jp.kaleidot725.easycalc.feature.category.CategoryEvent
 import jp.kaleidot725.easycalc.feature.category.CategoryScreen
@@ -50,6 +48,8 @@ import jp.kaleidot725.easycalc.feature.setting.theme.ThemeViewModel
 import jp.kaleidot725.easycalc.feature.start.StartEvent
 import jp.kaleidot725.easycalc.feature.start.StartScreen
 import jp.kaleidot725.easycalc.feature.start.StartViewModel
+import jp.kaleidot725.easycalc.feature.stats.StatsScreen
+import jp.kaleidot725.easycalc.feature.stats.StatsViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
@@ -134,9 +134,9 @@ fun NavGraphBuilder.addHomeScreen(navController: NavController) {
 
 fun NavGraphBuilder.addStatsScreen() {
     composable(ComposeNavigation.Stats.path) {
-        val viewModel = koinViewModel<StatsViewModel>()
+        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.stats.StatsViewModel>()
         val state by viewModel.collectAsState()
-        StatsScreen(
+        jp.kaleidot725.easycalc.feature.stats.StatsScreen(
             state = state,
             modifier = Modifier.fillMaxSize()
         )

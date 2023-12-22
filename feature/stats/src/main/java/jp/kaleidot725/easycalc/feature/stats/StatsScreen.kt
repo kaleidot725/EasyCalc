@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.stats
+package jp.kaleidot725.easycalc.feature.stats
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import jp.kaleidot725.easycalc.core.domain.model.stats.StatsData
 import jp.kaleidot725.easycalc.core.domain.model.utils.ElapsedTimeCalculator
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.screen.stats.component.StatsCard
+import jp.kaleidot725.easycalc.feature.stats.component.StatsCard
 
 @Composable
 fun StatsScreen(
