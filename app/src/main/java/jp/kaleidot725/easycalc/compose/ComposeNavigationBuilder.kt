@@ -18,9 +18,6 @@ import androidx.navigation.compose.dialog
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.getCategory
 import jp.kaleidot725.easycalc.compose.ComposeNavigation.Category.Companion.isCategoryRoute
 import jp.kaleidot725.easycalc.core.ui.extention.clickableNoRipple
-import jp.kaleidot725.easycalc.core.ui.screen.progress.ProgressEvent
-import jp.kaleidot725.easycalc.core.ui.screen.progress.ProgressScreen
-import jp.kaleidot725.easycalc.core.ui.screen.progress.ProgressViewModel
 import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizAction
 import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizEvent
 import jp.kaleidot725.easycalc.core.ui.screen.quiz.QuizScreen
@@ -57,6 +54,9 @@ import jp.kaleidot725.easycalc.feature.mylist.MyListAction
 import jp.kaleidot725.easycalc.feature.mylist.MyListEvent
 import jp.kaleidot725.easycalc.feature.mylist.MyListScreen
 import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
+import jp.kaleidot725.easycalc.feature.progress.ProgressEvent
+import jp.kaleidot725.easycalc.feature.progress.ProgressScreen
+import jp.kaleidot725.easycalc.feature.progress.ProgressViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
@@ -304,7 +304,9 @@ fun NavGraphBuilder.addProgressScreen(
     composable(ComposeNavigation.Progress().path) {
         val id =
             ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
-        val viewModel = koinViewModel<ProgressViewModel> { parametersOf(id) }
+        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.progress.ProgressViewModel> {
+            parametersOf(id)
+        }
         val state by viewModel.collectAsState()
 
         LaunchedEffect(state) {
@@ -319,11 +321,11 @@ fun NavGraphBuilder.addProgressScreen(
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is ProgressEvent.Interrupted -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Interrupted -> {
                     navController.navigate(ComposeNavigation.Interrupt.route)
                 }
 
-                is ProgressEvent.Finish -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Finish -> {
                     navController.navigate(
                         ComposeNavigation.Result(
                             sideEffect.mathText,
@@ -333,32 +335,32 @@ fun NavGraphBuilder.addProgressScreen(
                     if (!sideEffect.isMute) sound.playFinish()
                 }
 
-                is ProgressEvent.Success -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Success -> {
                     if (!sideEffect.isMute) sound.playSuccess()
                 }
 
-                is ProgressEvent.Failed -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Failed -> {
                     if (!sideEffect.isMute) sound.playFailed()
                 }
 
-                is ProgressEvent.Clear -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Clear -> {
                     if (!sideEffect.isMute) sound.playClear()
                 }
 
-                is ProgressEvent.Input -> {
+                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Input -> {
                     if (!sideEffect.isMute) sound.playInput()
                 }
 
-                ProgressEvent.StartBGM -> {
+                jp.kaleidot725.easycalc.feature.progress.ProgressEvent.StartBGM -> {
                     sound.playBgm()
                 }
 
-                ProgressEvent.StopBGM -> {
+                jp.kaleidot725.easycalc.feature.progress.ProgressEvent.StopBGM -> {
                     sound.stopBgm()
                 }
             }
         }
-        ProgressScreen(
+        jp.kaleidot725.easycalc.feature.progress.ProgressScreen(
             state = state,
             action = viewModel,
             modifier = Modifier.fillMaxSize()

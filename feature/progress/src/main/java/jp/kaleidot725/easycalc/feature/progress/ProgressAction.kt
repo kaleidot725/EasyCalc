@@ -1,4 +1,6 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress
+package jp.kaleidot725.easycalc.feature.progress
+
+import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 
 interface ProgressAction {
     fun onClickNumber(number: Int)

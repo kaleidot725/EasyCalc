@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress.component
+package jp.kaleidot725.easycalc.feature.progress.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.ui.R
 
 @Composable
-fun NumberIme(
+internal fun NumberIme(
     isEffectMute: Boolean,
     isBgmMute: Boolean,
     onClickNumber: (Int) -> Unit,

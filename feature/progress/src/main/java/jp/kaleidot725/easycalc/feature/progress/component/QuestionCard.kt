@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress.component
+package jp.kaleidot725.easycalc.feature.progress.component
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.Image
@@ -31,9 +31,9 @@ import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.R
 import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
-import jp.kaleidot725.easycalc.core.ui.screen.progress.FocusMode
 import jp.kaleidot725.easycalc.core.ui.screen.resources.ColorResource
 import jp.kaleidot725.easycalc.core.ui.screen.resources.MathTextResource
+import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 
 @Composable
 private fun getFocusColor(current: FocusMode, target: FocusMode): Color {
@@ -45,7 +45,7 @@ private fun getFocusColor(current: FocusMode, target: FocusMode): Color {
 }
 
 @Composable
-fun QuestionCard(
+internal fun QuestionCard(
     first: String,
     second: String,
     category: MathText.Category,

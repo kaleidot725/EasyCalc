@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress
+package jp.kaleidot725.easycalc.feature.progress
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -33,9 +33,9 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import jp.kaleidot725.easycalc.core.ui.screen.progress.component.NumberIme
-import jp.kaleidot725.easycalc.core.ui.screen.progress.component.ProgressBar
-import jp.kaleidot725.easycalc.core.ui.screen.progress.component.QuestionCard
+import jp.kaleidot725.easycalc.feature.progress.component.NumberIme
+import jp.kaleidot725.easycalc.feature.progress.component.ProgressBar
+import jp.kaleidot725.easycalc.feature.progress.component.QuestionCard
 
 private val enter = slideInHorizontally { width -> width } + fadeIn()
 private val exit = slideOutHorizontally { height -> -height } + fadeOut()

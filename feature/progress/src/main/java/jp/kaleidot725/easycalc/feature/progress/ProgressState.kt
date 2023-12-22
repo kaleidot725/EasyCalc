@@ -1,8 +1,9 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress
+package jp.kaleidot725.easycalc.feature.progress
 
 import jp.kaleidot725.easycalc.core.domain.model.question.Question
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
+import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 
 data class ProgressState(
     val mathText: MathText,

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress
+package jp.kaleidot725.easycalc.feature.progress
 
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText

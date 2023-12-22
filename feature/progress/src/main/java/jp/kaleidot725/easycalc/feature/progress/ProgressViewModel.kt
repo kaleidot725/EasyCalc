@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress
+package jp.kaleidot725.easycalc.feature.progress
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +8,7 @@ import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
 import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
 import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

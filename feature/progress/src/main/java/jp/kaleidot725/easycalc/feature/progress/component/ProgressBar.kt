@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.ui.screen.progress.component
+package jp.kaleidot725.easycalc.feature.progress.component
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -22,7 +22,7 @@ private const val WARNING = 1f / 3f
 private const val CAUTION = 1f / 3f * 2f
 
 @Composable
-fun ProgressBar(progress: Float, modifier: Modifier = Modifier) {
+internal fun ProgressBar(progress: Float, modifier: Modifier = Modifier) {
     val color = when {
         (progress in ZERO..WARNING) -> ColorResource.red()
         (progress in WARNING..CAUTION) -> ColorResource.yellow()
