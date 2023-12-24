@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.repository
+package jp.kaleidot725.easycalc.core.repository.impl
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -10,7 +10,7 @@ import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextSet
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTexts
-import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,7 +18,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-class TextRepositoryImpl(
+internal class TextRepositoryImpl(
     private val applicationContext: Context,
 ) : TextRepository {
     private val Context.historyStore: DataStore<Preferences> by preferencesDataStore(name = FILE_NAME)

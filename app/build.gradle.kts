@@ -31,7 +31,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     buildTypes {
@@ -91,7 +91,6 @@ dependencies {
     implementation(libs.orbit.compose)
     implementation(libs.review.ktx)
     implementation(libs.timber)
-    implementation(libs.accompanist.systemuicontroller)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)

@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.ui.R
-import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizableText
 import jp.kaleidot725.easycalc.core.ui.resource.ColorResource
 import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
@@ -64,7 +64,7 @@ internal fun QuestionCard(
             verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
             Row {
-                AutoSizeableText(
+                AutoSizableText(
                     text = first,
                     style = TextStyle(
                         textAlign = TextAlign.Center,
@@ -72,7 +72,7 @@ internal fun QuestionCard(
                     ),
                     modifier = Modifier.weight(1.0f)
                 )
-                AutoSizeableText(
+                AutoSizableText(
                     text = MathTextResource.getOperator(category = category),
                     style = TextStyle(
                         textAlign = TextAlign.Center,
@@ -80,7 +80,7 @@ internal fun QuestionCard(
                     ),
                     modifier = Modifier.wrapContentWidth()
                 )
-                AutoSizeableText(
+                AutoSizableText(
                     text = second,
                     style = TextStyle(
                         textAlign = TextAlign.Center,
@@ -96,7 +96,7 @@ internal fun QuestionCard(
                     .padding(horizontal = 24.dp)
                     .align(Alignment.CenterHorizontally),
             ) {
-                AutoSizeableText(
+                AutoSizableText(
                     text = "=",
                     style = TextStyle(
                         textAlign = TextAlign.Center,
@@ -114,7 +114,7 @@ internal fun QuestionCard(
                         .clickable { onFocusChange(FocusMode.ANSWER) }
                         .padding(horizontal = 16.dp)
                 ) {
-                    AutoSizeableText(
+                    AutoSizableText(
                         text = answer,
                         style = TextStyle(
                             textAlign = TextAlign.Center,

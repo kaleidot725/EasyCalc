@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizableText
 
 @Composable
 internal fun HomeStatsItem(
@@ -42,7 +42,7 @@ internal fun HomeStatsItem(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            AutoSizeableText(
+            AutoSizableText(
                 text = title,
                 style = TextStyle(
                     fontSize = 12.sp,
@@ -58,7 +58,7 @@ internal fun HomeStatsItem(
                 label = "text",
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             ) { text ->
-                AutoSizeableText(
+                AutoSizableText(
                     text = text,
                     style = TextStyle(
                         fontSize = 18.sp,

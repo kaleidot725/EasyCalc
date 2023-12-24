@@ -22,6 +22,10 @@ import jp.kaleidot725.easycalc.feature.category.CategoryAction
 import jp.kaleidot725.easycalc.feature.category.CategoryEvent
 import jp.kaleidot725.easycalc.feature.category.CategoryScreen
 import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
+import jp.kaleidot725.easycalc.feature.history.HistoryAction
+import jp.kaleidot725.easycalc.feature.history.HistoryEvent
+import jp.kaleidot725.easycalc.feature.history.HistoryScreen
+import jp.kaleidot725.easycalc.feature.history.HistoryViewModel
 import jp.kaleidot725.easycalc.feature.home.HomeAction
 import jp.kaleidot725.easycalc.feature.home.HomeEvent
 import jp.kaleidot725.easycalc.feature.home.HomeScreen
@@ -31,6 +35,13 @@ import jp.kaleidot725.easycalc.feature.mylist.MyListAction
 import jp.kaleidot725.easycalc.feature.mylist.MyListEvent
 import jp.kaleidot725.easycalc.feature.mylist.MyListScreen
 import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
+import jp.kaleidot725.easycalc.feature.progress.ProgressEvent
+import jp.kaleidot725.easycalc.feature.progress.ProgressScreen
+import jp.kaleidot725.easycalc.feature.progress.ProgressViewModel
+import jp.kaleidot725.easycalc.feature.quiz.QuizAction
+import jp.kaleidot725.easycalc.feature.quiz.QuizEvent
+import jp.kaleidot725.easycalc.feature.quiz.QuizScreen
+import jp.kaleidot725.easycalc.feature.quiz.QuizViewModel
 import jp.kaleidot725.easycalc.feature.result.ResultEvent
 import jp.kaleidot725.easycalc.feature.result.ResultScreen
 import jp.kaleidot725.easycalc.feature.result.ResultViewModel
@@ -57,13 +68,6 @@ import org.orbitmvi.orbit.compose.collectSideEffect
 
 fun NavDestination.visibleBottomNavigation(): Boolean {
     return this.isTextGroup() || this.isSettingGroup() || this.isHomeGroup()
-}
-
-fun NavDestination.isDialog(): Boolean {
-    fun judge(route: String?): Boolean {
-        return route == ComposeNavigation.Interrupt.route
-    }
-    return this.hierarchy.any { judge(it.route) }
 }
 
 fun NavDestination.isHomeGroup(): Boolean {
@@ -145,25 +149,25 @@ fun NavGraphBuilder.addStatsScreen() {
 
 fun NavGraphBuilder.addQuizScreen(navController: NavController) {
     composable(ComposeNavigation.Quiz.path) {
-        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.quiz.QuizViewModel>()
-        val action = viewModel as jp.kaleidot725.easycalc.feature.quiz.QuizAction
+        val viewModel = koinViewModel<QuizViewModel>()
+        val action = viewModel as QuizAction
         val state by viewModel.collectAsState()
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is jp.kaleidot725.easycalc.feature.quiz.QuizEvent.ClickCategory -> {
+                is QuizEvent.ClickCategory -> {
                     val route =
                         ComposeNavigation.Category(sideEffect.category).route
                     navController.navigate(route)
                 }
 
-                is jp.kaleidot725.easycalc.feature.quiz.QuizEvent.ClickText -> {
+                is QuizEvent.ClickText -> {
                     val route =
                         ComposeNavigation.Start(sideEffect.mathText).route
                     navController.navigate(route)
                 }
             }
         }
-        jp.kaleidot725.easycalc.feature.quiz.QuizScreen(
+        QuizScreen(
             state = state,
             action = action,
             modifier = Modifier.fillMaxSize()
@@ -232,13 +236,13 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
 
 fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
     composable(ComposeNavigation.History.path) {
-        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.history.HistoryViewModel>()
-        val action = viewModel as jp.kaleidot725.easycalc.feature.history.HistoryAction
+        val viewModel = koinViewModel<HistoryViewModel>()
+        val action = viewModel as HistoryAction
         val state by viewModel.collectAsState()
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is jp.kaleidot725.easycalc.feature.history.HistoryEvent.ClickText -> {
+                is HistoryEvent.ClickText -> {
                     navController.navigate(
                         ComposeNavigation.Start(
                             sideEffect.mathText
@@ -246,12 +250,12 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
                     )
                 }
 
-                is jp.kaleidot725.easycalc.feature.history.HistoryEvent.PopBack -> {
+                is HistoryEvent.PopBack -> {
                     navController.popBackStack()
                 }
             }
         }
-        jp.kaleidot725.easycalc.feature.history.HistoryScreen(
+        HistoryScreen(
             state = state,
             action = action,
             modifier = Modifier.fillMaxSize()
@@ -297,7 +301,7 @@ fun NavGraphBuilder.addProgressScreen(
     composable(ComposeNavigation.Progress().path) {
         val id =
             ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
-        val viewModel = koinViewModel<jp.kaleidot725.easycalc.feature.progress.ProgressViewModel> {
+        val viewModel = koinViewModel<ProgressViewModel> {
             parametersOf(id)
         }
         val state by viewModel.collectAsState()
@@ -314,11 +318,11 @@ fun NavGraphBuilder.addProgressScreen(
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Interrupted -> {
+                is ProgressEvent.Interrupted -> {
                     navController.navigate(ComposeNavigation.Interrupt.route)
                 }
 
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Finish -> {
+                is ProgressEvent.Finish -> {
                     navController.navigate(
                         ComposeNavigation.Result(
                             sideEffect.mathText,
@@ -328,32 +332,32 @@ fun NavGraphBuilder.addProgressScreen(
                     if (!sideEffect.isMute) sound.playFinish()
                 }
 
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Success -> {
+                is ProgressEvent.Success -> {
                     if (!sideEffect.isMute) sound.playSuccess()
                 }
 
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Failed -> {
+                is ProgressEvent.Failed -> {
                     if (!sideEffect.isMute) sound.playFailed()
                 }
 
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Clear -> {
+                is ProgressEvent.Clear -> {
                     if (!sideEffect.isMute) sound.playClear()
                 }
 
-                is jp.kaleidot725.easycalc.feature.progress.ProgressEvent.Input -> {
+                is ProgressEvent.Input -> {
                     if (!sideEffect.isMute) sound.playInput()
                 }
 
-                jp.kaleidot725.easycalc.feature.progress.ProgressEvent.StartBGM -> {
+                ProgressEvent.StartBGM -> {
                     sound.playBgm()
                 }
 
-                jp.kaleidot725.easycalc.feature.progress.ProgressEvent.StopBGM -> {
+                ProgressEvent.StopBGM -> {
                     sound.stopBgm()
                 }
             }
         }
-        jp.kaleidot725.easycalc.feature.progress.ProgressScreen(
+        ProgressScreen(
             state = state,
             action = viewModel,
             modifier = Modifier.fillMaxSize()
@@ -361,10 +365,7 @@ fun NavGraphBuilder.addProgressScreen(
     }
 }
 
-fun NavGraphBuilder.addResultScreen(
-    composeAppAction: ComposeAppAction,
-    navController: NavController
-) {
+fun NavGraphBuilder.addResultScreen(navController: NavController) {
     composable(ComposeNavigation.Result().path) {
         val id =
             ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
@@ -387,7 +388,6 @@ fun NavGraphBuilder.addResultScreen(
                             inclusive = false
                         )
                     }
-                    composeAppAction.finish()
                 }
 
                 is ResultEvent.Retry -> {

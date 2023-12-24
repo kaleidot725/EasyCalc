@@ -3,7 +3,7 @@ package jp.kaleidot725.easycalc.feature.setting.theme
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.theme.Theme
-import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
+import jp.kaleidot725.easycalc.core.repository.ThemeRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost

@@ -3,7 +3,7 @@ package jp.kaleidot725.easycalc.feature.setting.language
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.language.Language
-import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
+import jp.kaleidot725.easycalc.core.repository.LanguageRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost

@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.repository
+package jp.kaleidot725.easycalc.core.repository.impl
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -7,11 +7,11 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
-import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
+import jp.kaleidot725.easycalc.core.repository.SettingRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class SettingRepositoryImpl(
+internal class SettingRepositoryImpl(
     private val applicationContext: Context,
 ) : SettingRepository {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = FILE_NAME)

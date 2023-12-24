@@ -2,7 +2,7 @@ package jp.kaleidot725.easycalc.feature.stats
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.repository.StatsRepository
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent

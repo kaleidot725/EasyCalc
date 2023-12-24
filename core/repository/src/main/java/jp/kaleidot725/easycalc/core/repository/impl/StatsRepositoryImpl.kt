@@ -1,7 +1,7 @@
-package jp.kaleidot725.easycalc.core.repository
+package jp.kaleidot725.easycalc.core.repository.impl
 
 import jp.kaleidot725.easycalc.core.domain.model.stats.StatsData
-import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.repository.StatsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
@@ -11,7 +11,7 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
 import kotlinx.datetime.toLocalDateTime
 
-class StatsRepositoryImpl(
+internal class StatsRepositoryImpl(
     private val todayStatsDao: jp.kaleidot725.easycalc.core.database.dao.TodayStatsDao
 ) : StatsRepository {
     override suspend fun getTodayStreakDays(): StatsData.TodayStreakDays {

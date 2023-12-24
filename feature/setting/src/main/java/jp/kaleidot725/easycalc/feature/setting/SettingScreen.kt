@@ -51,19 +51,6 @@ fun SettingScreen(
                 .padding(12.dp)
         )
 
-//                Divider()
-//
-//                SettingItem(
-//                    title = stringResource(id = R.string.privacy_policy_title),
-//                    icon = Icons.Default.PrivacyTip,
-//                    iconDescription = "privacy",
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .height(64.dp)
-//                        .clickable(onClick = onNavigatePrivacyPolicy)
-//                        .padding(12.dp)
-//                )
-
         Divider()
 
         SettingItem(

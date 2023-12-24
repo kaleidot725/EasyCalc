@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:domain"))
+    implementation(project(":core:repository"))
 
     implementation(platform("androidx.compose:compose-bom:2023.09.02"))
     implementation("androidx.compose.ui:ui")

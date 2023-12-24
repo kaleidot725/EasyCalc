@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.domain.repository
+package jp.kaleidot725.easycalc.core.repository
 
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import kotlinx.coroutines.flow.Flow
