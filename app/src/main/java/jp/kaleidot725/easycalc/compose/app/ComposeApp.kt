@@ -59,8 +59,9 @@ fun ComposeApp(
     val context = LocalContext.current
     val navController = rememberNavController()
     val state by navController.currentBackStackEntryAsState()
-    val isDialog = state?.destination?.isDialog() == true
-    val visibleBottomBar by remember { derivedStateOf { state?.destination?.visibleBottomNavigation() == true } }
+    val visibleBottomBar by remember {
+        derivedStateOf { state?.destination?.visibleBottomNavigation() == true }
+    }
     val sound by remember { mutableStateOf(ComposeAppSound()) }
     var progress by remember { mutableStateOf(ComposeAppProgress()) }
 
@@ -71,7 +72,6 @@ fun ComposeApp(
 
     ComposeTheme(
         theme = appState.theme,
-        enableBackgroundFilter = appState.isLoading || isDialog,
         modifier = modifier
     ) {
         Box {
@@ -106,7 +106,7 @@ fun ComposeApp(
                         addThemeScreen(navController)
                         addLanguageScreen(navController)
                         addProgressScreen(navController, sound) { p -> progress = p }
-                        addResultScreen(appAction, navController)
+                        addResultScreen(navController)
                         addInterruptDialog(navController)
                         addMyListScreen(navController)
                     }

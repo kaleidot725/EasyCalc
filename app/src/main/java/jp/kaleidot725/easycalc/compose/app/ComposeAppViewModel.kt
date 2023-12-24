@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
 import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -34,20 +33,5 @@ class ComposeAppViewModel(
                 }
             }
         }
-    }
-
-    override fun finish() = intent {
-        val newCount = state.count + 1
-        reduce { state.copy(count = newCount) }
-
-        if (newCount == 3) postSideEffect(ComposeAppEvent.ShowAppInReview)
-        if (newCount % 5 == 0) {
-            reduce { state.copy(isLoading = true) }
-        }
-    }
-
-    override fun showedAd() = intent {
-        delay(200)
-        reduce { state.copy(isLoading = false) }
     }
 }
