@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.viewmodel.container
 
 class CategoryViewModel(
     category: MathText.Category,
-    private val textRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    private val textRepository: TextRepository,
 ) : ContainerHost<CategoryState, CategoryEvent>, CategoryAction, ViewModel() {
     override val container = container<CategoryState, CategoryEvent>(CategoryState(category))
 
