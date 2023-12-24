@@ -11,6 +11,8 @@ import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextSet
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTexts
 import jp.kaleidot725.easycalc.core.repository.TextRepository
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -24,25 +26,25 @@ internal class TextRepositoryImpl(
     private val Context.historyStore: DataStore<Preferences> by preferencesDataStore(name = FILE_NAME)
     private val Context.favoriteStore: DataStore<Preferences> by preferencesDataStore(name = FAVORITE_FILE_NAME)
 
-    private val additions = listOf(
+    private val additions = persistentListOf(
         MathText.SingleDigitsAddition,
         MathText.DoubleDigitsAddition,
         MathText.TripleDigitsAddition
     )
 
-    private val subtractions = listOf(
+    private val subtractions = persistentListOf(
         MathText.SingleDigitsSubtraction,
         MathText.DoubleDigitsSubtraction,
         MathText.TripleDigitsSubtraction
     )
 
-    private val multiplications = listOf(
+    private val multiplications = persistentListOf(
         MathText.SingleDigitsMultiplication,
         MathText.DoubleDigitsMultiplication,
         MathText.TripleDigitsMultiplication
     )
 
-    private val divisions = listOf(
+    private val divisions = persistentListOf(
         MathText.SingleDigitsDivision,
         MathText.DoubleDigitsDivision,
         MathText.TripleDigitsDivision,
@@ -51,7 +53,7 @@ internal class TextRepositoryImpl(
         MathText.TripleDigitsDivisionRemainder,
     )
 
-    private val multiplicationTable = listOf(
+    private val multiplicationTable = persistentListOf(
         MathText.MultiplicationTableForOne,
         MathText.MultiplicationTableForTwo,
         MathText.MultiplicationTableForThree,
@@ -94,8 +96,9 @@ internal class TextRepositoryImpl(
             } catch (_: IllegalArgumentException) {
                 emptyList()
             }
-            val values =
-                currentHistoryList.mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+            val values = currentHistoryList
+                .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+                .toPersistentList()
             MathTexts(values)
         }
     }
@@ -108,8 +111,9 @@ internal class TextRepositoryImpl(
             } catch (_: IllegalArgumentException) {
                 emptyList()
             }
-            val values =
-                currentFavoriteList.mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+            val values = currentFavoriteList
+                .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+                .toPersistentList()
             MathTexts(values)
         }
     }

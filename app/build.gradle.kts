@@ -78,6 +78,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.collections.immutable)
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
@@ -91,6 +92,7 @@ dependencies {
     implementation(libs.orbit.compose)
     implementation(libs.review.ktx)
     implementation(libs.timber)
+    compileOnly(libs.compose.stable.marker)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)

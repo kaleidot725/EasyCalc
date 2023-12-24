@@ -1,8 +1,10 @@
 package jp.kaleidot725.easycalc.core.domain.model.question
 
+import androidx.compose.runtime.Immutable
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import kotlinx.serialization.Serializable
 
+@Immutable
 @Serializable
 data class Question(
     val one: String,
