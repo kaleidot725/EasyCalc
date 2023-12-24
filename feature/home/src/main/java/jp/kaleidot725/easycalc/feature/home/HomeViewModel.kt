@@ -44,7 +44,7 @@ class HomeViewModel(
     override fun refresh() {
         jobs.forEach { it.cancel() }
         jobs.clear()
-        
+
         jobs.add(
             viewModelScope.launch {
                 textRepository.getHistory().collectLatest {
