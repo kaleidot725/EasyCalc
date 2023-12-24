@@ -7,8 +7,8 @@ import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
-import jp.kaleidot725.easycalc.core.domain.repository.SettingRepository
-import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.repository.SettingRepository
+import jp.kaleidot725.easycalc.core.repository.TextRepository
 import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
@@ -20,9 +20,9 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class ProgressViewModel(
-    private val settingRepository: SettingRepository,
+    private val settingRepository: jp.kaleidot725.easycalc.core.repository.SettingRepository,
     mathTextId: MathTextId,
-    mathTextRepository: TextRepository,
+    mathTextRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
     questionSelector: QuestionSelector,
 ) : ContainerHost<ProgressState, ProgressEvent>, ProgressAction, ViewModel() {
     private val text = mathTextRepository.getById(mathTextId)

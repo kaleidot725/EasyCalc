@@ -2,8 +2,8 @@ package jp.kaleidot725.easycalc.compose.app
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
-import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
+import jp.kaleidot725.easycalc.core.repository.LanguageRepository
+import jp.kaleidot725.easycalc.core.repository.ThemeRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost

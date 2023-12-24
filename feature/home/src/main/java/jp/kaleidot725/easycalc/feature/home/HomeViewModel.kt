@@ -3,8 +3,8 @@ package jp.kaleidot725.easycalc.feature.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
-import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -14,8 +14,8 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class HomeViewModel(
-    private val textRepository: TextRepository,
-    private val statsRepository: StatsRepository,
+    private val textRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    private val statsRepository: jp.kaleidot725.easycalc.core.repository.StatsRepository,
 ) : ContainerHost<HomeState, HomeEvent>, HomeAction, ViewModel() {
     override val container = container<HomeState, HomeEvent>(HomeState())
 

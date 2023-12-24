@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
-import jp.kaleidot725.easycalc.core.domain.repository.StatsRepository
-import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.repository.StatsRepository
+import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -15,8 +15,8 @@ import org.orbitmvi.orbit.viewmodel.container
 class ResultViewModel(
     mathTextId: MathTextId,
     qaList: QAList,
-    mathTextRepository: TextRepository,
-    statsRepository: StatsRepository,
+    mathTextRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    statsRepository: jp.kaleidot725.easycalc.core.repository.StatsRepository,
 ) : ContainerHost<ResultState, ResultEvent>, ResultAction, ViewModel() {
     override val container = container<ResultState, ResultEvent>(
         ResultState(

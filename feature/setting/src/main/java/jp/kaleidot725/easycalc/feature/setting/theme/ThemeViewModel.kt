@@ -3,7 +3,7 @@ package jp.kaleidot725.easycalc.feature.setting.theme
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.theme.Theme
-import jp.kaleidot725.easycalc.core.domain.repository.ThemeRepository
+import jp.kaleidot725.easycalc.core.repository.ThemeRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class ThemeViewModel(
-    private val themeRepository: ThemeRepository,
+    private val themeRepository: jp.kaleidot725.easycalc.core.repository.ThemeRepository,
 ) : ContainerHost<ThemeState, ThemeEvent>, ThemeAction, ViewModel() {
     override val container = container<ThemeState, ThemeEvent>(ThemeState())
 

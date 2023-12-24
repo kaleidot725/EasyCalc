@@ -3,7 +3,7 @@ package jp.kaleidot725.easycalc.feature.category
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.core.domain.repository.TextRepository
+import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.viewmodel.container
 
 class CategoryViewModel(
     category: MathText.Category,
-    private val textRepository: TextRepository,
+    private val textRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
 ) : ContainerHost<CategoryState, CategoryEvent>, CategoryAction, ViewModel() {
     override val container = container<CategoryState, CategoryEvent>(CategoryState(category))
 

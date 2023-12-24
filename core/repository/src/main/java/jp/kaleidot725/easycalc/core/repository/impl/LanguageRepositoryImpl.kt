@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.core.repository
+package jp.kaleidot725.easycalc.core.repository.impl
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -7,13 +7,13 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import jp.kaleidot725.easycalc.core.domain.model.language.Language
-import jp.kaleidot725.easycalc.core.domain.repository.LanguageRepository
+import jp.kaleidot725.easycalc.core.repository.LanguageRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.util.Locale
 
-class LanguageRepositoryImpl(
+internal class LanguageRepositoryImpl(
     private val applicationContext: Context,
 ) : LanguageRepository {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = FILE_NAME)
