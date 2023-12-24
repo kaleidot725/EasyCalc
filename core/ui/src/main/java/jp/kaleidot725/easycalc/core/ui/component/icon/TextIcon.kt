@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
-import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizableText
 import jp.kaleidot725.easycalc.core.ui.resource.MathTextResource
 
 @Composable
@@ -28,9 +28,8 @@ fun TextIcon(mathText: MathText, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(8.dp)
     ) {
-        AutoSizeableText(
+        AutoSizableText(
             text = MathTextResource.getTitle(text = mathText),
-            maxLines = 2,
             style = TextStyle(
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Bold,

@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizableText
 
 @Composable
 internal fun CircleButton(
@@ -23,9 +23,11 @@ internal fun CircleButton(
     modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier = modifier.clickable { onClick() }.clip(CircleShape)
+        modifier = modifier
+            .clickable { onClick() }
+            .clip(CircleShape)
     ) {
-        AutoSizeableText(
+        AutoSizableText(
             text = text,
             style = TextStyle(fontSize = fontSize),
             modifier = Modifier.align(Alignment.Center)

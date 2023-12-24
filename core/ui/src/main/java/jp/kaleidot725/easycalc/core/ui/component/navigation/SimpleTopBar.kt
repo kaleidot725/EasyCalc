@@ -1,6 +1,5 @@
 package jp.kaleidot725.easycalc.core.ui.component.navigation
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -12,8 +11,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -28,12 +27,9 @@ fun SimpleTopBar(
         title = {
             Text(
                 text = title,
-                color = MaterialTheme.colorScheme.onBackground,
                 fontWeight = FontWeight.Bold,
                 fontSize = 22.sp,
-                modifier = Modifier
-                    .background(Color.Transparent)
-                    .padding(32.dp)
+                modifier = Modifier.padding(32.dp)
             )
         },
         navigationIcon = if (onBack != null) {
@@ -42,7 +38,6 @@ fun SimpleTopBar(
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = "Back",
-                        tint = MaterialTheme.colorScheme.onBackground
                     )
                 }
             }
@@ -51,4 +46,12 @@ fun SimpleTopBar(
         },
         modifier = modifier,
     )
+}
+
+@Preview
+@Composable
+private fun SimpleTopBarPreview() {
+    MaterialTheme {
+        SimpleTopBar(title = "SAMPLE", onBack = {})
+    }
 }

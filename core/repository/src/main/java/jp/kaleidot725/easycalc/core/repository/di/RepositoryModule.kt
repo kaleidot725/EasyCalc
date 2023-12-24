@@ -32,8 +32,6 @@ val repositoryModule = module {
         QuestionSelectorImpl()
     }
     single<StatsRepository> {
-        StatsRepositoryImpl(
-            get()
-        )
+        StatsRepositoryImpl(get())
     }
 }

@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizeableText
+import jp.kaleidot725.easycalc.core.ui.component.text.AutoSizableText
 
 @Composable
 fun StatsCard(
@@ -51,7 +51,7 @@ fun StatsCard(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                AutoSizeableText(
+                AutoSizableText(
                     text = title,
                     style = TextStyle(
                         fontSize = 14.sp,
@@ -62,7 +62,7 @@ fun StatsCard(
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
 
-                AutoSizeableText(
+                AutoSizableText(
                     text = text,
                     style = TextStyle(
                         fontSize = 24.sp,

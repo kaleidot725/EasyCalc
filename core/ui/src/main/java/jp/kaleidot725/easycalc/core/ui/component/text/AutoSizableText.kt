@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun AutoSizeableText(
+fun AutoSizableText(
     text: String,
     style: TextStyle,
     modifier: Modifier = Modifier,
