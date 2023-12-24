@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.collections.immutable)
+
     implementation(libs.timber)
     compileOnly(libs.compose.stable.marker)
 

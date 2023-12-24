@@ -48,6 +48,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.collections.immutable)
+
     implementation(libs.timber)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
