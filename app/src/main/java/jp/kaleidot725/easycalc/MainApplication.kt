@@ -1,7 +1,7 @@
 package jp.kaleidot725.easycalc
 
 import android.app.Application
-import jp.kaleidot725.easycalc.core.database.dbModule
+import jp.kaleidot725.easycalc.core.database.di.dbModule
 import jp.kaleidot725.easycalc.core.repository.di.repositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

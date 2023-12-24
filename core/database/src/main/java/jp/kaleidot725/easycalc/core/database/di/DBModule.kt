@@ -1,6 +1,7 @@
-package jp.kaleidot725.easycalc.core.database
+package jp.kaleidot725.easycalc.core.database.di
 
 import androidx.room.Room
+import jp.kaleidot725.easycalc.core.database.StatsDatabase
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
