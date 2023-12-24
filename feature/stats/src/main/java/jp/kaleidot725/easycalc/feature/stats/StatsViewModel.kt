@@ -10,7 +10,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class StatsViewModel(
-    private val statsRepository: jp.kaleidot725.easycalc.core.repository.StatsRepository
+    private val statsRepository: StatsRepository
 ) : ContainerHost<StatsState, StatsEvent>, StatsAction, ViewModel() {
     override val container = container<StatsState, StatsEvent>(
         StatsState(isLoading = true, items = emptyList())

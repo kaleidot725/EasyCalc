@@ -14,7 +14,7 @@ import org.orbitmvi.orbit.viewmodel.container
 
 class StartViewModel(
     private val mathTextId: MathTextId,
-    private val mathTextRepository: jp.kaleidot725.easycalc.core.repository.TextRepository
+    private val mathTextRepository: TextRepository
 ) : ContainerHost<StartState, StartEvent>, StartAction, ViewModel() {
     override val container = container<StartState, StartEvent>(
         StartState(

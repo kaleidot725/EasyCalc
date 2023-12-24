@@ -12,7 +12,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class QuizViewModel(
-    private val textRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    private val textRepository: TextRepository,
 ) : ContainerHost<QuizState, QuizEvent>, QuizAction, ViewModel() {
     override val container = container<QuizState, QuizEvent>(QuizState())
 

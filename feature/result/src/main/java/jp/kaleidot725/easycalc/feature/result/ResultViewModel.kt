@@ -15,8 +15,8 @@ import org.orbitmvi.orbit.viewmodel.container
 class ResultViewModel(
     mathTextId: MathTextId,
     qaList: QAList,
-    mathTextRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
-    statsRepository: jp.kaleidot725.easycalc.core.repository.StatsRepository,
+    mathTextRepository: TextRepository,
+    statsRepository: StatsRepository,
 ) : ContainerHost<ResultState, ResultEvent>, ResultAction, ViewModel() {
     override val container = container<ResultState, ResultEvent>(
         ResultState(

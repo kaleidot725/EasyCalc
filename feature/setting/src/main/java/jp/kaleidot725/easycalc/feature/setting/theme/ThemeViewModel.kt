@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class ThemeViewModel(
-    private val themeRepository: jp.kaleidot725.easycalc.core.repository.ThemeRepository,
+    private val themeRepository: ThemeRepository,
 ) : ContainerHost<ThemeState, ThemeEvent>, ThemeAction, ViewModel() {
     override val container = container<ThemeState, ThemeEvent>(ThemeState())
 

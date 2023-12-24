@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class LanguageViewModel(
-    private val languageRepository: jp.kaleidot725.easycalc.core.repository.LanguageRepository,
+    private val languageRepository: LanguageRepository,
 ) : ContainerHost<LanguageState, LanguageEvent>, LanguageAction, ViewModel() {
     override val container = container<LanguageState, LanguageEvent>(LanguageState())
 

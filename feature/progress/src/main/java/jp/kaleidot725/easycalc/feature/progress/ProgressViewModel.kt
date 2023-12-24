@@ -20,9 +20,9 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class ProgressViewModel(
-    private val settingRepository: jp.kaleidot725.easycalc.core.repository.SettingRepository,
+    private val settingRepository: SettingRepository,
     mathTextId: MathTextId,
-    mathTextRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    mathTextRepository: TextRepository,
     questionSelector: QuestionSelector,
 ) : ContainerHost<ProgressState, ProgressEvent>, ProgressAction, ViewModel() {
     private val text = mathTextRepository.getById(mathTextId)

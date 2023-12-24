@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class MyListViewModel(
-    private val textRepository: jp.kaleidot725.easycalc.core.repository.TextRepository,
+    private val textRepository: TextRepository,
 ) : ContainerHost<MyListState, MyListEvent>, MyListAction, ViewModel() {
     override val container = container<MyListState, MyListEvent>(MyListState())
 
