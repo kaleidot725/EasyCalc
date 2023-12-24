@@ -42,18 +42,29 @@ fun QuizScreen(
                         text = {
                             Text(
                                 text = when (category) {
-                                    QuizTabCategory.ALL -> stringResource(id = R.string.category_all)
-                                    QuizTabCategory.ADDITION -> stringResource(id = R.string.category_addition)
-                                    QuizTabCategory.SUBTRACTION -> stringResource(id = R.string.category_subtraction)
-                                    QuizTabCategory.MULTIPLICATION -> stringResource(
-                                        id = R.string.category_multiplication
-                                    )
+                                    QuizTabCategory.ALL -> {
+                                        stringResource(id = R.string.category_all)
+                                    }
 
-                                    QuizTabCategory.MULTIPLICATION_TABLE -> stringResource(
-                                        id = R.string.category_multiplication_table
-                                    )
+                                    QuizTabCategory.ADDITION -> {
+                                        stringResource(id = R.string.category_addition)
+                                    }
 
-                                    QuizTabCategory.DIVISION -> stringResource(id = R.string.category_division)
+                                    QuizTabCategory.SUBTRACTION -> {
+                                        stringResource(id = R.string.category_subtraction)
+                                    }
+
+                                    QuizTabCategory.MULTIPLICATION -> {
+                                        stringResource(id = R.string.category_multiplication)
+                                    }
+
+                                    QuizTabCategory.MULTIPLICATION_TABLE -> {
+                                        stringResource(id = R.string.category_multiplication_table)
+                                    }
+
+                                    QuizTabCategory.DIVISION -> {
+                                        stringResource(id = R.string.category_division)
+                                    }
                                 }
                             )
                         },
@@ -65,7 +76,7 @@ fun QuizScreen(
 
             QuizCategoryList(
                 mathTextSet = state.mathTextSet,
-                tabCategory = QuizTabCategory.values().first { it.index == tabSelected },
+                tabCategory = QuizTabCategory.entries.first { it.index == tabSelected },
                 onClickCategory = action::clickCategory,
                 onClickText = action::clickText,
                 modifier = Modifier.weight(1.0f)

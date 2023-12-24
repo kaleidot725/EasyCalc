@@ -42,5 +42,6 @@ dependencies {
     implementation(libs.kotlinx.datetime)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.timber)
+    compileOnly(libs.compose.stable.marker)
     implementation(libs.koin.android)
 }

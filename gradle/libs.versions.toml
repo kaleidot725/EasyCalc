@@ -5,6 +5,7 @@ accompanist-systemuicontroller = "0.30.1"
 accompanist-webview = "0.30.1"
 activity-compose = "1.8.0"
 android-gradle = "8.1.2"
+composeStableMarker = "1.0.3"
 core-ktx = "1.12.0"
 datastore-preferences = "1.0.0"
 flipper = "0.201.0"
@@ -47,6 +48,7 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-runtime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-runtime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-runtime" }
+compose-stable-marker = { module = "com.github.skydoves:compose-stable-marker", version.ref = "composeStableMarker" }
 flipper = { module = "com.facebook.flipper:flipper", version.ref = "flipper" }
 flipper-noop = { module = "com.facebook.flipper:flipper-noop", version.ref = "flipper" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter-engine" }

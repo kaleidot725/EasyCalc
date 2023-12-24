@@ -91,6 +91,7 @@ dependencies {
     implementation(libs.orbit.compose)
     implementation(libs.review.ktx)
     implementation(libs.timber)
+    compileOnly(libs.compose.stable.marker)
 
     debugImplementation(libs.flipper)
     debugImplementation(libs.soloader)
