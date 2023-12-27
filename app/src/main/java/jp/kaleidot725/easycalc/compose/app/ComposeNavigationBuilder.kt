@@ -306,10 +306,12 @@ fun NavGraphBuilder.addProgressScreen(
     composable(ComposeNavigation.Progress().path) {
         val id =
             ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
-        val viewModel = koinViewModel<ProgressViewModel> {
-            parametersOf(id)
-        }
+        val viewModel = koinViewModel<ProgressViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
 
         LaunchedEffect(state) {
             onChangedProgress.invoke(ComposeAppProgress(state.textProgress, state.mathText.count))
@@ -372,10 +374,8 @@ fun NavGraphBuilder.addProgressScreen(
 
 fun NavGraphBuilder.addResultScreen(navController: NavController) {
     composable(ComposeNavigation.Result().path) {
-        val id =
-            ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
-        val qaList =
-            ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
+        val id = ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
+        val qaList = ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
         val viewModel = koinViewModel<ResultViewModel> { parametersOf(id, qaList) }
         val state by viewModel.collectAsState()
 

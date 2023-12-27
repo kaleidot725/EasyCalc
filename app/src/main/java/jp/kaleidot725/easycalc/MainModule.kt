@@ -8,6 +8,7 @@ import jp.kaleidot725.easycalc.feature.category.CategoryViewModel
 import jp.kaleidot725.easycalc.feature.history.HistoryViewModel
 import jp.kaleidot725.easycalc.feature.home.HomeViewModel
 import jp.kaleidot725.easycalc.feature.mylist.MyListViewModel
+import jp.kaleidot725.easycalc.feature.progress.ProgressViewModel
 import jp.kaleidot725.easycalc.feature.quiz.QuizViewModel
 import jp.kaleidot725.easycalc.feature.result.ResultViewModel
 import jp.kaleidot725.easycalc.feature.setting.language.LanguageViewModel
@@ -49,7 +50,7 @@ val featureModule = module {
         ComposeAppViewModel(get(), get())
     }
     viewModel { (id: MathTextId) ->
-        jp.kaleidot725.easycalc.feature.progress.ProgressViewModel(get(), id, get(), get())
+        ProgressViewModel(get(), id, get(), get())
     }
     viewModel { (id: MathTextId, qalist: QAList) ->
         ResultViewModel(id, qalist, get(), get())

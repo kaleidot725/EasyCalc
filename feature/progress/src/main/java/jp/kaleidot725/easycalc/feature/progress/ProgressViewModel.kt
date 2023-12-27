@@ -44,7 +44,7 @@ class ProgressViewModel(
         )
     )
 
-    init {
+    override fun refresh() {
         viewModelScope.launch {
             settingRepository.get().collectLatest {
                 intent {
@@ -64,15 +64,15 @@ class ProgressViewModel(
         }
     }
 
-    override fun onChangeEffectMute(isMute: Boolean) = intent {
+    override fun changeEffectMute(isMute: Boolean) = intent {
         settingRepository.update(state.setting.copy(isEffectMute = isMute))
     }
 
-    override fun onChangeBgmMute(isMute: Boolean) = intent {
+    override fun changeBgmMute(isMute: Boolean) = intent {
         settingRepository.update(state.setting.copy(isBgmMute = isMute))
     }
 
-    override fun onClickNumber(number: Int) = intent {
+    override fun clickNumber(number: Int) = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Input(state.setting.isEffectMute))
@@ -121,15 +121,15 @@ class ProgressViewModel(
         createNextQuestion()
     }
 
-    override fun onChangeFocus(focusMode: FocusMode) = intent {
+    override fun changeFocus(focusMode: FocusMode) = intent {
         reduce { state.copy(focusMode = focusMode) }
     }
 
-    override fun onSkip() {
-        onTimeout()
+    override fun skip() {
+        timeout()
     }
 
-    override fun onTimeout() = intent {
+    override fun timeout() = intent {
         if (state.isSuccess || state.isFailed) return@intent
         qaList.add(
             state.question,
@@ -152,7 +152,7 @@ class ProgressViewModel(
         createNextQuestion()
     }
 
-    override fun onDelete() = intent {
+    override fun delete() = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Input(state.setting.isEffectMute))
@@ -209,7 +209,7 @@ class ProgressViewModel(
         createNextQuestion()
     }
 
-    override fun onClear() = intent {
+    override fun clear() = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Clear(state.setting.isEffectMute))
@@ -225,11 +225,11 @@ class ProgressViewModel(
         }
     }
 
-    override fun onInterrupt() = intent {
+    override fun interrupt() = intent {
         postSideEffect(ProgressEvent.Interrupted(state.setting.isEffectMute))
     }
 
-    override fun onUpdateTimeoutProgress(value: Float) = intent {
+    override fun updateTimeoutProgress(value: Float) = intent {
         reduce { state.copy(timeoutProgress = value) }
     }
 
