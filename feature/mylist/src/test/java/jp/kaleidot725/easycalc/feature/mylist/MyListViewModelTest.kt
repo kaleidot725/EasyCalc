@@ -1,4 +1,4 @@
-package jp.kaleidot725.easycalc.feature.category
+package jp.kaleidot725.easycalc.feature.mylist
 
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextSet
@@ -16,9 +16,8 @@ import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import org.orbitmvi.orbit.test
 
-class CategoryViewModelTest {
-    private val firstCategory = MathText.Category.ADDITION
-    private val firstMathTexts = MathTextSet(
+class MyListViewModelTest {
+    private val mathTexts = MathTextSet(
         additions = MathTexts(value = persistentListOf(MathText.SingleDigitsAddition)),
         divisions = MathTexts.EMPTY,
         subtractions = MathTexts.EMPTY,
@@ -26,7 +25,7 @@ class CategoryViewModelTest {
         multiplicationTable = MathTexts.EMPTY,
     )
     private val textRepository = mock<TextRepository> {
-        onBlocking { get() } doReturn firstMathTexts
+        onBlocking { get() } doReturn mathTexts
     }
 
     @BeforeEach
@@ -41,60 +40,45 @@ class CategoryViewModelTest {
 
     @Test
     fun `初期化したときにテキストが通知されるか`() = runTest {
-        val initialState = CategoryState(firstCategory)
-        val viewModel = CategoryViewModel(
-            category = firstCategory,
-            textRepository = textRepository
-        ).test(initialState)
-
+        val initialState = MyListState()
+        val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
         viewModel.runOnCreate()
-        viewModel.testIntent { refresh() }
         viewModel.assert(initialState) {
             states(
-                { copy(mathTexts = firstMathTexts.additions) }
+                { copy(mathTexts = mathTexts) }
             )
         }
     }
 
     @Test
     fun `クリックしたときにClickTextイベントが発生するか`() = runTest {
-        val initialState = CategoryState(firstCategory)
-        val clickTarget = firstMathTexts.additions.value.first()
-        val viewModel = CategoryViewModel(
-            category = firstCategory,
-            textRepository = textRepository
-        ).test(initialState)
-
+        val initialState = MyListState()
+        val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
+        val clickTarget = mathTexts.additions.value.first()
         viewModel.runOnCreate()
-        viewModel.testIntent { refresh() }
         viewModel.testIntent { clickText(clickTarget) }
         viewModel.assert(initialState) {
             postedSideEffects(
-                CategoryEvent.ClickText(clickTarget),
+                MyListEvent.ClickText(clickTarget),
             )
             states(
-                { copy(mathTexts = firstMathTexts.additions) }
+                { copy(mathTexts = mathTexts) }
             )
         }
     }
 
     @Test
     fun `戻るときにPopBackイベントが発生するか`() = runTest {
-        val initialState = CategoryState(firstCategory)
-        val viewModel = CategoryViewModel(
-            category = firstCategory,
-            textRepository = textRepository
-        ).test(initialState)
-
+        val initialState = MyListState()
+        val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
         viewModel.runOnCreate()
-        viewModel.testIntent { refresh() }
         viewModel.testIntent { popBack() }
         viewModel.assert(initialState) {
             postedSideEffects(
-                CategoryEvent.PopBack,
+                MyListEvent.PopBack,
             )
             states(
-                { copy(mathTexts = firstMathTexts.additions) }
+                { copy(mathTexts = mathTexts) }
             )
         }
     }

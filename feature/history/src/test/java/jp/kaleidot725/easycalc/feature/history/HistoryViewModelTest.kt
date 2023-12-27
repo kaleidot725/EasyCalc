@@ -16,10 +16,10 @@ import org.mockito.kotlin.mock
 import org.orbitmvi.orbit.test
 
 class HistoryViewModelTest {
-    private val mathText = MathText.SingleDigitsAddition
-    private val mathTexts = MathTexts(value = persistentListOf(mathText))
+    private val firstMathText = MathText.SingleDigitsAddition
+    private val firstMathTexts = MathTexts(value = persistentListOf(firstMathText))
     private val textRepository = mock<TextRepository> {
-        onBlocking { getHistory() } doReturn mathTexts
+        onBlocking { getHistory() } doReturn firstMathTexts
     }
 
     @BeforeEach
@@ -34,47 +34,50 @@ class HistoryViewModelTest {
 
     @Test
     fun `初期化したときに履歴が通知されるか`() = runTest {
-        val initialState = HistoryState(MathTexts.EMPTY)
+        val initialState = HistoryState()
         val viewModel = HistoryViewModel(textRepository = textRepository).test(initialState)
 
         viewModel.runOnCreate()
+        viewModel.testIntent { refresh() }
         viewModel.assert(initialState) {
             states(
-                { initialState.copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts) }
             )
         }
     }
 
     @Test
     fun `クリックしたときにClickTextイベントが発生するか`() = runTest {
-        val initialState = HistoryState(MathTexts.EMPTY)
+        val initialState = HistoryState()
         val viewModel = HistoryViewModel(textRepository = textRepository).test(initialState)
 
         viewModel.runOnCreate()
-        viewModel.testIntent { clickText(mathText) }
+        viewModel.testIntent { refresh() }
+        viewModel.testIntent { clickText(firstMathText) }
         viewModel.assert(initialState) {
             postedSideEffects(
-                HistoryEvent.ClickText(mathText)
+                HistoryEvent.ClickText(firstMathText)
             )
             states(
-                { initialState.copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts) }
             )
         }
     }
 
     @Test
     fun `戻るときにPopBackイベントが発生するか`() = runTest {
-        val initialState = HistoryState(MathTexts.EMPTY)
+        val initialState = HistoryState()
         val viewModel = HistoryViewModel(textRepository = textRepository).test(initialState)
 
         viewModel.runOnCreate()
+        viewModel.testIntent { refresh() }
         viewModel.testIntent { popBack() }
         viewModel.assert(initialState) {
             postedSideEffects(
                 HistoryEvent.PopBack
             )
             states(
-                { initialState.copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts) }
             )
         }
     }

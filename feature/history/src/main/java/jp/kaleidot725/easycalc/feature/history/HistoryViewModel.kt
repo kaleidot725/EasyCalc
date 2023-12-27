@@ -16,7 +16,7 @@ class HistoryViewModel(
 ) : ContainerHost<HistoryState, HistoryEvent>, HistoryAction, ViewModel() {
     override val container = container<HistoryState, HistoryEvent>(HistoryState())
 
-    init {
+    override fun refresh() {
         viewModelScope.launch {
             val histories = textRepository.getHistory()
             intent {

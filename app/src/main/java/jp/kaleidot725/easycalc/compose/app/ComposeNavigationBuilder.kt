@@ -182,6 +182,9 @@ fun NavGraphBuilder.addCategoryScreen(navController: NavController) {
         val action = viewModel as CategoryAction
         val state by viewModel.collectAsState()
 
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is CategoryEvent.ClickText -> {
@@ -215,9 +218,7 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
             when (sideEffect) {
                 is MyListEvent.ClickText -> {
                     navController.navigate(
-                        ComposeNavigation.Start(
-                            sideEffect.mathText
-                        ).route
+                        ComposeNavigation.Start(sideEffect.mathText).route
                     )
                 }
 
@@ -239,6 +240,10 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
         val viewModel = koinViewModel<HistoryViewModel>()
         val action = viewModel as HistoryAction
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
