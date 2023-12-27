@@ -79,7 +79,6 @@ class CategoryViewModelTest {
     @Test
     fun `戻るときにPopBackイベントが発生するか`() = runTest {
         val initialState = CategoryState(category)
-        val clickTarget = mathTexts.additions.value.first()
         val viewModel = CategoryViewModel(
             category = category,
             textRepository = textRepository

@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.Flow
 interface TextRepository {
     suspend fun get(): MathTextSet
     fun getById(id: MathTextId): MathText
-    fun getHistory(): Flow<MathTexts>
-    fun getFavorite(): Flow<MathTexts>
+    suspend fun getHistory(): MathTexts
+    suspend fun getFavorite(): MathTexts
     fun isFavorite(id: MathTextId): Flow<Boolean>
 
     suspend fun addHistory(id: MathTextId)

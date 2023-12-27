@@ -5,7 +5,6 @@ import jp.kaleidot725.easycalc.core.domain.model.text.MathTexts
 import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
@@ -20,7 +19,7 @@ class HistoryViewModelTest {
     private val mathText = MathText.SingleDigitsAddition
     private val mathTexts = MathTexts(value = persistentListOf(mathText))
     private val textRepository = mock<TextRepository> {
-        onBlocking { getHistory() } doReturn flow { mathTexts }
+        onBlocking { getHistory() } doReturn mathTexts
     }
 
     @BeforeEach
