@@ -39,4 +39,11 @@ class QAList {
     fun clear() {
         _values.clear()
     }
+
+    override fun equals(other: Any?): Boolean {
+        val otherQAList = other as? QAList ?: return false
+        if (this.questionCount != otherQAList.questionCount) return false
+        if (this.values != otherQAList.values) return false
+        return true
+    }
 }

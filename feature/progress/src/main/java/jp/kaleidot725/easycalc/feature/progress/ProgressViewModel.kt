@@ -106,10 +106,7 @@ class ProgressViewModel(
         )
 
         reduce {
-            state.copy(
-                textProgress = state.textProgress,
-                isFailed = true
-            )
+            state.copy(isFailed = true)
         }
 
         postSideEffect(ProgressEvent.Failed(state.setting.isEffectMute))
@@ -213,7 +210,7 @@ class ProgressViewModel(
         postSideEffect(sideEffect = sideEffect)
     }
 
-    private fun next() = intent {
+    private suspend fun SimpleSyntax<ProgressState, ProgressEvent>.next() {
         if (qaList.questionCount < state.mathText.count) {
             reduce {
                 state.copy(
