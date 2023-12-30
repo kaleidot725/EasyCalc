@@ -304,8 +304,7 @@ fun NavGraphBuilder.addProgressScreen(
     onChangedProgress: (ComposeAppProgress) -> Unit
 ) {
     composable(ComposeNavigation.Progress().path) {
-        val id =
-            ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
+        val id = ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
         val viewModel = koinViewModel<ProgressViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
 

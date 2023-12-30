@@ -8,20 +8,18 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import jp.kaleidot725.easycalc.core.repository.SettingRepository
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.first
 
 internal class SettingRepositoryImpl(
     private val applicationContext: Context,
 ) : SettingRepository {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = FILE_NAME)
 
-    override fun get(): Flow<Setting> {
-        return applicationContext.dataStore.data.map { settings ->
-            val isEffectMute = settings[IS_MUTE_KEY] ?: false
-            val isBgmMute = settings[IS_BGM_MUTE_KEY] ?: false
-            Setting(isBgmMute = isBgmMute, isEffectMute = isEffectMute)
-        }
+    override suspend fun get(): Setting {
+        val preferences = applicationContext.dataStore.data.first()
+        val isEffectMute = preferences[IS_MUTE_KEY] ?: false
+        val isBgmMute = preferences[IS_BGM_MUTE_KEY] ?: false
+        return Setting(isBgmMute = isBgmMute, isEffectMute = isEffectMute)
     }
 
     override suspend fun update(data: Setting) {
