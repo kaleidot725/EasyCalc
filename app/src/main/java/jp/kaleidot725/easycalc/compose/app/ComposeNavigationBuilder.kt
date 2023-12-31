@@ -222,6 +222,9 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
         val action = viewModel as MyListAction
         val state by viewModel.collectAsState()
 
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is MyListEvent.ClickText -> {

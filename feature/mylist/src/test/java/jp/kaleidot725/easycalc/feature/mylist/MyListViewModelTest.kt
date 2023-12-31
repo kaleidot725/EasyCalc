@@ -17,7 +17,7 @@ import org.mockito.kotlin.mock
 import org.orbitmvi.orbit.test
 
 class MyListViewModelTest {
-    private val mathTexts = MathTextSet(
+    private val firstMathTexts = MathTextSet(
         additions = MathTexts(value = persistentListOf(MathText.SingleDigitsAddition)),
         divisions = MathTexts.EMPTY,
         subtractions = MathTexts.EMPTY,
@@ -25,7 +25,7 @@ class MyListViewModelTest {
         multiplicationTable = MathTexts.EMPTY,
     )
     private val textRepository = mock<TextRepository> {
-        onBlocking { get() } doReturn mathTexts
+        onBlocking { getFavorite() } doReturn firstMathTexts.additions
     }
 
     @BeforeEach
@@ -43,9 +43,10 @@ class MyListViewModelTest {
         val initialState = MyListState()
         val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
         viewModel.runOnCreate()
+        viewModel.testIntent { refresh() }
         viewModel.assert(initialState) {
             states(
-                { copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts.additions) }
             )
         }
     }
@@ -54,15 +55,16 @@ class MyListViewModelTest {
     fun `クリックしたときにClickTextイベントが発生するか`() = runTest {
         val initialState = MyListState()
         val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
-        val clickTarget = mathTexts.additions.value.first()
+        val clickTarget = firstMathTexts.additions.value.first()
         viewModel.runOnCreate()
+        viewModel.testIntent { refresh() }
         viewModel.testIntent { clickText(clickTarget) }
         viewModel.assert(initialState) {
             postedSideEffects(
                 MyListEvent.ClickText(clickTarget),
             )
             states(
-                { copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts.additions) }
             )
         }
     }
@@ -72,13 +74,14 @@ class MyListViewModelTest {
         val initialState = MyListState()
         val viewModel = MyListViewModel(textRepository = textRepository).test(initialState)
         viewModel.runOnCreate()
+        viewModel.testIntent { refresh() }
         viewModel.testIntent { popBack() }
         viewModel.assert(initialState) {
             postedSideEffects(
                 MyListEvent.PopBack,
             )
             states(
-                { copy(mathTexts = mathTexts) }
+                { copy(mathTexts = firstMathTexts.additions) }
             )
         }
     }

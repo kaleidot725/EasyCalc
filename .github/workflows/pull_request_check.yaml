@@ -1,0 +1,32 @@
+name: pull request check
+
+on:
+  pull_request
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Check pull request
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.0'
+          bundler-cache: true
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
+      - name: Run detekt
+        run: ./gradlew detekt
+      - name: Run test
+        run: ./gradlew test
+      - name: Run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gem install danger danger-checkstyle_format danger-android_lint danger-junit
+          danger

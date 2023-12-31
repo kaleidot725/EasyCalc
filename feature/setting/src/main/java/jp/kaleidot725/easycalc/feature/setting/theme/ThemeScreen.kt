@@ -75,6 +75,7 @@ private fun Preview() {
     ThemeScreen(
         state = ThemeState(),
         action = object : ThemeAction {
+            override fun refresh() = TODO()
             override fun clickTheme(theme: Theme) = TODO()
             override fun popBack() = TODO()
         },
