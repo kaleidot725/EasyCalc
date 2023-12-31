@@ -26,9 +26,11 @@ jobs:
         run: ./gradlew detekt
       - name: Run test
         run: ./gradlew test
-      - name: Run danger
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gem install danger danger-checkstyle_format danger-android_lint danger-junit
-          danger
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5.0.2
+        with:
+          add-paths: |
+            *.kt
+          commit-message: "Format by detekt"
+          title: "Format by detekt"
+          delete-branch: true
