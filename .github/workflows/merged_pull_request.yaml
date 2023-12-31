@@ -1,7 +1,9 @@
 name: pull request check
 
 on:
-  pull_request
+  push:
+    branches:
+      - master
 
 jobs:
   check:
