@@ -233,7 +233,7 @@ private fun TopBar(navController: NavController, progress: ComposeAppProgress) {
 
         currentDestination?.route == ComposeNavigation.MyList.route -> {
             title = stringResource(id = R.string.mylist_title)
-            onBack = null
+            onBack = { navController.popBackStack() }
         }
 
         else -> {
