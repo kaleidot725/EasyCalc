@@ -45,6 +45,7 @@ class QuizViewModelTest {
         // Action
         val initialState = QuizState()
         val viewModel = quizViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
 
         // Verify
@@ -60,6 +61,7 @@ class QuizViewModelTest {
         // Action
         val initialState = QuizState()
         val viewModel = quizViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
         viewModel.testIntent { clickCategory(MathText.Category.ADDITION) }
 
@@ -79,6 +81,7 @@ class QuizViewModelTest {
         // Action
         val initialState = QuizState()
         val viewModel = quizViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
         viewModel.testIntent { clickText(mathText) }
 

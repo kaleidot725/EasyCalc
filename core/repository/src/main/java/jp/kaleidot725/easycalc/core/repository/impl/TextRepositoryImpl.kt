@@ -14,9 +14,7 @@ import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -121,16 +119,15 @@ internal class TextRepositoryImpl(
         return all.first { it.id == id }
     }
 
-    override fun isFavorite(id: MathTextId): Flow<Boolean> {
-        return applicationContext.favoriteStore.data.map { settings ->
-            val currentFavoriteListJson = settings[FAVORITE_LIST_KEY]
-            val currentFavoriteList = try {
-                Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
-            } catch (_: IllegalArgumentException) {
-                emptyList()
-            }
-            currentFavoriteList.any { id.value == it }
+    override suspend fun isFavorite(id: MathTextId): Boolean {
+        val preferences = applicationContext.favoriteStore.data.first()
+        val currentFavoriteListJson = preferences[FAVORITE_LIST_KEY]
+        val currentFavoriteList = try {
+            Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
+        } catch (_: IllegalArgumentException) {
+            emptyList()
         }
+        return currentFavoriteList.any { id.value == it }
     }
 
     override suspend fun addHistory(id: MathTextId) {

@@ -47,6 +47,7 @@ class ResultViewModelTest {
         // Action
         val initialState = ResultState(mathText = mathText, qaList = qalist)
         val viewModel = resultViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
 
         // Verify
@@ -58,6 +59,7 @@ class ResultViewModelTest {
         // Action
         val initialState = ResultState(mathText = mathText, qaList = qalist)
         val viewModel = resultViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
         viewModel.testIntent { finish() }
 
@@ -73,6 +75,7 @@ class ResultViewModelTest {
         // Action
         val initialState = ResultState(mathText = mathText, qaList = qalist)
         val viewModel = resultViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
         viewModel.testIntent { retry() }
 
@@ -88,6 +91,7 @@ class ResultViewModelTest {
         // Action
         val initialState = ResultState(mathText = mathText, qaList = qalist)
         val viewModel = resultViewModel.test(initialState)
+        viewModel.runOnCreate()
         viewModel.testIntent { refresh() }
         viewModel.testIntent { popBack() }
 

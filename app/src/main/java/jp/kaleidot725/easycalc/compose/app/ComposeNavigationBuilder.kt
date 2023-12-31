@@ -274,11 +274,13 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
 
 fun NavGraphBuilder.addStartScreen(navController: NavController) {
     composable(ComposeNavigation.Start().path) {
-        val id =
-            ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
+        val id = ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
         val viewModel = koinViewModel<StartViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
 
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is StartEvent.ClickStart -> {
