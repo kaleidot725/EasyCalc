@@ -17,13 +17,15 @@
 
 | Name | Details |
 | ----- | ------ |
-| APP | Setup Application and Activity. |
-| UI | Compose application screens. |
-| DOMAIN | Define application domain model. |
-| REPOSITORY | Convert database entity to domain mode for reading domain model.<br>Convert domain model to database entity for writing database entity to persist data. |
-| DB | Read and write database entity as local data source. |
+| app | Define Application and Activity. |
+| feature | Define application screens. |
+| ui | Define common ui component. |
+| repository | Convert database entity to domain mode for reading domain model.<br>Convert domain model to database entity for writing database entity to persist data. |
+| database | Read and write database entity as local data source. |
 
-![image](https://github.com/kaleidot725/EasyCalc/assets/23740796/1994b4ea-6b8c-4cdd-b445-91a502cdec72)
+<p align=center>
+  <img src=https://github.com/kaleidot725/EasyCalc/assets/23740796/53a34211-655d-41f0-b672-0a2076cbeeb9 width=500>
+</p>
 
 ## Library
 
