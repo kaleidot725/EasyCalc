@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.text.MathText
 import jp.kaleidot725.easycalc.core.repository.TextRepository
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -17,12 +16,11 @@ class HistoryViewModel(
 ) : ContainerHost<HistoryState, HistoryEvent>, HistoryAction, ViewModel() {
     override val container = container<HistoryState, HistoryEvent>(HistoryState())
 
-    init {
-        intent {
-            viewModelScope.launch {
-                textRepository.getHistory().collectLatest {
-                    reduce { state.copy(mathTexts = it) }
-                }
+    override fun refresh() {
+        viewModelScope.launch {
+            val histories = textRepository.getHistory()
+            intent {
+                reduce { state.copy(mathTexts = histories) }
             }
         }
     }

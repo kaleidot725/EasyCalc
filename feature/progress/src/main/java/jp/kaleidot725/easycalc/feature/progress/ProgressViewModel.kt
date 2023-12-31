@@ -1,23 +1,22 @@
 package jp.kaleidot725.easycalc.feature.progress
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.question.Answer
 import jp.kaleidot725.easycalc.core.domain.model.question.QAList
 import jp.kaleidot725.easycalc.core.domain.model.question.selector.QuestionSelector
-import jp.kaleidot725.easycalc.core.domain.model.setting.Setting
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
 import jp.kaleidot725.easycalc.core.repository.SettingRepository
 import jp.kaleidot725.easycalc.core.repository.TextRepository
 import jp.kaleidot725.easycalc.feature.progress.model.FocusMode
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
+import org.orbitmvi.orbit.syntax.simple.SimpleSyntax
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.postSideEffect
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
+
+private typealias PrivateIntent = SimpleSyntax<ProgressState, ProgressEvent>
 
 class ProgressViewModel(
     private val settingRepository: SettingRepository,
@@ -28,51 +27,25 @@ class ProgressViewModel(
     private val text = mathTextRepository.getById(mathTextId)
     private val generator = questionSelector.select(text)
     private val qaList = QAList().apply { start() }
-
     override val container = container<ProgressState, ProgressEvent>(
-        ProgressState(
-            mathText = text,
-            textProgress = 1,
-            textAnswer = "",
-            textRemainder = "",
-            question = generator.generate(),
-            isSuccess = false,
-            isFailed = false,
-            setting = Setting(isBgmMute = false, isEffectMute = false),
-            focusMode = FocusMode.ANSWER,
-            timeoutProgress = 1f,
-        )
+        ProgressState.createInitState(text, generator)
     )
 
-    init {
-        viewModelScope.launch {
-            settingRepository.get().collectLatest {
-                intent {
-                    reduce {
-                        state.copy(setting = it)
-                    }
-                }
-
-                intent {
-                    if (it.isBgmMute) {
-                        postSideEffect(ProgressEvent.StopBGM)
-                    } else {
-                        postSideEffect(ProgressEvent.StartBGM)
-                    }
-                }
-            }
-        }
+    override fun refresh() = intent {
+        updateSetting()
     }
 
-    override fun onChangeEffectMute(isMute: Boolean) = intent {
+    override fun changeEffectMute(isMute: Boolean) = intent {
         settingRepository.update(state.setting.copy(isEffectMute = isMute))
+        updateSetting()
     }
 
-    override fun onChangeBgmMute(isMute: Boolean) = intent {
+    override fun changeBgmMute(isMute: Boolean) = intent {
         settingRepository.update(state.setting.copy(isBgmMute = isMute))
+        updateSetting()
     }
 
-    override fun onClickNumber(number: Int) = intent {
+    override fun clickNumber(number: Int) = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Input(state.setting.isEffectMute))
@@ -109,27 +82,22 @@ class ProgressViewModel(
             )
         )
 
-        reduce {
-            state.copy(
-                textProgress = state.textProgress,
-                isSuccess = true
-            )
-        }
+        reduce { state.copy(isSuccess = true) }
         postSideEffect(ProgressEvent.Success(state.setting.isEffectMute))
         delay(500)
 
-        createNextQuestion()
+        next()
     }
 
-    override fun onChangeFocus(focusMode: FocusMode) = intent {
+    override fun changeFocus(focusMode: FocusMode) = intent {
         reduce { state.copy(focusMode = focusMode) }
     }
 
-    override fun onSkip() {
-        onTimeout()
+    override fun skip() {
+        timeout()
     }
 
-    override fun onTimeout() = intent {
+    override fun timeout() = intent {
         if (state.isSuccess || state.isFailed) return@intent
         qaList.add(
             state.question,
@@ -140,19 +108,16 @@ class ProgressViewModel(
         )
 
         reduce {
-            state.copy(
-                textProgress = state.textProgress,
-                isFailed = true
-            )
+            state.copy(isFailed = true)
         }
 
         postSideEffect(ProgressEvent.Failed(state.setting.isEffectMute))
         delay(500)
 
-        createNextQuestion()
+        next()
     }
 
-    override fun onDelete() = intent {
+    override fun delete() = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Input(state.setting.isEffectMute))
@@ -206,10 +171,10 @@ class ProgressViewModel(
         postSideEffect(ProgressEvent.Success(state.setting.isEffectMute))
         delay(500)
 
-        createNextQuestion()
+        next()
     }
 
-    override fun onClear() = intent {
+    override fun clear() = intent {
         if (state.isSuccess || state.isFailed) return@intent
 
         postSideEffect(ProgressEvent.Clear(state.setting.isEffectMute))
@@ -225,15 +190,29 @@ class ProgressViewModel(
         }
     }
 
-    override fun onInterrupt() = intent {
+    override fun interrupt() = intent {
         postSideEffect(ProgressEvent.Interrupted(state.setting.isEffectMute))
     }
 
-    override fun onUpdateTimeoutProgress(value: Float) = intent {
+    override fun updateTimeoutProgress(value: Float) = intent {
         reduce { state.copy(timeoutProgress = value) }
     }
 
-    private fun createNextQuestion() = intent {
+    private suspend fun PrivateIntent.updateSetting() {
+        val setting = settingRepository.get()
+        reduce {
+            state.copy(setting = setting)
+        }
+
+        val sideEffect = if (setting.isBgmMute) {
+            ProgressEvent.StopBGM
+        } else {
+            ProgressEvent.StartBGM
+        }
+        postSideEffect(sideEffect = sideEffect)
+    }
+
+    private suspend fun PrivateIntent.next() {
         if (qaList.questionCount < state.mathText.count) {
             reduce {
                 state.copy(

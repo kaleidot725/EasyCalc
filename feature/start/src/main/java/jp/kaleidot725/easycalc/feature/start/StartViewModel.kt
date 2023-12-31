@@ -1,16 +1,16 @@
 package jp.kaleidot725.easycalc.feature.start
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.domain.model.text.MathTextId
 import jp.kaleidot725.easycalc.core.repository.TextRepository
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
+import org.orbitmvi.orbit.syntax.simple.SimpleSyntax
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.postSideEffect
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
+
+private typealias PrivateIntent = SimpleSyntax<StartState, StartEvent>
 
 class StartViewModel(
     private val mathTextId: MathTextId,
@@ -23,17 +23,7 @@ class StartViewModel(
         )
     )
 
-    init {
-        viewModelScope.launch {
-            mathTextRepository.isFavorite(mathTextId).collectLatest {
-                intent {
-                    reduce {
-                        state.copy(isFavorite = it)
-                    }
-                }
-            }
-        }
-    }
+    override fun refresh() = intent { updateFavorite() }
 
     override fun startCalculation() = intent {
         mathTextRepository.addHistory(mathTextId)
@@ -45,6 +35,14 @@ class StartViewModel(
             mathTextRepository.deleteFavorite(mathTextId)
         } else {
             mathTextRepository.addFavorite(mathTextId)
+        }
+        updateFavorite()
+    }
+
+    private suspend fun PrivateIntent.updateFavorite() {
+        val isFavorite = mathTextRepository.isFavorite(mathTextId)
+        reduce {
+            state.copy(isFavorite = isFavorite)
         }
     }
 

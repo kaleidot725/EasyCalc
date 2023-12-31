@@ -1,9 +1,7 @@
 package jp.kaleidot725.easycalc.feature.stats
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import jp.kaleidot725.easycalc.core.repository.StatsRepository
-import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
 import org.orbitmvi.orbit.syntax.simple.reduce
@@ -16,14 +14,10 @@ class StatsViewModel(
         StatsState(isLoading = true, items = emptyList())
     )
 
-    init {
-        viewModelScope.launch {
-            val items = statsRepository.getAll()
-            intent {
-                reduce {
-                    state.copy(isLoading = false, items = items)
-                }
-            }
+    override fun refresh() = intent {
+        val items = statsRepository.getAll()
+        reduce {
+            state.copy(isLoading = false, items = items)
         }
     }
 }

@@ -12,12 +12,12 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class CategoryViewModel(
-    category: MathText.Category,
+    private val category: MathText.Category,
     private val textRepository: TextRepository,
 ) : ContainerHost<CategoryState, CategoryEvent>, CategoryAction, ViewModel() {
     override val container = container<CategoryState, CategoryEvent>(CategoryState(category))
 
-    init {
+    override fun refresh() {
         viewModelScope.launch {
             val textSets = textRepository.get()
             intent {

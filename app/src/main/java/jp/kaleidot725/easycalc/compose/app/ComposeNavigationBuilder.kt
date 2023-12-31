@@ -140,6 +140,10 @@ fun NavGraphBuilder.addStatsScreen() {
     composable(ComposeNavigation.Stats.path) {
         val viewModel = koinViewModel<StatsViewModel>()
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         StatsScreen(
             state = state,
             modifier = Modifier.fillMaxSize()
@@ -152,6 +156,10 @@ fun NavGraphBuilder.addQuizScreen(navController: NavController) {
         val viewModel = koinViewModel<QuizViewModel>()
         val action = viewModel as QuizAction
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is QuizEvent.ClickCategory -> {
@@ -182,6 +190,9 @@ fun NavGraphBuilder.addCategoryScreen(navController: NavController) {
         val action = viewModel as CategoryAction
         val state by viewModel.collectAsState()
 
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is CategoryEvent.ClickText -> {
@@ -215,9 +226,7 @@ fun NavGraphBuilder.addMyListScreen(navController: NavController) {
             when (sideEffect) {
                 is MyListEvent.ClickText -> {
                     navController.navigate(
-                        ComposeNavigation.Start(
-                            sideEffect.mathText
-                        ).route
+                        ComposeNavigation.Start(sideEffect.mathText).route
                     )
                 }
 
@@ -239,6 +248,10 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
         val viewModel = koinViewModel<HistoryViewModel>()
         val action = viewModel as HistoryAction
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
 
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
@@ -265,11 +278,13 @@ fun NavGraphBuilder.addHistoryScreen(navController: NavController) {
 
 fun NavGraphBuilder.addStartScreen(navController: NavController) {
     composable(ComposeNavigation.Start().path) {
-        val id =
-            ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
+        val id = ComposeNavigation.Start.getTextId(navController.currentBackStackEntry)
         val viewModel = koinViewModel<StartViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
 
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is StartEvent.ClickStart -> {
@@ -299,12 +314,13 @@ fun NavGraphBuilder.addProgressScreen(
     onChangedProgress: (ComposeAppProgress) -> Unit
 ) {
     composable(ComposeNavigation.Progress().path) {
-        val id =
-            ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
-        val viewModel = koinViewModel<ProgressViewModel> {
-            parametersOf(id)
-        }
+        val id = ComposeNavigation.Progress.getTextId(navController.currentBackStackEntry)
+        val viewModel = koinViewModel<ProgressViewModel> { parametersOf(id) }
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
 
         LaunchedEffect(state) {
             onChangedProgress.invoke(ComposeAppProgress(state.textProgress, state.mathText.count))
@@ -367,10 +383,8 @@ fun NavGraphBuilder.addProgressScreen(
 
 fun NavGraphBuilder.addResultScreen(navController: NavController) {
     composable(ComposeNavigation.Result().path) {
-        val id =
-            ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
-        val qaList =
-            ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
+        val id = ComposeNavigation.Result.getTextId(navController.currentBackStackEntry)
+        val qaList = ComposeNavigation.Result.getQAList(navController.currentBackStackEntry)
         val viewModel = koinViewModel<ResultViewModel> { parametersOf(id, qaList) }
         val state by viewModel.collectAsState()
 
@@ -481,6 +495,9 @@ fun NavGraphBuilder.addThemeScreen(navController: NavController) {
         val viewModel = koinViewModel<ThemeViewModel>()
         val action = viewModel as ThemeAction
         val state by viewModel.collectAsState()
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 ThemeEvent.PopBack -> navController.navigateUp()
@@ -499,6 +516,9 @@ fun NavGraphBuilder.addLanguageScreen(navController: NavController) {
         val viewModel = koinViewModel<LanguageViewModel>()
         val action = viewModel as LanguageAction
         val state by viewModel.collectAsState()
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 LanguageEvent.PopBack -> navController.navigateUp()

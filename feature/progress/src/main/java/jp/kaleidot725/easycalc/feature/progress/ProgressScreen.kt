@@ -63,7 +63,7 @@ fun ProgressScreen(
             }
 
             override fun onDestroy(owner: LifecycleOwner) {
-                action.onUpdateTimeoutProgress(progressAnimationRef.value.value)
+                action.updateTimeoutProgress(progressAnimationRef.value.value)
             }
         }
 
@@ -77,11 +77,11 @@ fun ProgressScreen(
             targetValue = 0f,
             animationSpec = tween(durationMillis = remainTimeoutMs, easing = LinearEasing)
         )
-        action.onTimeout()
+        action.timeout()
     }
 
     BackHandler {
-        action.onInterrupt()
+        action.interrupt()
     }
 
     Column(
@@ -110,7 +110,7 @@ fun ProgressScreen(
                 isFailed = state.isFailed,
                 hasRemainder = state.question.hasRemainder,
                 focusMode = state.focusMode,
-                onFocusChange = action::onChangeFocus,
+                onFocusChange = action::changeFocus,
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
@@ -127,12 +127,12 @@ fun ProgressScreen(
             NumberIme(
                 isEffectMute = state.setting.isEffectMute,
                 isBgmMute = state.setting.isBgmMute,
-                onClickNumber = action::onClickNumber,
-                onSkip = action::onSkip,
-                onDelete = action::onDelete,
-                onClear = action::onClear,
-                onChangeEffectMute = action::onChangeEffectMute,
-                onChangeBgmMute = action::onChangeBgmMute,
+                onClickNumber = action::clickNumber,
+                onSkip = action::skip,
+                onDelete = action::delete,
+                onClear = action::clear,
+                onChangeEffectMute = action::changeEffectMute,
+                onChangeBgmMute = action::changeBgmMute,
                 modifier = Modifier
                     .fillMaxSize()
                     .align(Alignment.Center),

@@ -14,8 +14,7 @@ import jp.kaleidot725.easycalc.core.repository.TextRepository
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -88,50 +87,47 @@ internal class TextRepositoryImpl(
         )
     }
 
-    override fun getHistory(): Flow<MathTexts> {
-        return applicationContext.historyStore.data.map { settings ->
-            val currentHistoryListJson = settings[HISTORY_LIST_KEY]
-            val currentHistoryList = try {
-                Json.decodeFromString<List<String>>(currentHistoryListJson ?: "{}")
-            } catch (_: IllegalArgumentException) {
-                emptyList()
-            }
-            val values = currentHistoryList
-                .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
-                .toPersistentList()
-            MathTexts(values)
+    override suspend fun getHistory(): MathTexts {
+        val preferences = applicationContext.historyStore.data.first()
+        val currentHistoryListJson = preferences[HISTORY_LIST_KEY]
+        val currentHistoryList = try {
+            Json.decodeFromString<List<String>>(currentHistoryListJson ?: "{}")
+        } catch (_: IllegalArgumentException) {
+            emptyList()
         }
+        val values = currentHistoryList
+            .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+            .toPersistentList()
+        return MathTexts(values)
     }
 
-    override fun getFavorite(): Flow<MathTexts> {
-        return applicationContext.favoriteStore.data.map { settings ->
-            val currentFavoriteListJson = settings[FAVORITE_LIST_KEY]
-            val currentFavoriteList = try {
-                Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
-            } catch (_: IllegalArgumentException) {
-                emptyList()
-            }
-            val values = currentFavoriteList
-                .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
-                .toPersistentList()
-            MathTexts(values)
+    override suspend fun getFavorite(): MathTexts {
+        val preferences = applicationContext.favoriteStore.data.first()
+        val currentFavoriteListJson = preferences[FAVORITE_LIST_KEY]
+        val currentFavoriteList = try {
+            Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
+        } catch (_: IllegalArgumentException) {
+            emptyList()
         }
+        val values = currentFavoriteList
+            .mapNotNull { id -> all.firstOrNull { it.id.value == id } }
+            .toPersistentList()
+        return MathTexts(values)
     }
 
     override fun getById(id: MathTextId): MathText {
         return all.first { it.id == id }
     }
 
-    override fun isFavorite(id: MathTextId): Flow<Boolean> {
-        return applicationContext.favoriteStore.data.map { settings ->
-            val currentFavoriteListJson = settings[FAVORITE_LIST_KEY]
-            val currentFavoriteList = try {
-                Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
-            } catch (_: IllegalArgumentException) {
-                emptyList()
-            }
-            currentFavoriteList.any { id.value == it }
+    override suspend fun isFavorite(id: MathTextId): Boolean {
+        val preferences = applicationContext.favoriteStore.data.first()
+        val currentFavoriteListJson = preferences[FAVORITE_LIST_KEY]
+        val currentFavoriteList = try {
+            Json.decodeFromString<List<String>>(currentFavoriteListJson ?: "{}")
+        } catch (_: IllegalArgumentException) {
+            emptyList()
         }
+        return currentFavoriteList.any { id.value == it }
     }
 
     override suspend fun addHistory(id: MathTextId) {
