@@ -1,4 +1,4 @@
-name: pull request check
+name: Create format pull request
 
 on:
   push:

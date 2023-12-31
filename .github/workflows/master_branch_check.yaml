@@ -1,4 +1,4 @@
-name: pull request check
+name: Check master branch
 
 on:
   push:
