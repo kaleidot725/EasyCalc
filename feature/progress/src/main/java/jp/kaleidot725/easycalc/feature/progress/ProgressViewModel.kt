@@ -16,6 +16,8 @@ import org.orbitmvi.orbit.syntax.simple.postSideEffect
 import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
+private typealias PrivateIntent = SimpleSyntax<ProgressState, ProgressEvent>
+
 class ProgressViewModel(
     private val settingRepository: SettingRepository,
     mathTextId: MathTextId,
@@ -196,7 +198,7 @@ class ProgressViewModel(
         reduce { state.copy(timeoutProgress = value) }
     }
 
-    private suspend fun SimpleSyntax<ProgressState, ProgressEvent>.updateSetting() {
+    private suspend fun PrivateIntent.updateSetting() {
         val setting = settingRepository.get()
         reduce {
             state.copy(setting = setting)
@@ -210,7 +212,7 @@ class ProgressViewModel(
         postSideEffect(sideEffect = sideEffect)
     }
 
-    private suspend fun SimpleSyntax<ProgressState, ProgressEvent>.next() {
+    private suspend fun PrivateIntent.next() {
         if (qaList.questionCount < state.mathText.count) {
             reduce {
                 state.copy(

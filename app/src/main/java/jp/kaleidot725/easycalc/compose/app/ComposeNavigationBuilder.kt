@@ -152,6 +152,10 @@ fun NavGraphBuilder.addQuizScreen(navController: NavController) {
         val viewModel = koinViewModel<QuizViewModel>()
         val action = viewModel as QuizAction
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 is QuizEvent.ClickCategory -> {
