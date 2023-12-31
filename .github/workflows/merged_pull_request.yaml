@@ -6,7 +6,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    name: Check pull request
+    name: Check master branch
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
