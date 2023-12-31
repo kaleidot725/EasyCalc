@@ -3,12 +3,12 @@ name: Create format pull request
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    name: Check master branch
+    name: Check main branch
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3

@@ -1,9 +1,9 @@
-name: Check master branch
+name: Check main branch
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   check:
