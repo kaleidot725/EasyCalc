@@ -37,7 +37,11 @@
 | Orbit MVI             | https://orbit-mvi.org                                        |
 | Coil                  | https://coil-kt.github.io/coil/                              |
 | Room                  | https://developer.android.com/training/data-storage/room?hl=ja |
+| DataStore             | https://developer.android.com/topic/libraries/architecture/datastore |
 | Kotlin-Serialiazation | https://github.com/Kotlin/kotlinx.serialization              |
+| Compose Stable Marker | https://github.com/skydoves/compose-stable-marker |
+| Detekt | https://github.com/detekt/detekt | 
+| About Libraries | https://github.com/mikepenz/AboutLibraries |
 
 ## License
 
