@@ -1,10 +1,12 @@
 # <img src=https://github.com/albites/anzan/assets/23740796/a62b2ec7-b766-49b8-b61e-74c757ed839a width=24 height=24> EasyCalc
 
-![demo](https://github.com/kaleidot725/EasyCalc/assets/23740796/bc02756f-5d0e-45a1-ba8a-a0af127037c5)
+![20231231-221602](https://github.com/kaleidot725/EasyCalc/assets/23740796/6cce4a44-19a2-4abf-b722-9b0e738cfb7b)
 
 ## Demo
 
-![demo](https://github.com/kaleidot725/EasyCalc/assets/23740796/e573d6b0-5354-479c-8fed-b3f6aeab54c9)
+<p align=center>
+  <img src=https://github.com/kaleidot725/EasyCalc/assets/23740796/e573d6b0-5354-479c-8fed-b3f6aeab54c9 width=250>    
+</p>
 
 ## Features
 
