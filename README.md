@@ -10,8 +10,8 @@
 
 ## Features
 
-- Set questions that addiction and subtraction, multiplication, division
-- Check question answers that addiction and subtraction, multiplication, division.
+- Set questions that addition and subtraction, multiplication, division
+- Check question answers that addition and subtraction, multiplication, division.
 
 ## Modules
 
