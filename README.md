@@ -11,7 +11,7 @@
 ## Features
 
 - Set questions that addition and subtraction, multiplication, division
-- Check question answers that addition and subtraction, multiplication, division.
+- Check your question answers.
 
 ## Modules
 
