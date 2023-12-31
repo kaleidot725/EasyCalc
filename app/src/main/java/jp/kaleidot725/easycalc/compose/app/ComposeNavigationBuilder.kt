@@ -140,6 +140,10 @@ fun NavGraphBuilder.addStatsScreen() {
     composable(ComposeNavigation.Stats.path) {
         val viewModel = koinViewModel<StatsViewModel>()
         val state by viewModel.collectAsState()
+
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         StatsScreen(
             state = state,
             modifier = Modifier.fillMaxSize()
