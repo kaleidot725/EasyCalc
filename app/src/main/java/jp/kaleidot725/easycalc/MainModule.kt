@@ -53,6 +53,6 @@ val featureModule = module {
         ProgressViewModel(get(), id, get(), get())
     }
     viewModel { (id: MathTextId, qalist: QAList) ->
-        ResultViewModel(id, qalist, get(), get())
+        ResultViewModel(id, get(), qalist, get())
     }
 }

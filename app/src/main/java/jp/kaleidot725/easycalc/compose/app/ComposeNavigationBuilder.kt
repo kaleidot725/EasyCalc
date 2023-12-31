@@ -489,6 +489,9 @@ fun NavGraphBuilder.addThemeScreen(navController: NavController) {
         val viewModel = koinViewModel<ThemeViewModel>()
         val action = viewModel as ThemeAction
         val state by viewModel.collectAsState()
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 ThemeEvent.PopBack -> navController.navigateUp()
@@ -507,6 +510,9 @@ fun NavGraphBuilder.addLanguageScreen(navController: NavController) {
         val viewModel = koinViewModel<LanguageViewModel>()
         val action = viewModel as LanguageAction
         val state by viewModel.collectAsState()
+        LaunchedEffect(viewModel) {
+            viewModel.refresh()
+        }
         viewModel.collectSideEffect { sideEffect ->
             when (sideEffect) {
                 LanguageEvent.PopBack -> navController.navigateUp()
