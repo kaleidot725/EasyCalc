@@ -25,4 +25,3 @@ jobs:
         run: |
           ./gradlew detekt
           reviewdog -f=sarif -name="detekt" -reporter=github-pr-review < build/reports/detekt/detekt.sarif
-          echo TEST
