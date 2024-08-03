@@ -28,6 +28,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd
           ./gradlew detekt
           reviewdog -f=sarif -name="detekt" -reporter=github-pr-review < build/reports/detekt/detekt.sarif
