@@ -20,12 +20,12 @@ allprojects {
     }
 
     dependencies {
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
         detektPlugins("io.nlopez.compose.rules:detekt:0.2.1")
     }
 
     detekt {
-        toolVersion = "1.23.1"
+        toolVersion = "1.23.6"
         config = files("${rootProject.projectDir}/config/detekt/detekt.yml")
         buildUponDefaultConfig = true
         basePath = projectDir.toString()
@@ -36,21 +36,20 @@ allprojects {
 }
 
 val reportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
-    output.set(rootProject.layout.buildDirectory.file("reports/detekt/detekt.xml"))
+    output.set(rootProject.layout.buildDirectory.file("reports/detekt/detekt.sarif"))
 }
 
 subprojects {
     detekt {
-        reports.xml.required.set(true)
+        reports.sarif.required.set(true)
     }
 
-    plugins.withType<io.gitlab.arturbosch.detekt.DetektPlugin> {
-        tasks.withType<Detekt> detekt@{
-            finalizedBy(reportMerge)
-            reportMerge.configure {
-                input.from(this@detekt.xmlReportFile)
-            }
-        }
+    tasks.withType<Detekt>().configureEach {
+        finalizedBy(reportMerge)
+    }
+
+    reportMerge {
+        input.from(tasks.withType<Detekt>().map { it.sarifReportFile })
     }
 
     tasks.withType<Test>().configureEach {
