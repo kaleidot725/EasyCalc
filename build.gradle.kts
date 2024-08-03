@@ -36,7 +36,7 @@ allprojects {
 }
 
 val reportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
-    output.set(rootProject.layout.buildDirectory.file("reports/detekt/detekt.xml"))
+    output.set(rootProject.layout.buildDirectory.file("reports/detekt/detekt.sarif"))
 }
 
 subprojects {
@@ -49,7 +49,7 @@ subprojects {
     }
 
     reportMerge {
-        input.from(tasks.withType<Detekt>().map { it.xmlReportFile }) // or .sarifReportFile
+        input.from(tasks.withType<Detekt>().map { it.sarifReportFile })
     }
 
     tasks.withType<Test>().configureEach {

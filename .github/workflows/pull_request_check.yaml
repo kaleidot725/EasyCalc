@@ -20,14 +20,14 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: 17
-      - name: Run detekt
-        run: ./gradlew detekt
       - name: Install Reviewdog
         uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
-      - name: Run Reviewdog
+      - name: Run detekt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          cd
+          ./gradlew detekt
           reviewdog -f=sarif -name="detekt" -reporter=github-pr-review < build/reports/detekt/detekt.sarif
