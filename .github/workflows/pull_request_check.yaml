@@ -22,11 +22,12 @@ jobs:
           java-version: 17
       - name: Run detekt
         run: ./gradlew detekt
-      - name: Run test
-        run: ./gradlew test
-      - name: Run danger
+      - name: Install Reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+      - name: Run Reviewdog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gem install danger danger-checkstyle_format danger-android_lint danger-junit
-          danger
+          reviewdog -f=sarif -name="detekt" -reporter=github-pr-review < build/reports/detekt/detekt.sarif

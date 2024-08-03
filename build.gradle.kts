@@ -41,16 +41,15 @@ val reportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMe
 
 subprojects {
     detekt {
-        reports.xml.required.set(true)
+        reports.sarif.required.set(true)
     }
 
-    plugins.withType<io.gitlab.arturbosch.detekt.DetektPlugin> {
-        tasks.withType<Detekt> detekt@{
-            finalizedBy(reportMerge)
-            reportMerge.configure {
-                input.from(this@detekt.xmlReportFile)
-            }
-        }
+    tasks.withType<Detekt>().configureEach {
+        finalizedBy(reportMerge)
+    }
+
+    reportMerge {
+        input.from(tasks.withType<Detekt>().map { it.xmlReportFile }) // or .sarifReportFile
     }
 
     tasks.withType<Test>().configureEach {
