@@ -19,8 +19,11 @@ jobs:
           distribution: 'corretto'
           java-version: 17
       - uses: reviewdog/action-setup@v1
-      - name: Run detekt   
-        run: |
-          ./gradlew detekt
-          reviewdog -f=sarif -name="detekt" -reporter=github-pr-review < build/reports/detekt/detekt.sarif
-          done
+      - name: Run detekt
+        run: ./gradlew detekt
+      - name: Run reviewdog
+        if: failure()
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cat ./build/reports/detekt/detekt.sarif |
+          reviewdog -f=sarif -name="detekt" -reporter="github-pr-review"
