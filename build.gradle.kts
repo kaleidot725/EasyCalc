@@ -35,21 +35,9 @@ allprojects {
     }
 }
 
-val reportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
-    output.set(rootProject.layout.buildDirectory.file("reports/detekt/detekt.sarif"))
-}
-
 subprojects {
     detekt {
         reports.sarif.required.set(true)
-    }
-
-    tasks.withType<Detekt>().configureEach {
-        finalizedBy(reportMerge)
-    }
-
-    reportMerge {
-        input.from(tasks.withType<Detekt>().map { it.sarifReportFile })
     }
 
     tasks.withType<Test>().configureEach {
