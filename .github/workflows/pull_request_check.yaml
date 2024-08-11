@@ -21,3 +21,4 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cat ./build/reports/detekt/detekt.sarif |
           reviewdog -f=sarif -name="detekt" -reporter="github-pr-review"
+          cat ./build/reports/detekt/detekt.sarif
