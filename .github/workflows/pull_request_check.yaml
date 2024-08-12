@@ -3,21 +3,38 @@ name: Check pull request
 on:
   pull_request
 
+permissions:
+  contents: write
+  
 jobs:
   check:
     runs-on: ubuntu-latest
     name: Check pull request
+    permissions:
+      pull-requests: write
+    env:
+      REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: 17
-      - uses: reviewdog/action-setup@v1
-      - name: Run detekt
-        run: ./gradlew check
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Setup reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
+      - name: detekt
+        run: ./gradlew detekt
+
       - name: Run reviewdog
-        env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: cat ./build/reports/detekt/detekt.sarif |
-          reviewdog -f=sarif -name="detekt" -reporter="github-pr-review"
+        run: |
+          find . -regex '^.*/build/reports/detekt/detekt.xml' -type f | while read file_path; do
+           cat  "$file_path" | reviewdog -f=checkstyle -reporter=github-pr-review
+          done
