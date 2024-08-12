@@ -36,5 +36,5 @@ jobs:
       - name: Run reviewdog
         run: |
           find . -regex '^.*/build/reports/detekt/detekt.xml' -type f | while read file_path; do
-           cat  "$file_path" | reviewdog -f=checkstyle -reporter="github-pr-review" -filter-mode=nofilter -tee
+           cat  "$file_path" | reviewdog -f=checkstyle -reporter=github-pr-review
           done
