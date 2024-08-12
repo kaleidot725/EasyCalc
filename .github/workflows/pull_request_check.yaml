@@ -17,11 +17,16 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: 17
-      - uses: reviewdog/action-setup@v1
-      - name: Run detekt
-        run: ./gradlew check --continue
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Setup reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+      - name: detekt
+        run: ./gradlew detekt
       - name: Run reviewdog
         run: |
           find . -regex '^.*/build/reports/detekt/detekt.sarif$' -type f | while read file_path; do
-           reviewdog -f=sarif -diff="git diff" < "$file_path"
+           reviewdog -f=sarif -name="detekt" -reporter="github-pr-review" < "$file_path"
           done
