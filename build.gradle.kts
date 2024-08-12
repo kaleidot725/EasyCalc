@@ -37,7 +37,7 @@ allprojects {
 
 subprojects {
     detekt {
-        reports.sarif.required.set(true)
+        reports.xml.required.set(true)
     }
 
     tasks.withType<Test>().configureEach {
