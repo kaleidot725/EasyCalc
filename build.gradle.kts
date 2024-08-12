@@ -21,7 +21,7 @@ allprojects {
 
     dependencies {
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
-        detektPlugins("io.nlopez.compose.rules:detekt:0.2.1")
+        detektPlugins("io.nlopez.compose.rules:detekt:0.4.10")
     }
 
     detekt {
