@@ -27,6 +27,6 @@ jobs:
         run: ./gradlew detekt
       - name: Run reviewdog
         run: |
-          find . -regex '^.*/build/reports/detekt/detekt.sarif$' -type f | while read file_path; do
-           reviewdog -f=sarif -name="detekt" -reporter="github-pr-review" < "$file_path"
+          find . -regex '^.*/build/reports/detekt/detekt.xml' -type f | while read file_path; do
+           reviewdog -f=checkstyle -name="detekt" -reporter="github-pr-review" < "$file_path"
           done
