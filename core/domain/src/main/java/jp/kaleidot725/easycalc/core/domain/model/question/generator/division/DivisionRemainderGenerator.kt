@@ -16,15 +16,11 @@ internal data class DivisionRemainderGenerator(
 
     override fun generate(): Question {
         while (true) {
-            println()
-
-
-
-            
             val divisionNumbers = DIVISION_TABLE
             val targetDivisionNumber = divisionNumbers.random()
-            val multipleCandidates =
-                (2..max).map { number -> number * targetDivisionNumber }.filter { it in min..max }
+            val multipleCandidates = (2..max)
+                .map { number -> number * targetDivisionNumber }
+                .filter { it in min..max }
             if (multipleCandidates.isNotEmpty()) {
                 val multipleCandidate = multipleCandidates.random()
                 if (multipleCandidates.count() != 1 && targetDivisionNumber != multipleCandidate) {
