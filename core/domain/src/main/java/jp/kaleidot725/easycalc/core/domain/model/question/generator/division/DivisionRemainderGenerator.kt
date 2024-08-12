@@ -16,6 +16,11 @@ internal data class DivisionRemainderGenerator(
 
     override fun generate(): Question {
         while (true) {
+            println()
+
+
+
+            
             val divisionNumbers = DIVISION_TABLE
             val targetDivisionNumber = divisionNumbers.random()
             val multipleCandidates =
