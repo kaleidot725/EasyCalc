@@ -23,5 +23,5 @@ jobs:
       - name: Run reviewdog
         run: |
           find . -regex '^.*/build/reports/detekt/detekt.sarif$' -type f | while read file_path; do
-           reviewdog -f=sarif -reporter=github-pr-review < "$file_path"
+           reviewdog -f=sarif -diff="git diff" < "$file_path"
           done
