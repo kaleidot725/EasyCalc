@@ -44,11 +44,6 @@ fun StatsScreen(
                         .size(48.dp)
                         .align(Alignment.Center)
 
-
-
-
-
-                    
                 )
             }
         } else {
