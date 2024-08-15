@@ -12,8 +12,6 @@ jobs:
     name: Check pull request
     permissions:
       pull-requests: write
-    env:
-      REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
 
@@ -34,6 +32,8 @@ jobs:
         run: ./gradlew detekt
 
       - name: Run reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           find . -regex '^.*/build/reports/detekt/detekt.xml' -type f | while read file_path; do
            cat  "$file_path" | reviewdog -f=checkstyle -reporter=github-pr-review
