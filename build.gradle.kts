@@ -21,14 +21,14 @@ allprojects {
 
     dependencies {
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
-        detektPlugins("io.nlopez.compose.rules:detekt:0.4.10")
+        detektPlugins("io.nlopez.compose.rules:detekt:0.2.1")
     }
 
     detekt {
         toolVersion = "1.23.6"
-        config = files("${rootProject.projectDir}/config/detekt/detekt.yml")
+        config.setFrom(files("${rootProject.projectDir}/config/detekt/detekt.yml"))
         buildUponDefaultConfig = true
-        basePath = projectDir.toString()
+        basePath = rootDir.absolutePath
         ignoreFailures = true
         parallel = true
         autoCorrect = true
@@ -38,6 +38,7 @@ allprojects {
 subprojects {
     detekt {
         reports.xml.required.set(true)
+        reports.sarif.required.set(true)
     }
 
     tasks.withType<Test>().configureEach {
