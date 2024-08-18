@@ -38,5 +38,5 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           find . -regex '^.*/build/reports/detekt/detekt.sarif' -type f | while read file_path; do
-           cat "$file_path" | reviewdog -f=sarif -reporter=github-pr-review -level=warning -filter-mode=file 
+           cat "$file_path" | reviewdog -reporter=github-pr-review -f=sarif -level=info
           done
